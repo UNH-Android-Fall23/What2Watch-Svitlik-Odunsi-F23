@@ -22,14 +22,14 @@ class BrowseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val browseViewModel =
+            ViewModelProvider(this).get(BrowseViewModel::class.java)
 
         _binding = FragmentBrowseBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textBrowse
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        browseViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

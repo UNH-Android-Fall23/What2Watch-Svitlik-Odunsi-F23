@@ -22,4 +22,5 @@
         android:name="com.example.what2watch_svitlik_odunsi_f23.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
+
 </navigation>

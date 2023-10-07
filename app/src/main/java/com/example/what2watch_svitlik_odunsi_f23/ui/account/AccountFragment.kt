@@ -22,14 +22,14 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val accountViewModel =
             ViewModelProvider(this).get(AccountViewModel::class.java)
 
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textAccount
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        accountViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
