@@ -1,4 +1,4 @@
-package com.example.what2watch_svitlik_odunsi_f23.ui.dashboard
+package com.example.what2watch_svitlik_odunsi_f23.ui.browse
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
