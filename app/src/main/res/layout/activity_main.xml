@@ -47,4 +47,50 @@
         tools:layout_editor_absoluteX="79dp"
         tools:layout_editor_absoluteY="25dp" />
 
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New User?"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="546dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="#D30404"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="544dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
