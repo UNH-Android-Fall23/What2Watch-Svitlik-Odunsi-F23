@@ -22,14 +22,14 @@ class Q2Fragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val q2ViewModel =
+        val q3ViewModel =
             ViewModelProvider(this).get(q3ViewModel::class.java)
 
         _binding = FragmentQ3Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textQ3
-        q2ViewModel.text.observe(viewLifecycleOwner) {
+        q3ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
