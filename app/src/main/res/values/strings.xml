@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">What2Watch-Svitlik-Odunsi-F23</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Quiz</string>
     <string name="title_browse">Browse</string>
     <string name="title_account">Account</string>
+    <string name="start_the_quiz">Start the Quiz</string>
+    <string name="what2watch">What2Watch</string>
+    <string name="begin">Begin</string>
 </resources>
