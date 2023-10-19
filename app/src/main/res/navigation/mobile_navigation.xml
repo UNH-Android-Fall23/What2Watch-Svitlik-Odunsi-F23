@@ -23,4 +23,10 @@
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
 
+    <fragment
+        android:id="@+id/navigation_shuffle"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.shuffle.ShuffleFragment"
+        android:label="Shuffle"
+        tools:layout="@layout/fragment_shuffle" />
+
 </navigation>
