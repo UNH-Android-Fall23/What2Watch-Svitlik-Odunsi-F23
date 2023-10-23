@@ -61,15 +61,16 @@
         tools:layout_editor_absoluteX="47dp" />
 
     <Button
-        android:id="@+id/btn_recent"
+        android:id="@+id/btn_90s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Recent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_20s"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="@+id/btn_10s"
-        app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
+        android:text="90's"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_00s"
+        app:layout_constraintEnd_toStartOf="@+id/btn_00s"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toEndOf="@+id/btn_80s"
+        app:layout_constraintTop_toBottomOf="@+id/text_Decade"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_00s"
@@ -99,17 +100,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_90s"
         tools:layout_editor_absoluteX="226dp" />
 
+
     <Button
-        android:id="@+id/btn_90s"
+        android:id="@+id/btn_recent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="90's"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_00s"
-        app:layout_constraintEnd_toStartOf="@+id/btn_00s"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toEndOf="@+id/btn_80s"
-        app:layout_constraintTop_toBottomOf="@+id/text_Decade"
-        app:layout_constraintVertical_bias="1.0" />
-
+        android:layout_marginTop="56dp"
+        android:text="Recent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_20s"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="@+id/btn_10s"
+        app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
