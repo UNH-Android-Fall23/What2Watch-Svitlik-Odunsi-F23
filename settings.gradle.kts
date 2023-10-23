@@ -12,6 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+}
 
 rootProject.name = "What2Watch-Svitlik-Odunsi-F23"
 include(":app")

@@ -39,4 +39,7 @@ class Q2Fragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
+
