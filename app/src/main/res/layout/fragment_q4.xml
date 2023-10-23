@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.q4.q4Fragment">
+    tools:context=".ui.q4.Q4Fragment">
 
     <TextView
         android:id="@+id/text_Q4"
@@ -48,6 +48,19 @@
         app:layout_constraintRight_toRightOf="@id/text_Home"
         app:layout_constraintTop_toBottomOf="@id/text_Home" />
 
-    
 
+    <com.google.android.material.slider.RangeSlider
+
+        android:id="@+id/range_slider2"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:stepSize="5.0"
+        android:valueFrom="0.0"
+        android:valueTo="100.0"
+        app:layout_constraintEnd_toEndOf="@+id/text_rating"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/text_rating"
+        app:layout_constraintTop_toBottomOf="@+id/text_rating"
+        app:values="@array/initial_slider_values" />
 </androidx.constraintlayout.widget.ConstraintLayout>
