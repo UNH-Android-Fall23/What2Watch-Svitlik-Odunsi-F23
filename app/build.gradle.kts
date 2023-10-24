@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.what2watch_svitlik_odunsi_f23"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.what2watch_svitlik_odunsi_f23"
@@ -55,6 +55,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("me.relex:circleindicator:2.1.6")
-
 
 }

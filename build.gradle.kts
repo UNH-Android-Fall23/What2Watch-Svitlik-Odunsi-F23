@@ -9,4 +9,8 @@ allprojects {
         google()
         mavenCentral()
     }
+
+    dependencies {
+         ("com.android.tools.build:gradle:8.1.0")
+    }
 }

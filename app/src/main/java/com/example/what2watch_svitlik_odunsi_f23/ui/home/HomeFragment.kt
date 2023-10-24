@@ -7,7 +7,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager2.widget.ViewPager2
+import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentHomeBinding
+import com.example.what2watch_svitlik_odunsi_f23.ui.FragmentStateAdapter
+import com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie.q1Fragment
+import com.example.what2watch_svitlik_odunsi_f23.ui.q2genre.q2Fragment
+import com.example.what2watch_svitlik_odunsi_f23.ui.q3decade.q3Fragment
+import com.example.what2watch_svitlik_odunsi_f23.ui.q4rating.q4Fragment
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
@@ -21,6 +30,8 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
+
+
     ): View {
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
@@ -32,6 +43,7 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
         return root
     }
 

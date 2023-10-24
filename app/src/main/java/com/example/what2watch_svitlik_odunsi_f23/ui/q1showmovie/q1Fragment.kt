@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ1Binding
 
-class BrowseFragment : Fragment() {
+class q1Fragment : Fragment() {
 
     private var _binding: FragmentQ1Binding? = null
 
