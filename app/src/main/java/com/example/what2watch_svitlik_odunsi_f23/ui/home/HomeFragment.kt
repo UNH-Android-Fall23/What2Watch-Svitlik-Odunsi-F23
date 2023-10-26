@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentHomeBinding
-import com.example.what2watch_svitlik_odunsi_f23.ui.FragmentStateAdapter
 import com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie.q1Fragment
 import com.example.what2watch_svitlik_odunsi_f23.ui.q2genre.q2Fragment
 import com.example.what2watch_svitlik_odunsi_f23.ui.q3decade.q3Fragment
