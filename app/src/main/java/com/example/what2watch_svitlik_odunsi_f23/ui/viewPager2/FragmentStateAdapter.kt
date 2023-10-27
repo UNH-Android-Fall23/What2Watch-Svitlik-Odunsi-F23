@@ -37,9 +37,6 @@ class CollectionDemoFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewPager=view.findViewById(R.id.pager)
-        demoCollectionAdapter = DemoCollectionAdapter(this)
-        viewPager.adapter = demoCollectionAdapter
         tabLayout = view.findViewById(R.id.tab_layout)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
