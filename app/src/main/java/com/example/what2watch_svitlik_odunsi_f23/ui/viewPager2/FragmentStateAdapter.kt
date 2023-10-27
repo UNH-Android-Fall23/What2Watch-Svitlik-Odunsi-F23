@@ -17,6 +17,7 @@ class CollectionDemoFragment : Fragment() {
     // representing an object in the collection.
     private lateinit var demoCollectionAdapter: DemoCollectionAdapter
     private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +28,7 @@ class CollectionDemoFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val tabLayout = view.findViewById(R.id.tab_layout)
+       tabLayout = view.findViewById(R.id.tab_layout)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = "OBJECT ${(position + 1)}"
         }.attach()
