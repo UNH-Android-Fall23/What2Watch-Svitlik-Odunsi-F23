@@ -54,6 +54,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation ("me.relex:circleindicator:2.1.6")
+    implementation ("androidx.navigation:navigation-fragment:2.3.0")
+    implementation ("androidx.navigation:navigation-ui:2.3.0")
 
 }
