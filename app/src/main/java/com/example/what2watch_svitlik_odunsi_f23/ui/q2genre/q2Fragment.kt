@@ -1,17 +1,25 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.q2genre
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ2Binding
 
 class q2Fragment : Fragment() {
 
     private var _binding: FragmentQ2Binding? = null
+    private lateinit var btnShow: Button
+    private lateinit var btnMovie: Button
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -31,6 +39,14 @@ class q2Fragment : Fragment() {
         val textView: TextView = binding.textQ2
         q2ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        btnShow.setOnClickListener {
+            Log.d(TAG, "Show button was pressed")
+
+        }
+
+        btnMovie.setOnClickListener {
+            Log.d(TAG, "Movie button was pressed")
         }
         return root
     }
