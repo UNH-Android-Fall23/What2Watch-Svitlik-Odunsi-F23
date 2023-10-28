@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.q1.q1Fragment">
-
 
     <TextView
         android:id="@+id/text_q1"
@@ -16,10 +15,10 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/text_Home"
@@ -29,9 +28,13 @@
         android:text=" What2Watch"
         android:textColor="#000000"
         android:textSize="40sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-       />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_ShowMovie"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        />
 
     <TextView
         android:id="@+id/text_ShowMovie"
@@ -41,27 +44,37 @@
         android:text=" Show or Movie?"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/text_Home"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/text_Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_show"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        />
 
     <Button
         android:id="@+id/btn_movie"
-        android:layout_width="148dp"
-        android:layout_height="336dp"
+        android:layout_width="104dp"
+        android:layout_height="313dp"
+        android:layout_marginRight="20dp"
         android:text="Movie"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="50dp"
-        android:layout_centerVertical="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/btn_show"
+        app:layout_constraintTop_toTopOf="@id/btn_show"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/btn_show"
-        android:layout_width="148dp"
-        android:layout_height="336dp"
-        android:layout_toEndOf="@+id/btn_movie"
-        android:layout_marginStart="16dp"
+        android:layout_width="108dp"
+        android:layout_height="314dp"
+        android:layout_marginStart="8dp"
         android:text="Show"
-        android:layout_centerVertical="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@id/text_ShowMovie" />
 
     <!-- I would like to use this code below to eventually have an image with "Show" and "Movie" that the user can click as buttons for their choice. Right now I will just use
     buttons.
@@ -87,4 +100,4 @@
         tools:layout_editor_absoluteX="222dp"
         tools:layout_editor_absoluteY="276dp" />
 -->
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
