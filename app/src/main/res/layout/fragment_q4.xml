@@ -75,4 +75,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text_rating"
         app:values="@array/initial_slider_values" />
 
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="417dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

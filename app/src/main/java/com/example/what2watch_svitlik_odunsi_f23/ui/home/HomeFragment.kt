@@ -34,13 +34,11 @@ class HomeFragment : Fragment() {
         btnBegin.setOnClickListener {
             Log.d(TAG, "Begin the quiz button was pressed!")
             findNavController().navigate(R.id.navigation_q1)
-            // TODO: Get this to swipe to the next quiz fragment
         }
 
         btnPick.setOnClickListener {
             Log.d(TAG, "Just pick for me button was pressed!")
             findNavController().navigate(R.id.navigation_shuffle)
-            // TODO: Get this to swipe to the shuffle fragment
         }
 
         return root

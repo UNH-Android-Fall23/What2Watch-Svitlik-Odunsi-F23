@@ -40,15 +40,17 @@ class q2Fragment : Fragment() {
         q2ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        btnShow.setOnClickListener {
-            Log.d(TAG, "Show button was pressed")
 
+        val btnNext = binding.btnNext
+
+        // Button click listeners
+        btnNext.setOnClickListener {
+            Log.d(TAG, "Next button was pressed!")
+            findNavController().navigate(R.id.navigation_q3)
         }
 
-        btnMovie.setOnClickListener {
-            Log.d(TAG, "Movie button was pressed")
-        }
         return root
+
     }
 
     override fun onDestroyView() {

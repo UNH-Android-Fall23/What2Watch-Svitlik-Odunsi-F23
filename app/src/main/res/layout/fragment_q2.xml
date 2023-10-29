@@ -205,4 +205,14 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_fantasy"
         app:layout_constraintTop_toBottomOf="@+id/btn_romcom" />
 
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:text="Next"
+        app:layout_constraintTop_toBottomOf="@+id/btn_adventure"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="171dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

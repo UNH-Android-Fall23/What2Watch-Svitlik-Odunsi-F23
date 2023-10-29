@@ -112,4 +112,12 @@
         app:layout_constraintStart_toStartOf="@+id/btn_10s"
         app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
 
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="434dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
