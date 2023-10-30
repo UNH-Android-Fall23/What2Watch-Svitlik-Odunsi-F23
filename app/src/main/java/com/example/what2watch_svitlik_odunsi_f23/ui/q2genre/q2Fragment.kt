@@ -37,7 +37,7 @@ class q2Fragment : Fragment() {
         _binding = FragmentQ2Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textQ2
+        val textView: TextView = binding.textGenre
         q2ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
