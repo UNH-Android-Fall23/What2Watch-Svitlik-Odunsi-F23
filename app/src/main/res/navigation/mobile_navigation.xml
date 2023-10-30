@@ -67,7 +67,18 @@
         android:id="@+id/navigation_q4"
         android:name="com.example.what2watch_svitlik_odunsi_f23.ui.q4rating.q4Fragment"
         android:label="q4"
-        tools:layout="@layout/fragment_q4" />
+        tools:layout="@layout/fragment_q4" >
+        <action
+            android:id="@+id/action_navigation_q4_to_navigation_quizresults"
+            app:destination="@id/navigation_quizresults" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quizresults"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.ResultsFragment"
+        android:label="results"
+        tools:layout="@layout/fragment_results" />
+
 
     <fragment
         android:id="@+id/nav_host_fragment"

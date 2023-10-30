@@ -30,14 +30,14 @@ class q1Fragment : Fragment() {
         val btnShow = binding.btnShow
         val btnMovie = binding.btnMovie
 
-            btnShow?.setOnClickListener {
+            btnShow.setOnClickListener {
                 Log.d(TAG, "Show button was pressed!")
-                findNavController().navigate(R.id.navigation_q1)
+                findNavController().navigate(R.id.navigation_q2)
             }
 
-            btnMovie?.setOnClickListener {
+            btnMovie.setOnClickListener {
                 Log.d(TAG, "Movie button was pressed!")
-                findNavController().navigate(R.id.navigation_q1)
+                findNavController().navigate(R.id.navigation_q2)
             }
 
 

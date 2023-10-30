@@ -45,12 +45,12 @@ class q4Fragment : Fragment() {
         // Button click listeners
         btnSkip.setOnClickListener {
             Log.d(TAG, "Skip button was pressed!")
-            findNavController().navigate(R.id.navigation_browse)
+            findNavController().navigate(R.id.navigation_quizresults)
         }
 
         btnSkip.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
-            findNavController().navigate(R.id.navigation_browse)
+            findNavController().navigate(R.id.navigation_quizresults)
         }
 
         return root
@@ -60,7 +60,5 @@ class q4Fragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }
 
