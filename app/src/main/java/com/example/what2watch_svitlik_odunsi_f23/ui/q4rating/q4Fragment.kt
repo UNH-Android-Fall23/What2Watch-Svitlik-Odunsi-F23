@@ -16,9 +16,6 @@ import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ4Binding
 class q4Fragment : Fragment() {
 
     private var _binding: FragmentQ4Binding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -37,12 +34,9 @@ class q4Fragment : Fragment() {
             textView.text = it
         }
 
-        // Use the binding to access views
         val btnSkip = binding.btnSkip
         val btnNext = binding.btnNext
 
-
-        // Button click listeners
         btnSkip.setOnClickListener {
             Log.d(TAG, "Skip button was pressed!")
             findNavController().navigate(R.id.navigation_quizresults)
@@ -52,7 +46,6 @@ class q4Fragment : Fragment() {
             Log.d(TAG, "Next button was pressed!")
             findNavController().navigate(R.id.navigation_quizresults)
         }
-
         return root
     }
 
