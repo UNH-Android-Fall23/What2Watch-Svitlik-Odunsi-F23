@@ -1,4 +1,4 @@
-package com.example.what2watch_svitlik_odunsi_f23.ui.account
+package com.example.what2watch_svitlik_odunsi_f23.ui.shuffle
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentAccountBinding
+import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentShuffleBinding
 
-class AccountFragment : Fragment() {
+class ShuffleFragment : Fragment() {
 
-    private var _binding: FragmentAccountBinding? = null
+    private var _binding: FragmentShuffleBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val accountViewModel =
-            ViewModelProvider(this).get(AccountViewModel::class.java)
+        val shuffleViewModel =
+            ViewModelProvider(this).get(ShuffleViewModel::class.java)
 
-        _binding = FragmentAccountBinding.inflate(inflater, container, false)
+        _binding = FragmentShuffleBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textAccount
-        accountViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textShuffle
+        shuffleViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
@@ -40,4 +40,3 @@ class AccountFragment : Fragment() {
         _binding = null
     }
 }
-

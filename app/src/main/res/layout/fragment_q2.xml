@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.q2genre.q2Fragment">
+
+    <TextView
+        android:id="@+id/text_Home"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/alata"
+        android:text=" What2Watch"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/text_Genre"
+        android:layout_width="180dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/alata"
+        android:text="What genre?"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@id/text_Home"
+        app:layout_constraintRight_toRightOf="@id/text_Home"
+        app:layout_constraintTop_toBottomOf="@id/text_Home" />
+
+    <TextView
+        android:id="@+id/text_max3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="-12dp"
+        android:fontFamily="@font/alata"
+        android:text=" Choose a max of 3"
+        android:textColor="#000000"
+
+
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Genre"
+        app:layout_constraintStart_toStartOf="@+id/text_Genre"
+        app:layout_constraintTop_toBottomOf="@+id/text_Genre" />
+
+
+    <Button
+        android:id="@+id/btn_romance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Romance"
+        app:layout_constraintEnd_toStartOf="@+id/btn_action"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_action" />
+
+    <Button
+        android:id="@+id/btn_mystery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Mystery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/btn_fantasy"
+        app:layout_constraintTop_toBottomOf="@+id/btn_comedy"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="History"
+        app:layout_constraintEnd_toStartOf="@+id/btn_fantasy"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_comedy" />
+
+    <Button
+        android:id="@+id/btn_fantasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Fantasy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_comedy"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Action"
+        app:layout_constraintEnd_toEndOf="@+id/text_Genre"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/text_Genre"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <Button
+        android:id="@+id/btn_thriller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Thriller"
+        app:layout_constraintEnd_toStartOf="@+id/btn_comedy"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_comedy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Comedy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action" />
+
+    <Button
+        android:id="@+id/btn_doc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Documentary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fantasy" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_drama" />
+
+    <Button
+        android:id="@+id/btn_adventure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Adventure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_doc"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_romcom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:text="Rom-Com"
+        app:layout_constraintEnd_toStartOf="@+id/btn_doc"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fantasy" />
+
+    <Button
+        android:id="@+id/btn_horror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Horror"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toEndOf="@+id/btn_comedy"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action" />
+
+    <Button
+        android:id="@+id/btn_drama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Drama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/btn_adventure"
+        app:layout_constraintTop_toBottomOf="@+id/btn_doc" />
+
+    <Button
+        android:id="@+id/btn_faith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Faith"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/btn_action"
+        app:layout_constraintTop_toTopOf="@+id/btn_action" />
+
+
+    <Button
+        android:id="@+id/btn_Scifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Sci-Fi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_doc"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fantasy"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

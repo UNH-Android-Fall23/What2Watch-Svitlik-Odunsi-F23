@@ -1,0 +1,107 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.q1.q1Fragment">
+
+    <TextView
+        android:id="@+id/text_q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text_Home"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/alata"
+        android:text=" What2Watch"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_ShowMovie"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        />
+
+    <TextView
+        android:id="@+id/text_ShowMovie"
+        android:layout_width="230dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/alata"
+        android:text=" Show or Movie?"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/text_Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_show"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        />
+
+    <Button
+        android:id="@+id/btn_movie"
+        android:layout_width="104dp"
+        android:layout_height="313dp"
+        android:layout_marginRight="20dp"
+        android:text="Movie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/btn_show"
+        app:layout_constraintTop_toTopOf="@id/btn_show"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="108dp"
+        android:layout_height="314dp"
+        android:layout_marginStart="8dp"
+        android:text="Show"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@id/text_ShowMovie" />
+
+
+
+    <!-- I would like to use this code below to eventually have an image with "Show" and "Movie" that the user can click as buttons for their choice. Right now I will just use
+    buttons.
+    <ImageButton
+        android:id="@+id/btn_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Picture of movies with the title movie on it."
+        android:src="@drawable/baseline_person_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <ImageButton
+        android:id="@+id/btn_show"
+        android:layout_width="148dp"
+        android:layout_height="337dp"
+        android:background="@null"
+        android:contentDescription="Picture of shows with the title show on it."
+        android:src="@drawable/baseline_person_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="276dp" />
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>
