@@ -25,7 +25,7 @@
         android:id="@+id/text_Genre"
         android:layout_width="180dp"
         android:layout_height="62dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/alata"
         android:text="What genre?"
         android:textColor="#000000"
@@ -100,11 +100,12 @@
         android:id="@+id/btn_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
         android:text="Action"
-        app:layout_constraintEnd_toEndOf="@+id/text_Genre"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="@+id/text_Genre"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_Home" />
 
     <Button
         android:id="@+id/btn_thriller"
@@ -136,7 +137,7 @@
         android:layout_marginTop="8dp"
         android:text="Documentary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_fantasy" />
 
@@ -145,10 +146,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_drama" />
 
@@ -169,7 +170,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="4dp"
         android:text="Rom-Com"
         app:layout_constraintEnd_toStartOf="@+id/btn_doc"
         app:layout_constraintTop_toBottomOf="@+id/btn_fantasy" />
@@ -213,8 +214,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="8dp"
         android:text="Sci-Fi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toEndOf="@+id/btn_doc"
         app:layout_constraintTop_toBottomOf="@+id/btn_fantasy"
         tools:ignore="MissingConstraints" />
