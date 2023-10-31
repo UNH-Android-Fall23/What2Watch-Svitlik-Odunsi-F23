@@ -42,7 +42,7 @@ class q4Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
-        btnSkip.setOnClickListener {
+        btnNext.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
             findNavController().navigate(R.id.navigation_quizresults)
         }

@@ -39,6 +39,12 @@ class q3Fragment : Fragment() {
 
         // Use the binding to access views
         val btnNext = binding.btnNext
+        val btn80s = binding.btn80s
+        val btn90s = binding.btn90s
+        val btn00s = binding.btn00s
+        val btn10s = binding.btn10s
+        val btn20s = binding.btn20s
+        val btnRecent = binding.btnRecent
 
         // Button click listeners
         btnNext.setOnClickListener {
@@ -46,8 +52,35 @@ class q3Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_q4)
         }
 
+        btn80s.setOnClickListener {
+            Log.d(TAG, "80s button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
 
+        btn90s.setOnClickListener {
+            Log.d(TAG, "90s button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
 
+        btn00s.setOnClickListener {
+            Log.d(TAG, "00s button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
+
+        btn10s.setOnClickListener {
+            Log.d(TAG, "10s button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
+
+        btn20s.setOnClickListener {
+            Log.d(TAG, "20s button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
+
+        btnRecent.setOnClickListener {
+            Log.d(TAG, "Reent button was pressed!")
+            findNavController().navigate(R.id.navigation_q4)
+        }
         return root
     }
 
