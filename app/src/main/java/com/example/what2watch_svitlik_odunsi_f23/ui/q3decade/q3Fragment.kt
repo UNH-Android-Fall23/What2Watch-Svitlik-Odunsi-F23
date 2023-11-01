@@ -20,7 +20,6 @@ class q3Fragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,10 +27,8 @@ class q3Fragment : Fragment() {
     ): View {
         val q3ViewModel =
             ViewModelProvider(this).get(q3ViewModel::class.java)
-
         _binding = FragmentQ3Binding.inflate(inflater, container, false)
         val root: View = binding.root
-
         val textView: TextView = binding.textQ3
         q3ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
@@ -78,12 +75,11 @@ class q3Fragment : Fragment() {
         }
 
         btnRecent.setOnClickListener {
-            Log.d(TAG, "Reent button was pressed!")
+            Log.d(TAG, "Recent button was pressed!")
             findNavController().navigate(R.id.navigation_q4)
         }
         return root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
