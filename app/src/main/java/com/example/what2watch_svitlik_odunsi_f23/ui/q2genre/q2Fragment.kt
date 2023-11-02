@@ -42,6 +42,7 @@ class q2Fragment : Fragment() {
             textView.text = it
         }
 
+        //Buttons for all different movie genre
         val btnAdventure = binding.btnAdventure
         val btnAction = binding.btnAction
         val btnSciFi = binding.btnScifi

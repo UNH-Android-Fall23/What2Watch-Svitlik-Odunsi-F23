@@ -1,5 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -30,15 +31,15 @@ class q1Fragment : Fragment() {
         val btnShow = binding.btnShow
         val btnMovie = binding.btnMovie
 
-            btnShow.setOnClickListener {
-                Log.d(TAG, "Show button was pressed!")
-                findNavController().navigate(R.id.navigation_q2)
-            }
+        btnShow.setOnClickListener {
+            Log.d(TAG, "Show button was pressed!")
+            findNavController().navigate(R.id.navigation_q2)
+        }
 
-            btnMovie.setOnClickListener {
-                Log.d(TAG, "Movie button was pressed!")
-                findNavController().navigate(R.id.navigation_q2)
-            }
+        btnMovie.setOnClickListener {
+            Log.d(TAG, "Movie button was pressed!")
+            findNavController().navigate(R.id.navigation_q2)
+        }
 
 
         return root

@@ -26,7 +26,6 @@ class CollectionDemoFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +33,6 @@ class CollectionDemoFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.activity_main, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         tabLayout = view.findViewById(R.id.tab_layout)
@@ -69,8 +67,6 @@ class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment)
             }
         }
     }
-
-
 
 private const val ARG_OBJECT = "object"
 

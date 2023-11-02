@@ -37,7 +37,7 @@ class q3Fragment : Fragment() {
             textView.text = it
         }
 
-        // Use the binding to access views
+        // Buttons for the different decades
         val btnNext = binding.btnNext
         val btn80s = binding.btn80s
         val btn90s = binding.btn90s
