@@ -55,27 +55,21 @@ class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment)
 
 
     override fun createFragment(position: Int): Fragment {
-        // Return a NEW fragment instance in createFragment(int)
-            // Return the appropriate fragment for each position
-            return when (position) {
-                0 -> HomeFragment()
-                1 -> q1Fragment()
-                2 -> q2Fragment()
-                3 -> q3Fragment()
-                4 -> q4Fragment()
-                else -> HomeFragment() // Handle unexpected position
-            }
+        // Return a NEW fragment instance in createFragment(int).
+        val fragment = DemoObjectFragment()
+        fragment.arguments = Bundle().apply {
+            // The object is just an integer.
+            putInt(ARG_OBJECT, position + 1)
         }
+        return fragment
     }
-
+}
 private const val ARG_OBJECT = "object"
 
 
 // Instances of this class are fragments representing a single
 // object in our collection.
 class DemoObjectFragment : Fragment() {
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

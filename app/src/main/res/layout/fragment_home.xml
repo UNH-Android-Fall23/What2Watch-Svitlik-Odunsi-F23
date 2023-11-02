@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-
-
-
     <TextView
         android:id="@+id/text_Home"
         android:layout_width="260dp"
