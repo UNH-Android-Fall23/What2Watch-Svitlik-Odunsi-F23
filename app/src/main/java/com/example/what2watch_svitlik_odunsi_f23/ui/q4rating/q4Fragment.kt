@@ -54,4 +54,3 @@ class q4Fragment : Fragment() {
         _binding = null
     }
 }
-

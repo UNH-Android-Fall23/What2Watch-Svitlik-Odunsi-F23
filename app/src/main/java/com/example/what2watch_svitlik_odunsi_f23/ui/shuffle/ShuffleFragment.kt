@@ -28,7 +28,7 @@ class ShuffleFragment : Fragment() {
         _binding = FragmentShuffleBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textShuffle
+        val textView: TextView = binding.textHome
         shuffleViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
