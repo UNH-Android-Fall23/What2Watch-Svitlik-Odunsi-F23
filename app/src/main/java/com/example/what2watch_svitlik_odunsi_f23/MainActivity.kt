@@ -35,46 +35,51 @@ class MainActivity : AppCompatActivity() {
 
         //Hard coded data for testing
         val movie1 = ShowMovieData (
+            "",
             "Movie",
             "Jurrasic Park",
             1993,
-            "Action",
+            arrayOf("Action", "Thriller", "Fantasy") ,
             1,
             90
         )
 
         val movie2 = ShowMovieData (
+            "",
             "Movie",
             "Barbie",
             2023,
-            "Adventure",
+            arrayOf("Adventure"),
             1,
             70
         )
 
         val movie3 = ShowMovieData (
+            "",
             "Movie",
             "How the Grinch Stole Christmas",
             2000,
-            "Comedy",
+            arrayOf("Comedy", "Fantasy"),
             0,
             63
         )
-        
+
         val show1 = ShowMovieData (
+            "",
             "TV Series",
             "Love it or List it",
             2008,
-            "Reality",
+            arrayOf("Reality"),
             1,
             65
         )
 
         val show2 = ShowMovieData (
+            "",
             "TV Series",
             "Competition",
             2011,
-            "Reality",
+            arrayOf("Reality"),
             1,
             65
         )
