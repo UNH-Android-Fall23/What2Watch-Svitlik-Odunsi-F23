@@ -1,5 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.account
 
+import android.content.ContentValues.TAG
 import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
@@ -32,7 +33,7 @@ class LogInFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val btnLogIn = binding.btnLogIn
+        val btnLogIn = binding.btnLogin
 
         btnLogIn.setOnClickListener {
             Log.d(TAG, "Show button was pressed!")
@@ -51,5 +52,6 @@ class LogInFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+}
 
 

@@ -62,7 +62,8 @@
         android:layout_height="wrap_content"
         android:text="Forgot password?"
         tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="375dp" />
+        tools:layout_editor_absoluteY="375dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
@@ -70,7 +71,8 @@
         android:layout_height="wrap_content"
         android:text="New User?"
         tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="546dp" />
+        tools:layout_editor_absoluteY="546dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"
@@ -80,10 +82,11 @@
         android:textColor="#D30404"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="544dp" />
+        tools:layout_editor_absoluteY="544dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_Login"
         android:layout_width="143dp"
         android:layout_height="54dp"
         android:layout_marginStart="116dp"
