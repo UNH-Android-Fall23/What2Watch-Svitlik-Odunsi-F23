@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.what2watch_svitlik_odunsi_f23.databinding.ActivityMainBinding
+import com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie.ShowMovieData
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,5 +32,54 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //Hard coded data for testing
+        val movie1 = ShowMovieData (
+            "Movie",
+            "Jurrasic Park",
+            1993,
+            "Action",
+            1,
+            90
+        )
+
+        val movie2 = ShowMovieData (
+            "Movie",
+            "Barbie",
+            2023,
+            "Adventure",
+            1,
+            70
+        )
+
+        val movie3 = ShowMovieData (
+            "Movie",
+            "How the Grinch Stole Christmas",
+            2000,
+            "Comedy",
+            0,
+            63
+        )
+        
+        val show1 = ShowMovieData (
+            "TV Series",
+            "Love it or List it",
+            2008,
+            "Reality",
+            1,
+            65
+        )
+
+        val show2 = ShowMovieData (
+            "TV Series",
+            "Competition",
+            2011,
+            "Reality",
+            1,
+            65
+        )
     }
+
+
+
 }
