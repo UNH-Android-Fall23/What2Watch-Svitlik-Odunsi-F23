@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.account.AccountFragment"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.account.LogInFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
 
