@@ -32,59 +32,5 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        //Hard coded data for testing
-        val movie1 = ShowMovieData (
-            "",
-            "Movie",
-            "Jurrasic Park",
-            1993,
-            arrayOf("Action", "Thriller", "Fantasy") ,
-            1,
-            90
-        )
-
-        val movie2 = ShowMovieData (
-            "",
-            "Movie",
-            "Barbie",
-            2023,
-            arrayOf("Adventure"),
-            1,
-            70
-        )
-
-        val movie3 = ShowMovieData (
-            "",
-            "Movie",
-            "How the Grinch Stole Christmas",
-            2000,
-            arrayOf("Comedy", "Fantasy"),
-            0,
-            63
-        )
-
-        val show1 = ShowMovieData (
-            "",
-            "TV Series",
-            "Love it or List it",
-            2008,
-            arrayOf("Reality"),
-            1,
-            65
-        )
-
-        val show2 = ShowMovieData (
-            "",
-            "TV Series",
-            "Competition",
-            2011,
-            arrayOf("Reality"),
-            1,
-            65
-        )
     }
-
-
-
 }
