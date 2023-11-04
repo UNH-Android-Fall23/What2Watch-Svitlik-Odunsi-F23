@@ -32,7 +32,7 @@
         android:typeface="serif"
         tools:layout_editor_absoluteX="79dp"
         tools:layout_editor_absoluteY="25dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -43,7 +43,7 @@
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="140dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -54,7 +54,7 @@
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="218dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
