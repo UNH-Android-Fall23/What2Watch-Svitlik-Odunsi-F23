@@ -1,18 +1,13 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 
-import android.content.ContentValues
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBinding
-import com.example.what2watch_svitlik_odunsi_f23.ui.q4rating.q4ViewModel
 
 
 class ResultsFragment : Fragment() {
@@ -38,8 +33,30 @@ class ResultsFragment : Fragment() {
         ResultsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        //Results Recycler View
+        val movieShowRecyclerList: ArrayList<ResultsCard> = ArrayList()
+        for (showMovie in ShowMovieList) {
+            movieShowRecyclerList.add (
+                ResultsCard(
+                    showMovie.tconst,
+                    showMovie.primaryTitle,
+                    showMovie.titleType,
+                    showMovie.startYear,
+                    showMovie.genre,
+                    showMovie.averageRating
+                )
+            )
+        }
+
+        //Move data into adapter
+     //   mRecyclerView = binding.recyclerViewMoviesShows
+   //     mRecylerView = setHasFixedSize(true)
+   //     mRecyclerView.ResultsAdapter(movieShowRecyclerList,  this)
         return root
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

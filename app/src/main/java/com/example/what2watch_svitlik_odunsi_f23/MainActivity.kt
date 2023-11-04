@@ -8,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.what2watch_svitlik_odunsi_f23.databinding.ActivityMainBinding
-import com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie.ShowMovieData
 
 class MainActivity : AppCompatActivity() {
 
