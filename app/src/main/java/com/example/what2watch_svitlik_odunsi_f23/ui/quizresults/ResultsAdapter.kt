@@ -19,8 +19,7 @@ class ResultsAdapter (
         parent: ViewGroup,
         viewType: Int
     ): ExampleViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.results_card, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.results_card, parent, false)
         return ExampleViewHolder(itemView)
     }
 
@@ -28,14 +27,11 @@ class ResultsAdapter (
         return mExampleList.size
     }
 
-    override fun onBindViewHolder(
-        holder: ExampleViewHolder,
-        position: Int
-    ) { //tells the position of the recycler view you click
-        //val (imageResource, text1, text2) = mExampleList[position]
-        // holder.mImageView.setImageResource(imageResource)  Todo: Get this to be a real image
-      //  holder.mTextView1.text = text1
-    //    holder.mTextView2.text = text2
+    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
+        val (imageResource, text1, text2) = mExampleList[position]
+        //holder.mImageView.setImageResource(imageResource)  Todo: Get this to be a real image
+        holder.mTextView1.text = text1
+        holder.mTextView2.text = text2
 
         holder.itemView.setOnClickListener {
             Log.d(TAG, "Clicked position i s$position")

@@ -1,6 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 
-class ResultsCard (
+data class ResultsCard (
     val tconst: String,
     val primaryTitle: String,
     val titleType: String,
