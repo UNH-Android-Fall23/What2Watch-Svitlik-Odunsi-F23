@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBinding
 
@@ -25,8 +26,7 @@ class ResultsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val ResultsViewModel =
-            ViewModelProvider(this).get(ResultsViewModel::class.java)
+        val ResultsViewModel = ViewModelProvider(this).get(ResultsViewModel::class.java)
 
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -37,24 +37,25 @@ class ResultsFragment : Fragment() {
         }
 
         //Results Recycler View
-        val movieShowRecyclerList: ArrayList<ResultsCard> = ArrayList()
-        for (showMovie in ShowMovieList) {
-            movieShowRecyclerList.add(
+        val resultsRecyclerList: ArrayList<ResultsCard> = ArrayList()
+        for (result in ResultsList) {
+            resultsRecyclerList.add(
                 ResultsCard(
-                    showMovie.tconst,
-                    showMovie.primaryTitle,
-                    showMovie.titleType,
-                    showMovie.startYear,
-                    showMovie.genre,
-                    showMovie.averageRating)
+                    result.tconst,
+                    result.primaryTitle,
+                    result.titleType,
+                    result.startYear,
+                    result.genre,
+                    result.averageRating)
                 )
         }
 
 
             //Move data into adapter
-            mRecyclerView = binding.recyclerViewMoviesShows
-            mRecyclerView.setHasFixedSize(true)
-            mRecyclerView.adapter = ResultsAdapter(movieShowRecyclerList, this)
+        mRecyclerView = binding.recyclerViewMoviesShows
+        mRecyclerView.setHasFixedSize(true)
+        mRecyclerView.layoutManager = LinearLayoutManager(context)
+        mRecyclerView.adapter = ResultsAdapter(resultsRecyclerList, this)
 
             return root
 
