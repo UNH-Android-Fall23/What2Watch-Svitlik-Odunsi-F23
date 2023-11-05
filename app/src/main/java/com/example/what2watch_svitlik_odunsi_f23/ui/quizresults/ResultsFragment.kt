@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBinding
 
 
@@ -17,6 +18,7 @@ class ResultsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var mRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,26 +39,26 @@ class ResultsFragment : Fragment() {
         //Results Recycler View
         val movieShowRecyclerList: ArrayList<ResultsCard> = ArrayList()
         for (showMovie in ShowMovieList) {
-            movieShowRecyclerList.add (
+            movieShowRecyclerList.add(
                 ResultsCard(
                     showMovie.tconst,
                     showMovie.primaryTitle,
                     showMovie.titleType,
                     showMovie.startYear,
                     showMovie.genre,
-                    showMovie.averageRating
+                    showMovie.averageRating)
                 )
-            )
         }
 
-        //Move data into adapter
-     //   mRecyclerView = binding.recyclerViewMoviesShows
-   //     mRecylerView = setHasFixedSize(true)
-   //     mRecyclerView.ResultsAdapter(movieShowRecyclerList,  this)
-        return root
-    }
 
+            //Move data into adapter
+            mRecyclerView = binding.recyclerViewMoviesShows
+            mRecyclerView.setHasFixedSize(true)
+            mRecyclerView.adapter = ResultsAdapter(movieShowRecyclerList, this)
 
+            return root
+
+        }
 
     override fun onDestroyView() {
         super.onDestroyView()
