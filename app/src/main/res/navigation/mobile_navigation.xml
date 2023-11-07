@@ -23,9 +23,9 @@
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.account.LogInFragment"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.login.LogInFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_shuffle"

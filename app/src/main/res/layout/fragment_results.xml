@@ -33,5 +33,3 @@
         tools:listitem="@layout/results_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

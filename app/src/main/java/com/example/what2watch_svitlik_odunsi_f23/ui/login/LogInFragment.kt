@@ -1,21 +1,15 @@
-package com.example.what2watch_svitlik_odunsi_f23.ui.account
+package com.example.what2watch_svitlik_odunsi_f23.ui.login
 
 import android.content.ContentValues.TAG
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.what2watch_svitlik_odunsi_f23.R
-import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentAccountBinding
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentLoginBinding
-import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ1Binding
-import com.google.android.material.tabs.TabLayout.TabGravity
 
 class LogInFragment : Fragment() {
 
