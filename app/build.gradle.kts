@@ -56,7 +56,7 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("androidx.navigation:navigation-fragment:2.3.0")
     implementation ("androidx.navigation:navigation-ui:2.3.0")
-    implementation 'com.google.firebase:firebase-auth:20.0.1'
-    implementation 'com.google.firebase:firebase-database:20.0.0'
+    implementation ("com.google.firebase:firebase-auth:20.0.1")
+    implementation ("com.google.firebase:firebase-database:20.0.0")
 
 }
