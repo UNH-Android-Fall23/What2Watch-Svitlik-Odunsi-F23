@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -56,7 +57,7 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("androidx.navigation:navigation-fragment:2.3.0")
     implementation ("androidx.navigation:navigation-ui:2.3.0")
-    implementation ("com.google.firebase:firebase-auth:20.0.1")
-    implementation ("com.google.firebase:firebase-database:20.0.0")
-
+    implementation ("com.google.firebase:firebase-auth:22.2.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation("com.google.firebase:firebase-firestore")
 }
