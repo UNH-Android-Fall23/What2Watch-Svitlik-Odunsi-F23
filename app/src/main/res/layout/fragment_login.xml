@@ -36,40 +36,42 @@
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="254dp"
+        android:layout_height="67dp"
         android:ems="10"
         android:hint="email"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="140dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="114dp"
+        android:autofillHints="Enter email address" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="236dp"
+        android:layout_height="65dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="87dp"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="218dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        android:autofillHints="Enter password" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="375dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="467dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New User?"
+        android:text="@string/new_user"
         tools:layout_editor_absoluteX="99dp"
         tools:layout_editor_absoluteY="546dp"
         tools:ignore="MissingConstraints" />
@@ -78,7 +80,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="#D30404"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="176dp"
@@ -87,9 +89,9 @@
 
     <Button
         android:id="@+id/btn_Login"
-        android:layout_width="143dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="116dp"
+        android:layout_width="211dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="96dp"
         android:text="@string/log_in"
         app:iconPadding="24dp"
         app:iconTint="#E91E63"
@@ -97,7 +99,6 @@
         app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment_activity_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
         app:strokeColor="#0B0A0A"
         tools:ignore="UnknownIdInLayout" />
 
