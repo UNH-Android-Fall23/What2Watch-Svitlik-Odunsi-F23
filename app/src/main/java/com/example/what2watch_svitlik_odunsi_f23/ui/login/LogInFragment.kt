@@ -30,7 +30,7 @@ class LogInFragment : Fragment() {
         val btnLogIn = binding.btnLogin
 
         btnLogIn.setOnClickListener {
-            Log.d(TAG, "Show button was pressed!")
+            Log.d(TAG, "LogIn button was pressed!")
             findNavController().navigate(R.id.navigation_q1)
         }
         btnLogIn.setOnClickListener {
