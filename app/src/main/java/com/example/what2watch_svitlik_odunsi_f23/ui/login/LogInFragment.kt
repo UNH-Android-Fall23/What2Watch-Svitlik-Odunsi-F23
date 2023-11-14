@@ -27,14 +27,10 @@ class LogInFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val btnLogIn = binding.btnLogin
+        binding.btnLogin
 
-        btnLogIn.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             Log.d(TAG, "LogIn button was pressed!")
-            findNavController().navigate(R.id.navigation_q1)
-        }
-        btnLogIn.setOnClickListener {
-            Log.d(TAG, "Login Successful!")
             findNavController().navigate(R.id.navigation_q1)
         }
 
