@@ -19,4 +19,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_Action"
+        android:layout_width="60dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alata"
+        android:text="Action"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerViewMoviesShows"
+        android:layout_marginBottom="40dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/results_card" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
