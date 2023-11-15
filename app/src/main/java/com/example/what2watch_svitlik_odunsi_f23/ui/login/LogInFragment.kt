@@ -10,8 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentLoginBinding
+import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class LogInFragment : Fragment() {
+
+    private val db = Firebase.firestore
 
     private var _binding: FragmentLoginBinding? = null
 
@@ -24,14 +29,16 @@ class LogInFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val logInViewModel =
+            ViewModelProvider(this)[LogInViewModel::class.java]
 
-        binding.btnLogin
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        val root : View = binding.root
+
 
         binding.btnLogin.setOnClickListener {
             Log.d(TAG, "LogIn button was pressed!")
-            findNavController().navigate(R.id.navigation_q1)
+            findNavController().navigate(R.id.navigation_home)
         }
 
         return root
