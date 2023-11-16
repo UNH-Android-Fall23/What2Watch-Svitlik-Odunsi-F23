@@ -29,11 +29,11 @@ class LogInFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val logInViewModel =
-            ViewModelProvider(this)[LogInViewModel::class.java]
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root : View = binding.root
+
+        val btnLogIn = binding.btnLogin
 
 
         binding.btnLogin.setOnClickListener {
