@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.R
+import com.example.what2watch_svitlik_odunsi_f23.ui.browse.BrowseFragment
 
 
-class ResultsAdapter (
+class ResultsAdapter(
     private val mExampleList: ArrayList<ResultsCard>, // takes in a list
-    private val context: ResultsFragment //pass in the context of results fragment to link data from one to another
+    private val context: BrowseFragment //pass in the context of results fragment to link data from one to another
 ) : RecyclerView.Adapter<ResultsAdapter.ExampleViewHolder>() {
     override fun onCreateViewHolder( //where you generate view for recycler view
         parent: ViewGroup,

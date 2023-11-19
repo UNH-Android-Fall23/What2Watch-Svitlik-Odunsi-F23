@@ -46,20 +46,20 @@ class ResultsFragment : Fragment() {
                     result.titleType,
                     result.startYear,
                     result.genre,
-                    result.averageRating)
+                    result.averageRating
                 )
+            )
         }
 
-
-            //Move data into adapter
+        //Move data into adapter
         mRecyclerView = binding.recyclerViewMoviesShows
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = LinearLayoutManager(context)
         mRecyclerView.adapter = ResultsAdapter(resultsRecyclerList, this)
 
-            return root
+        return root
 
-        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
