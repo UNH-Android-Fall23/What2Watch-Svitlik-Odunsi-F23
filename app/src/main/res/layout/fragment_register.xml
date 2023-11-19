@@ -32,7 +32,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="109dp" />
 
     <TextView

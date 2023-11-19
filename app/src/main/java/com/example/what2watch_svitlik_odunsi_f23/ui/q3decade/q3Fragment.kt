@@ -72,42 +72,43 @@ class q3Fragment : Fragment() {
 
         btn80s.setOnClickListener {
             Log.d(TAG, "80s button was pressed!")
-            answersList.add(AnswersData(eighties))
+            answersList.add(AnswersData(q3 = eighties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn90s.setOnClickListener {
             Log.d(TAG, "90s button was pressed!")
-            answersList.add(AnswersData(nineties))
+            answersList.add(AnswersData(q3 = nineties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn00s.setOnClickListener {
             Log.d(TAG, "00s button was pressed!")
-            answersList.add(AnswersData(twothousands))
+            answersList.add(AnswersData(q3 = twothousands))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn10s.setOnClickListener {
             Log.d(TAG, "10s button was pressed!")
-            answersList.add(AnswersData(twentytens))
+            answersList.add(AnswersData(q3 = twentytens))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn20s.setOnClickListener {
             Log.d(TAG, "20s button was pressed!")
-            answersList.add(AnswersData(twentytwenies))
+            answersList.add(AnswersData(q3 = twentytwenies))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
+        /* may have to get rid of this, no "recent" on imdb dataset */
         btnRecent.setOnClickListener {
             Log.d(TAG, "Recent button was pressed!")
-            answersList.add(AnswersData(recent))
+            answersList.add(AnswersData(q3 = recent))
             findNavController().navigate(R.id.navigation_q4)
         }
         return root

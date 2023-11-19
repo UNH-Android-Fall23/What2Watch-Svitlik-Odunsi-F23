@@ -33,8 +33,9 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.073" />
 
+    <!-- Adding clickable attributes to the TextViews -->
     <TextView
         android:id="@+id/text_profile"
         android:layout_width="60dp"
@@ -44,6 +45,8 @@
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:clickable="true"
+        android:onClick="onProfileClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
@@ -58,8 +61,42 @@
         android:text="Reviews"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:clickable="true"
+        android:onClick="onReviewsClick"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+
+    <TextView
+        android:id="@+id/text_editProfile"
+        android:layout_width="180dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/alata"
+        android:text="Edit Profile"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:onClick="onEditProfileClick"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+
+    <TextView
+        android:id="@+id/text_Theme"
+        android:layout_width="180dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="168dp"
+        android:clickable="true"
+        android:fontFamily="@font/alata"
+        android:onClick="onThemeClick"
+        android:text="Theme"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home" />
 
@@ -67,13 +104,31 @@
         android:id="@+id/text_Settings"
         android:layout_width="180dp"
         android:layout_height="62dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="220dp"
         android:fontFamily="@font/alata"
         android:text="Settings"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:clickable="true"
+        android:onClick="onSettingsClick"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+
+    <TextView
+        android:id="@+id/text_Logout"
+        android:layout_width="180dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="468dp"
+        android:fontFamily="@font/alata"
+        android:text="Logout"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:onClick="onLogoutClick"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home" />
 

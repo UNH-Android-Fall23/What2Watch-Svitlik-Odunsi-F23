@@ -15,12 +15,12 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ1Binding
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
-
-
-
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class q1Fragment : Fragment() {
     private val TAG = "What2WatchAndroidF23Tag"
+    private val db = Firebase.firestore
     private var _binding: FragmentQ1Binding? = null
     private val show = "Show"
     private val movie = "Movie"
@@ -35,17 +35,14 @@ class q1Fragment : Fragment() {
         _binding = FragmentQ1Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         val btnShow = binding.btnShow
         val btnMovie = binding.btnMovie
 
-
         btnShow.setOnClickListener {
             Log.d(TAG, "Show button was pressed!")
-            answersList.add(AnswersData(show))
+            answersList.add(AnswersData(q1 = show))
             findNavController().navigate(R.id.navigation_q2)
         }
-
 
         btnMovie.setOnClickListener {
             Log.d(TAG, "Movie button was pressed!")
@@ -53,12 +50,8 @@ class q1Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_q2)
         }
 
-
-
-
         return root
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

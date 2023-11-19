@@ -10,12 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class ResultsFragment : Fragment() {
 
     private var _binding: FragmentResultsBinding? = null
-
+    private val db = Firebase.firestore
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -36,6 +38,11 @@ class ResultsFragment : Fragment() {
             textView.text = it
         }
 
+        /*  Now I have All the answers for my answers list
+        * I would have to open up the document in Firebase and filter through it based on the
+        * answer list. How do I bring the answer list into this fragment?   */
+
+
         //Results Recycler View
         val resultsRecyclerList: ArrayList<ResultsCard> = ArrayList()
         for (result in ResultsList) {
@@ -46,9 +53,8 @@ class ResultsFragment : Fragment() {
                     result.titleType,
                     result.startYear,
                     result.genre,
-                    result.averageRating
+                    result.averageRating)
                 )
-            )
         }
 
         //Move data into adapter
@@ -59,7 +65,7 @@ class ResultsFragment : Fragment() {
 
         return root
 
-    }
+        }
 
     override fun onDestroyView() {
         super.onDestroyView()

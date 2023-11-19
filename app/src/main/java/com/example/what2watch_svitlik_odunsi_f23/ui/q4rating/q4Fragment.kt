@@ -33,19 +33,15 @@ class q4Fragment : Fragment() {
         val q4ViewModel =
             ViewModelProvider(this).get(q4ViewModel::class.java)
 
-
-        //val rangeSlider = binding.rangeSlider2
-
-
         _binding = FragmentQ4Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        val rangeSlider = binding.rangeSlider2
 
         val textView: TextView = binding.textQ4
         q4ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
 
         val btnSkip = binding.btnSkip
         val btnNext = binding.btnNext
@@ -62,14 +58,13 @@ class q4Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
-
-        /*
-        rangeSlider.addOnChangeListener { rangeSlider, value, fromUser ->
+        rangeSlider.addOnChangeListener { rangeSlider2, value, fromUser ->
             val rating = value.toString()
-            answersList.add(AnswersData(rating))
+            answersList.add(AnswersData(q4 = rating))
         }
 
-*/
+
+
         return root
     }
 
