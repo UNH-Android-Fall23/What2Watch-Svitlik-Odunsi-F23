@@ -43,6 +43,7 @@ class ResultsFragment : Fragment() {
         * answer list. How do I bring the answer list into this fragment?   */
 
 
+
         //Results Recycler View
         val resultsRecyclerList: ArrayList<ResultsCard> = ArrayList()
         for (result in ResultsList) {

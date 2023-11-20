@@ -38,8 +38,6 @@ class ResultsAdapter (
         }
     }
 
-
-
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mImageView: ImageView = itemView.findViewById(R.id.image_view)
         val mTextView1: TextView = itemView.findViewById(R.id.text_view_1)

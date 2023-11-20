@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+
     <TextView
         android:id="@+id/text_Home"
         android:layout_width="260dp"
@@ -19,55 +20,28 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.237" />
 
-    <TextView
-        android:id="@+id/text_StartQuiz"
+    <Button
+        android:id="@+id/btn_start"
         android:layout_width="200dp"
-        android:layout_marginTop="25dp"
         android:layout_height="62dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/alata"
         android:text="@string/start_the_quiz"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/text_Home"
         app:layout_constraintLeft_toLeftOf="@id/text_Home"
         app:layout_constraintRight_toRightOf="@id/text_Home"
-        app:layout_constraintVertical_bias="0.27" />
-
-    <Button
-        android:id="@+id/btn_begin"
-        android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/begin"
-        app:layout_constraintTop_toBottomOf="@id/text_StartQuiz"
-        app:layout_constraintLeft_toLeftOf="@id/text_StartQuiz"
-        app:layout_constraintRight_toRightOf="@id/text_StartQuiz"/>
-
-
-    <TextView
-        android:id="@+id/text_or"
-        android:layout_width="60dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/alata"
-        android:text="Or..."
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="@id/btn_begin"
-        app:layout_constraintRight_toRightOf="@id/btn_begin"
-        app:layout_constraintTop_toBottomOf="@id/btn_begin" />
+        app:layout_constraintTop_toBottomOf="@id/text_Home" />
 
     <Button
         android:id="@+id/btn_pickForMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Just Pick for Me!"
-        android:layout_marginTop="40dp"
 
-        app:layout_constraintLeft_toLeftOf="@id/text_or"
-        app:layout_constraintRight_toRightOf="@id/text_or"
-        app:layout_constraintTop_toBottomOf="@id/text_or" />
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="391dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

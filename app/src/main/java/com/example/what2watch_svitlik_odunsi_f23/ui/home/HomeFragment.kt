@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         // Use the binding to access views
-        val btnBegin = binding.btnBegin
+        val btnBegin = binding.btnStart
         val btnPick = binding.btnPickForMe
 
         // Button click listeners
