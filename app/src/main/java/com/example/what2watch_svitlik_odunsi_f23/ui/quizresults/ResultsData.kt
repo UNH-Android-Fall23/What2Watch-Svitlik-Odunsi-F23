@@ -6,7 +6,7 @@ data class ResultsData(
     val titleType: String = "",    //this is how IMBD differentiates a show or a movie
     val primaryTitle: String = "",
     val startYear: Long = 0,
-    val genre: Array <String> = emptyArray(),
+    val genre: String,
     val isAdult: Long = 0,
 
     //from imbd ratings data collection
@@ -15,9 +15,9 @@ data class ResultsData(
 
     var ResultsList: ArrayList<ResultsData> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
         // TODO: This is temporary data, I will take this out soon
-            ResultsData ("dfsdf", "Movie", "Jurrasic Park", 1993, arrayOf("Action"), 1, 90),
-            ResultsData ("dfdsa", "Movie", "Barbie", 2023, arrayOf("Adventure"), 1, 70),
-            ResultsData ("kuybg", "Movie", "How the Grinch Stole Christmas", 2000, arrayOf("Comedy", "Fantasy"), 0, 63),
-            ResultsData ("otgl", "TV Series", "Love it or List It", 2008, arrayOf("Reality", "Competition"), 1, 65),
-            ResultsData ("erwe", "TV Series", "The Voice", 2011, arrayOf("Reality", "Competition"), 1, 65),
+            ResultsData ("dfsdf", "Movie", "Jurrasic Park", 1993, "Action", 1, 90),
+            ResultsData ("dfdsa", "Movie", "Barbie", 2023,"Adventure", 1, 70),
+            ResultsData ("kuybg", "Movie", "How the Grinch Stole Christmas", 2000,  "Comedy",   0, 63),
+            ResultsData ("otgl", "TV Series", "Love it or List It", 2008, "Reality",   1, 65),
+            ResultsData ("erwe", "TV Series", "The Voice", 2011,  "Reality",   1, 65),
     )

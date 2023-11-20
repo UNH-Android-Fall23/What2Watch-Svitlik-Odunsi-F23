@@ -12,51 +12,55 @@
         android:id="@+id/text_Home"
         android:layout_width="260dp"
         android:layout_height="62dp"
-        android:fontFamily="@font/alata"
+        android:fontFamily="sans-serif-smallcaps"
         android:text=" What2Watch"
         android:textColor="#000000"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="121dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/cinema"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="197dp"
         android:layout_height="73dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/alata"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
         android:text="@string/start"
         android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#A32727"
+        android:textColorLink="#000000"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:rippleColor="#FBDDDD" />
 
     <Button
         android:id="@+id/btn_pickForMe"
-        android:layout_width="160dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/alata"
+        android:layout_width="196dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
         android:text="Shuffle"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toBottomOf="@+id/btn_start" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="168dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/filmreel"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

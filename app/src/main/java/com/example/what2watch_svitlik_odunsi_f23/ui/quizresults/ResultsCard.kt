@@ -5,6 +5,6 @@ data class ResultsCard (
     val primaryTitle: String,
     val titleType: String,
     val startYear: Long,
-    val genre: Array <String>,
+    val genre: String,
     val averageRating: Long = 0
 )
