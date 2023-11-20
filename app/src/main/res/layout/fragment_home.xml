@@ -28,7 +28,7 @@
         android:layout_width="121dp"
         android:layout_height="101dp"
         android:layout_marginTop="28dp"
-        android:src="@drawable/ic_purple_reel"
+        android:src="@drawable/cinema"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
