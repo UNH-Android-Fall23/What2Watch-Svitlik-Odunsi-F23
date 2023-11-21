@@ -38,43 +38,48 @@
         android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="254dp"
         android:layout_height="67dp"
+        android:autofillHints="Enter email address"
         android:ems="10"
         android:hint="email"
         android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="114dp"
-        android:autofillHints="Enter email address" />
+        tools:layout_editor_absoluteY="114dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="236dp"
         android:layout_height="65dp"
+        android:autofillHints="Enter password"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="218dp"
-        android:autofillHints="Enter password" />
+        tools:layout_editor_absoluteY="218dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forgot_password"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="482dp" />
+        tools:layout_editor_absoluteY="406dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_user"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="546dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="443dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -83,21 +88,21 @@
         android:text="@string/register"
         android:textColor="#D30404"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="544dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="481dp" />
 
     <Button
-        android:id="@+id/btn_Login"
+        android:id="@+id/btnLogin"
         android:layout_width="211dp"
         android:layout_height="63dp"
-        android:layout_marginStart="96dp"
-        android:text="@string/log_in"
+        android:text="LOG IN"
         app:iconPadding="24dp"
         app:iconTint="#E91E63"
         app:layout_constraintBottom_toBottomOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment_activity_main"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#0B0A0A"
         tools:ignore="UnknownIdInLayout" />

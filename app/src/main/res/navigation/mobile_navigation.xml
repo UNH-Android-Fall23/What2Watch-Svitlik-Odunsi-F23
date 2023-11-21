@@ -22,9 +22,9 @@
         tools:layout="@layout/fragment_browse" />
 
     <fragment
-        android:id="@+id/navigation_account"
-        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.login.LogInFragment"
-        android:label="@string/title_account"
+        android:id="@+id/navigation_profile"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.Profile.ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
@@ -78,6 +78,16 @@
         android:name="com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.ResultsFragment"
         android:label="Results"
         tools:layout="@layout/fragment_results" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.login.LogInFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 
     <fragment

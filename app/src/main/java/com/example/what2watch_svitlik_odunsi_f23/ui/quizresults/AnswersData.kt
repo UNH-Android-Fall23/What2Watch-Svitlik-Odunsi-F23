@@ -9,5 +9,4 @@ data class AnswersData(
 
 
 )
-
 var answersList: ArrayList<AnswersData> = arrayListOf()

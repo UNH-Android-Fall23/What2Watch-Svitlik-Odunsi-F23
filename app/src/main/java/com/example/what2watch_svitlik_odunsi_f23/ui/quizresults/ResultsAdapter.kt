@@ -28,21 +28,28 @@ class ResultsAdapter (
     }
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
-        val (imageResource, text1, text2) = mExampleList[position]
-        //holder.mImageView.setImageResource(imageResource)  Todo: Get this to be a real image
-        holder.mTextView1.text = text1
-        holder.mTextView2.text = text2
+        val (imageResource, name, type, genre, year, rating) = mExampleList[position]
+      //  holder.mImageView.setImageResource(imageResource)
+        holder.mTextView1.text = name
+        holder.mTextView2.text = type
+        holder.mTextGenre.text = genre.toString()
+        holder.mTextYear.text = year.toString()
+        holder.mTextRating.text = rating.toString()
+
 
         holder.itemView.setOnClickListener {
             Log.d(TAG, "Clicked position i s$position")
         }
     }
 
-
-
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mImageView: ImageView = itemView.findViewById(R.id.image_view)
-        val mTextView1: TextView = itemView.findViewById(R.id.text_view_1)
-        val mTextView2: TextView = itemView.findViewById(R.id.text_view_2)
+        val mTextView1: TextView = itemView.findViewById(R.id.text_name)
+        val mTextView2: TextView = itemView.findViewById(R.id.text_type1)
+        val mTextGenre: TextView = itemView.findViewById(R.id.text_genre)
+        val mTextYear: TextView = itemView.findViewById(R.id.text_year)
+        val mTextRating: TextView = itemView.findViewById(R.id.text_rating)
     }
+
 }
+

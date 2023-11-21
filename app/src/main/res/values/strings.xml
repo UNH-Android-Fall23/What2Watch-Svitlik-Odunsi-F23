@@ -12,4 +12,8 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="new_user">New User?</string>
     <string name="register">Register</string>
+    <string name="get_started">Get Started</string>
+    <string name="what_2watch">What2Watch</string>
+    <string name="title_profile" />
+    <string name="start">Start</string>
 </resources>
