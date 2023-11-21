@@ -26,12 +26,12 @@
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Next"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="449dp" />
-    <!--
+        app:layout_constraintEnd_toEndOf="@+id/slider"
+        app:layout_constraintStart_toStartOf="@+id/slider"
+        app:layout_constraintTop_toBottomOf="@+id/slider"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider"
@@ -43,8 +43,8 @@
         android:valueTo="100.0"
         app:layout_constraintEnd_toEndOf="@+id/text_rating"
         app:layout_constraintStart_toStartOf="@+id/text_rating"
-        app:layout_constraintTop_toBottomOf="@+id/text_rating"
-        app:value="@array/initial_slider_values" /> -->
+        app:layout_constraintTop_toBottomOf="@+id/text_rating" />
+
 
 <TextView
      android:id="@+id/text_rating"

@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -36,7 +35,7 @@ class q4Fragment : Fragment() {
         _binding = FragmentQ4Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //.val slider = binding.slider
+        val slider = binding.slider
 
         val textView: TextView = binding.textQ4
         q4ViewModel.text.observe(viewLifecycleOwner) {
@@ -52,11 +51,10 @@ class q4Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
-        /*
         slider.addOnChangeListener { _slider, value, fromUser ->
-            val rating = value.toString()
-            answersList.add(AnswersData(q4 = rating))
-        } */
+            val rating = value.toInt()
+            answersList.add(AnswersData(q4 = rating.toInt()))
+        }
 
 
 
