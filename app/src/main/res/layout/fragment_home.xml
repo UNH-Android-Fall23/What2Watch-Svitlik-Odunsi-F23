@@ -22,45 +22,44 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="197dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/start"
-        android:textColor="@color/white"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#A32727"
-        android:textColorLink="#000000"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:rippleColor="#FBDDDD" />
-
-    <Button
-        android:id="@+id/btn_pickForMe"
-        android:layout_width="196dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif"
-        android:text="Shuffle"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="168dp"
         android:layout_height="189dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/filmreel"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+
+    <ImageView
+        android:id="@+id/btn_start"
+        android:layout_width="157dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/start"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/btn_pickForMe"
+        android:layout_width="155dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/shuffle"
+        android:fontFamily="sans-serif"
+        android:text="Shuffle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_start"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
