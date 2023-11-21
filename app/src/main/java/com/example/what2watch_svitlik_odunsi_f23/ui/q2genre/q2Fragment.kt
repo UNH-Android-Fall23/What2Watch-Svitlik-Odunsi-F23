@@ -97,6 +97,7 @@ class q2Fragment : Fragment() {
         btnSciFi.setOnClickListener {
             Log.d(TAG, "Sci Fi genre was chosen")
             answersList.add(AnswersData(q2 = scifi))
+            Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
 

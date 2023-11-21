@@ -101,6 +101,7 @@ class q3Fragment : Fragment() {
         btn20s.setOnClickListener {
             Log.d(TAG, "20s button was pressed!")
             answersList.add(AnswersData(q3 = twentytwenies))
+            Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q4)
         }
 

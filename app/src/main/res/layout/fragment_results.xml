@@ -30,6 +30,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/results_card" />
+        tools:listitem="@layout/movies_shows_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

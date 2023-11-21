@@ -19,7 +19,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class q1Fragment : Fragment() {
-    private val TAG = "What2WatchAndroidF23Tag"
     private val db = Firebase.firestore
     private var _binding: FragmentQ1Binding? = null
     private val show = "Show"
@@ -47,6 +46,9 @@ class q1Fragment : Fragment() {
         btnMovie.setOnClickListener {
             Log.d(TAG, "Movie button was pressed!")
             answersList.add(AnswersData(movie))
+            for (answer in answersList) {
+                Log.d(TAG, "Answer: ${answer.q1}")
+            }
             findNavController().navigate(R.id.navigation_q2)
         }
 

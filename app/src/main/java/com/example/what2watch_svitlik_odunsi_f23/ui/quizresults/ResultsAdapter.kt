@@ -12,14 +12,14 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 
 
 class ResultsAdapter (
-    private val mExampleList: ArrayList<ResultsCard>, // takes in a list
+    private val mExampleList: ArrayList<RecyclerResultsCard>, // takes in a list
     private val context: ResultsFragment //pass in the context of results fragment to link data from one to another
 ) : RecyclerView.Adapter<ResultsAdapter.ExampleViewHolder>() {
     override fun onCreateViewHolder( //where you generate view for recycler view
         parent: ViewGroup,
         viewType: Int
     ): ExampleViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.results_card, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.movies_shows_card, parent, false)
         return ExampleViewHolder(itemView)
     }
 

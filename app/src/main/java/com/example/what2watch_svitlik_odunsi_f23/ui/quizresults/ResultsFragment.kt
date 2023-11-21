@@ -45,10 +45,10 @@ class ResultsFragment : Fragment() {
 
 
         //Results Recycler View
-        val resultsRecyclerList: ArrayList<ResultsCard> = ArrayList()
-        for (result in ResultsList) {
+        val resultsRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
+        for (result in MoviesAndShowsList) {
             resultsRecyclerList.add(
-                ResultsCard(
+                RecyclerResultsCard(
                     result.tconst,
                     result.primaryTitle,
                     result.titleType,

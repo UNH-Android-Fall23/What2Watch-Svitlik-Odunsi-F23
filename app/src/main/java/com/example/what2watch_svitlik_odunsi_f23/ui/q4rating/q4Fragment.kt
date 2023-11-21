@@ -36,32 +36,28 @@ class q4Fragment : Fragment() {
         _binding = FragmentQ4Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val rangeSlider = binding.rangeSlider2
+        //.val slider = binding.slider
 
         val textView: TextView = binding.textQ4
         q4ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
-        val btnSkip = binding.btnSkip
         val btnNext = binding.btnNext
-
-
-        btnSkip.setOnClickListener {
-            Log.d(TAG, "Skip button was pressed!")
-            findNavController().navigate(R.id.navigation_quizresults)
-        }
 
 
         btnNext.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
+            Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
-        rangeSlider.addOnChangeListener { rangeSlider2, value, fromUser ->
+        /*
+        slider.addOnChangeListener { _slider, value, fromUser ->
             val rating = value.toString()
             answersList.add(AnswersData(q4 = rating))
-        }
+        } */
+
 
 
 
