@@ -20,29 +20,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_Action"
-        android:layout_width="60dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/alata"
-        android:text="Action"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btn_hamburgerIcon"
+        android:layout_width="48dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/hamburger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMoviesShows"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_marginBottom="40dp"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_hamburgerIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/movies_shows_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
