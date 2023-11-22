@@ -25,13 +25,13 @@ class BrowseFragment : Fragment() {
         val browseViewModel =
             ViewModelProvider(this).get(BrowseViewModel::class.java)
 
-        val btnFilterGenre = binding.btnHamburgerIcon
+ //       val btnFilterGenre = binding.btnHamburgerIcon
 
-        btnFilterGenre.setOnClickListener {
+     //   btnFilterGenre.setOnClickListener {
             //When pressed, what shows up ?
             // Need to put a pop up that would show the different genres you can pick from
             // Then need to figure out how to change the recycler view based on that filter alone
-        }
+      //  }
 
         _binding = FragmentBrowseBinding.inflate(inflater, container, false)
         val root: View = binding.root

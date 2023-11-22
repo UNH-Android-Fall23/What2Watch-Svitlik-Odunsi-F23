@@ -25,12 +25,11 @@
         android:id="@+id/btn_hamburgerIcon"
         android:layout_width="48dp"
         android:layout_height="34dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/hamburger"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMoviesShows"
