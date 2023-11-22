@@ -43,17 +43,17 @@ class q4Fragment : Fragment() {
         }
 
         val btnNext = binding.btnNext
-
+        var finalSliderValue: Int = 0 // variable to store the final value
 
         btnNext.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
+            answersList.add(AnswersData(q4 = finalSliderValue))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
         slider.addOnChangeListener { _slider, value, fromUser ->
-            val rating = value.toInt()
-            answersList.add(AnswersData(q4 = rating.toInt()))
+            finalSliderValue = value.toInt()
         }
 
 
