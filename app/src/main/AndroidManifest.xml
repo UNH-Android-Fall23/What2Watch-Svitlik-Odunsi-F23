@@ -13,6 +13,9 @@
         android:theme="@style/Theme.What2WatchSvitlikOdunsiF23"
         tools:targetApi="31">
         <activity
+            android:name=".activity_login"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
@@ -42,6 +45,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 
 </manifest>
