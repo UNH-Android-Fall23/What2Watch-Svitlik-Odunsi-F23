@@ -16,7 +16,6 @@ import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.initializeMoviesAndShowsList
 
-
 class q4Fragment : Fragment() {
 
     val TAG = "SvitlikOdunsi"

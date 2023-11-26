@@ -23,7 +23,6 @@ class q1Fragment : Fragment() {
     private val binding get() = _binding!!
     val TAG = "SvitlikOdunsi"
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,10 +47,8 @@ class q1Fragment : Fragment() {
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q2)
         }
-
         return root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
