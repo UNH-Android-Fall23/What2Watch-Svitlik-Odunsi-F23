@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentProfileBinding
+
+val TAG = "SvitlikOdunsi"
+
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!

@@ -1,7 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.q4rating
 
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,11 +14,12 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ4Binding
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.initializeMoviesAndShowsList
 
 
 class q4Fragment : Fragment() {
 
-
+    val TAG = "SvitlikOdunsi"
     private var _binding: FragmentQ4Binding? = null
     private val binding get() = _binding!!
 
@@ -47,16 +47,17 @@ class q4Fragment : Fragment() {
 
         btnNext.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
-            answersList.add(AnswersData(q4 = finalSliderValue))
+            //       answersList.add(AnswersData(q4 = finalSliderValue))
             Log.d(TAG, "answersList size: ${answersList.size}")
+            Log.d(TAG, "range slider final value $finalSliderValue")
+            val answersData = AnswersData(answersList.toString())
+            initializeMoviesAndShowsList(answersData)
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
         slider.addOnChangeListener { _slider, value, fromUser ->
             finalSliderValue = value.toInt()
         }
-
-
 
 
         return root

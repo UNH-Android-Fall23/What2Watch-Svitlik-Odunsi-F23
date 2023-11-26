@@ -22,6 +22,7 @@ class ResultsFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var mRecyclerView: RecyclerView
+    val TAG = "SvitlikOdunsi"
 
     override fun onCreateView(
         inflater: LayoutInflater,

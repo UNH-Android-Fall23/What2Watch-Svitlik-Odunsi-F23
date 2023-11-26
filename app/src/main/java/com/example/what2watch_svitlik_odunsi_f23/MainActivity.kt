@@ -16,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-     val TAG = "SvilikAppHelp"
+     val TAG = "SvitlikOdunsi"
 
     private var db = Firebase.firestore
 
