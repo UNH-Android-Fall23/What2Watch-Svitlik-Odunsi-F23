@@ -12,7 +12,7 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-    private val TAG = "What2WatchAndroidF23Tag"
+    private val TAG = "SvitlikOdunsi"
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and onDestroyView.

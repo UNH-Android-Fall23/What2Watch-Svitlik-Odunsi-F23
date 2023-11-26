@@ -16,6 +16,7 @@ class BrowseFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    val TAG = "SvitlikOdunsi"
 
     override fun onCreateView(
         inflater: LayoutInflater,

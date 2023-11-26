@@ -1,7 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie
 
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,8 +19,9 @@ class q1Fragment : Fragment() {
     private val db = Firebase.firestore
     private var _binding: FragmentQ1Binding? = null
     private val show = "Show"
-    private val movie = "Movie"
+    private val movie = "movie"
     private val binding get() = _binding!!
+    val TAG = "SvitlikOdunsi"
 
 
     override fun onCreateView(

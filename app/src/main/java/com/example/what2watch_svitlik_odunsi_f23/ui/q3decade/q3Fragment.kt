@@ -21,6 +21,7 @@ class q3Fragment : Fragment() {
 
 
     private var _binding: FragmentQ3Binding? = null
+    val TAG = "SvitlikOdunsi"
 
 
     // This property is only valid between onCreateView and
@@ -72,35 +73,35 @@ class q3Fragment : Fragment() {
 
         btn80s.setOnClickListener {
             Log.d(TAG, "80s button was pressed!")
-            answersList.add(AnswersData(q3 = eighties))
+            //       answersList.add(AnswersData(q3 = eighties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn90s.setOnClickListener {
             Log.d(TAG, "90s button was pressed!")
-            answersList.add(AnswersData(q3 = nineties))
+            //           answersList.add(AnswersData(q3 = nineties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn00s.setOnClickListener {
             Log.d(TAG, "00s button was pressed!")
-            answersList.add(AnswersData(q3 = twothousands))
+            //           answersList.add(AnswersData(q3 = twothousands))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn10s.setOnClickListener {
             Log.d(TAG, "10s button was pressed!")
-            answersList.add(AnswersData(q3 = twentytens))
+            //            answersList.add(AnswersData(q3 = twentytens))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn20s.setOnClickListener {
             Log.d(TAG, "20s button was pressed!")
-            answersList.add(AnswersData(q3 = twentytwenies))
+            //           answersList.add(AnswersData(q3 = twentytwenies))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q4)
         }
@@ -109,7 +110,7 @@ class q3Fragment : Fragment() {
         /* may have to get rid of this, no "recent" on imdb dataset */
         btnRecent.setOnClickListener {
             Log.d(TAG, "Recent button was pressed!")
-            answersList.add(AnswersData(q3 = recent))
+            //           answersList.add(AnswersData(q3 = recent))
             findNavController().navigate(R.id.navigation_q4)
         }
         return root

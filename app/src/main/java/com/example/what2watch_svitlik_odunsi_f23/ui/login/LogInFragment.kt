@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 class LogInFragment : Fragment() {
 
     private val db = Firebase.firestore
+    val TAG = "SvitlikOdunsi"
 
     private var _binding: FragmentLoginBinding? = null
 
