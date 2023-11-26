@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser() {
-        val email = "ololade.odunsi@gmail.comcom"
+        val email = "ololade.odunsi@gmail.com"
         val password = "OloladeOdunsi"
 
         if (email.isEmpty() || password.isEmpty()) {
