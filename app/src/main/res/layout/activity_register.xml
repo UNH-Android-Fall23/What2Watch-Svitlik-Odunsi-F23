@@ -81,7 +81,7 @@
         android:ems="10"
         android:inputType="textPostalAddress"
         android:text="Country"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Female"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
         android:layout_marginEnd="100dp"
         android:text="Gender"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/personalInfo"
@@ -159,7 +159,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Registerbutton"
         android:layout_width="282dp"
         android:layout_height="61dp"
         android:text="Register"
