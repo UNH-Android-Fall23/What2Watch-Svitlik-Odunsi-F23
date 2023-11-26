@@ -14,16 +14,16 @@ data class MoviesAndShows(
     val isAdult: Long = 0,
 
     //from imbd ratings data collection
-    val averageRating: Long = 0
+    val averageRating: String = ""
 )
 
     var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
         // TODO: This is temporary data, I will take this out soon
-            MoviesAndShows ("dfsdf", "Movie", "Jurrasic Park", 1993, "Action", 1, 90),
-            MoviesAndShows ("dfdsa", "Movie", "Barbie", 2023,"Adventure", 1, 70),
-            MoviesAndShows ("kuybg", "Movie", "How the Grinch Stole Christmas", 2000,  "Comedy",   0, 63),
-            MoviesAndShows ("otgl", "TV Series", "Love it or List It", 2008, "Reality",   1, 65),
-            MoviesAndShows ("erwe", "TV Series", "The Voice", 2011,  "Reality",   1, 65),
+            MoviesAndShows ("dfsdf", "Movie", "Jurrasic Park", 1993, "Action", 1, "4"),
+            MoviesAndShows ("dfdsa", "Movie", "Barbie", 2023,"Adventure", 1, "7"),
+            MoviesAndShows ("kuybg", "Movie", "How the Grinch Stole Christmas", 2000,  "Comedy",   0, "63"),
+            MoviesAndShows ("otgl", "TV Series", "Love it or List It", 2008, "Reality",   1, "65"),
+            MoviesAndShows ("erwe", "TV Series", "The Voice", 2011,  "Reality",   1, "65"),
     )
 
 /*
@@ -44,7 +44,7 @@ fun firebaseFilters(answersData: AnswersData, moviesAndShowsList: ArrayList<Movi
     }
 
     answersData.q4?.let {
-        query = query.whereEqualTo("averageRating", it.toLong())
+        query = query.whereEqualTo("averageRating", it)
     }
 
     query.get()
@@ -52,12 +52,10 @@ fun firebaseFilters(answersData: AnswersData, moviesAndShowsList: ArrayList<Movi
             for (document in documents) {
                 val movieOrShow = document.toObject(MoviesAndShows::class.java)
                 moviesAndShowsList.add(movieOrShow)
-                Log.d("FirestoreQuery", "Retrieved: $movieOrShow")
+                Log.d("Firebase data retrieved", ": $movieOrShow")
             }
-            // Now you can use the moviesAndShowsList as needed
-            // For example, you could pass it to another function or update UI
         }
         .addOnFailureListener { exception ->
-            Log.w("FirestoreQuery", "Error getting documents: ", exception)
+            Log.w(""Error getting documents: ", exception)
         }
 } */

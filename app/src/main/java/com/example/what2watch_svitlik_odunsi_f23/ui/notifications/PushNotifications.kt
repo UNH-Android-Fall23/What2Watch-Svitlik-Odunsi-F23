@@ -11,9 +11,9 @@ import androidx.core.app.NotificationManagerCompat
 import com.example.what2watch_svitlik_odunsi_f23.MainActivity
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
-import com.google.firebase.messaging.FirebaseMessagingService
-import com.google.firebase.messaging.RemoteMessage
-
+//import com.google.firebase.messaging.FirebaseMessagingService
+//import com.google.firebase.messaging.RemoteMessage
+/*
 public class PushNotifications : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         if (remoteMessage.notification != null) {
@@ -63,4 +63,4 @@ public class PushNotifications : FirebaseMessagingService() {
     }
 
 
-}
+}*/

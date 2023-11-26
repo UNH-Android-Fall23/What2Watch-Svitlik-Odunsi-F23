@@ -52,6 +52,7 @@ class q4Fragment : Fragment() {
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
+        //todo: I need to fix the range slider so that it is values 0-10, not 0-100
         slider.addOnChangeListener { _slider, value, fromUser ->
             finalSliderValue = value.toInt()
         }
