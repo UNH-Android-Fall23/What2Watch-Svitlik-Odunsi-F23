@@ -3,6 +3,8 @@ package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 data class MoviesAndShows(
     //from imbd basics data collection
@@ -19,6 +21,7 @@ data class MoviesAndShows(
 
 )
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf()
+var db = Firebase.firestore
 /*
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
     // TODO: This is temporary data, I will take this out soon
@@ -27,6 +30,21 @@ var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is
 
 fun initializeMoviesAndShowsList(answersData: AnswersData) {
     val TAG = "SvitlikOdunsi"
+    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}")
+
+    db.collection ("MoviesAndShows")
+        .whereEqualTo("titleType", answersList[0].q1)
+        .get()
+        .addOnSuccessListener {documents ->
+            for (document in documents) {
+                Log.d (TAG, "${document.id} => $document.data}")
+            }
+        }
+        .addOnFailureListener { exception ->
+            Log.w(TAG, "Error getting documents: ", exception)
+        }
+}
+    /*
     val moviesShow = FirebaseFirestore.getInstance().collection("MoviesAndShows")
     var query: Query = moviesShow
 
@@ -51,7 +69,7 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
          query = query.whereLessThanOrEqualTo("averageRating", it)
          Log.d(TAG, "Filter added to query: startYear = $it")
      }
- */
+
     query.get()
         .addOnSuccessListener { documents ->
             for (document in documents) {
@@ -63,4 +81,4 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
         .addOnFailureListener { exception ->
             Log.w(TAG, "Error getting documents: ", exception)
         }
-}
+} */

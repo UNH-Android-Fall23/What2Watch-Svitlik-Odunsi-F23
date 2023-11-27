@@ -47,8 +47,8 @@ class q4Fragment : Fragment() {
         btnNext.setOnClickListener {
             Log.d(TAG, "Next button was pressed!")
             //       answersList.add(AnswersData(q4 = finalSliderValue))
-            Log.d(TAG, "answersList size: ${answersList.size}")
-            Log.d(TAG, "range slider final value $finalSliderValue")
+            //Log.d(TAG, "answersList size: ${answersList.size}")
+            Log.d(TAG, "slider final value $finalSliderValue")
 
             val answersData = AnswersData(answersList.toString())
             initializeMoviesAndShowsList(answersData)
