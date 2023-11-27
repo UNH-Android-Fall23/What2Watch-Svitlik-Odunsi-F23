@@ -73,22 +73,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editPassword"
         tools:ignore="HardcodedText" />
 
-    <EditText
-        android:id="@+id/editCountry"
-        android:layout_width="348dp"
-        android:layout_height="51dp"
-        android:autofillHints="United States"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        android:text="Country"
-        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        app:layout_constraintVertical_bias="0.812"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="126dp"
@@ -102,8 +86,6 @@
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintBottom_toTopOf="@+id/editTextDate"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
         app:layout_constraintVertical_bias="1.0"
@@ -114,33 +96,17 @@
         android:id="@+id/editTextDate"
         android:layout_width="160dp"
         android:layout_height="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="213dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="mm/dd/yyyy"
         android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/editCountry"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.898"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="185dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Female"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.659"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView9"
@@ -211,11 +177,30 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
         app:layout_constraintTop_toBottomOf="@+id/personalInfo"
+        tools:layout_editor_absoluteX="261dp"
         tools:text="Gender" />
+
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/country"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Spinner
+        android:id="@+id/spinnerGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
