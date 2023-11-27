@@ -18,7 +18,7 @@ import com.google.firebase.ktx.Firebase
 class q1Fragment : Fragment() {
     private val db = Firebase.firestore
     private var _binding: FragmentQ1Binding? = null
-    private val show = "Show"
+    private val show = "tvSeries"
     private val movie = "movie"
     private val binding get() = _binding!!
     val TAG = "SvitlikOdunsi"
@@ -43,7 +43,7 @@ class q1Fragment : Fragment() {
 
         btnMovie.setOnClickListener {
             Log.d(TAG, "Movie button was pressed!")
-            answersList.add(AnswersData(movie))
+            answersList.add(AnswersData(q1 = movie))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q2)
         }

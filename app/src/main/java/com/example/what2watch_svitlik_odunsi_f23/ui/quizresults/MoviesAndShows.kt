@@ -1,11 +1,9 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 
-import android.content.ContentValues.TAG
 import android.util.Log
-import com.example.what2watch_svitlik_odunsi_f23.ui.q1showmovie.q1Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
+
 data class MoviesAndShows(
     //from imbd basics data collection
     val tconst: String ="",
@@ -30,9 +28,25 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
     answersData.q1.let {
         val titleTypeValue = answersData.q1
         query = query.whereEqualTo("titleType", titleTypeValue)
-        Log.d(TAG, "Filter added to query: titleType = $titleTypeValue")
+        Log.d(TAG, "Filter added to query: = $titleTypeValue")
     }
 
+    /*
+     answersData.q2?.let {
+         query = query.whereEqualTo("genre", it)
+         Log.d(TAG, "Filter added to query: genre = $it")
+     }
+
+     answersData.q3?.let {
+         query = query.whereEqualTo("startYear", it)
+         Log.d(TAG, "Filter added to query: startYear = $it")
+     }
+
+      answersData.q4?.let {
+         query = query.whereLessThanOrEqualTo("averageRating", it)
+         Log.d(TAG, "Filter added to query: startYear = $it")
+     }
+ */
     query.get()
         .addOnSuccessListener { documents ->
             for (document in documents) {
