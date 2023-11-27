@@ -1,5 +1,6 @@
-package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
+package com.example.what2watch_svitlik_odunsi_f23.ui.shuffle
 
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.RecyclerResultsCard
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.R
 
 
-class ResultsAdapter (
+class ShuffleRecyclerAdapter (
     private val mExampleList: ArrayList<RecyclerResultsCard>, // takes in a list
-    private val context: ResultsFragment //pass in the context of results fragment to link data from one to another
- ) : RecyclerView.Adapter<ResultsAdapter.ExampleViewHolder>() {
+    private val context: ShuffleFragment //pass in the context of results fragment to link data from one to another
+) : RecyclerView.Adapter<ShuffleRecyclerAdapter.ExampleViewHolder>() {
     override fun onCreateViewHolder( //where you generate view for recycler view
         parent: ViewGroup,
         viewType: Int
@@ -29,7 +30,7 @@ class ResultsAdapter (
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
         val (imageResource, name, type, genre, year, rating) = mExampleList[position]
-      //  holder.mImageView.setImageResource(imageResource)
+        //  holder.mImageView.setImageResource(imageResource)
         holder.mTextView1.text = name
         holder.mTextView2.text = type
         holder.mTextGenre.text = genre.toString()

@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentShuffleBinding
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.RecyclerResultsCard
 
 class ShuffleFragment : Fragment() {
 
@@ -34,6 +35,10 @@ class ShuffleFragment : Fragment() {
         }
         return root
     }
+
+    val shuffleRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
