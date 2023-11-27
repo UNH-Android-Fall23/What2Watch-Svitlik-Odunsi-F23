@@ -19,6 +19,11 @@ data class MoviesAndShows(
 
 )
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf()
+/*
+var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
+    // TODO: This is temporary data, I will take this out soon
+    MoviesAndShows ("dfsdf", "Movie", "Jurrasic Park", "Jurrasic Park", 1993, "Action", "1", "90", "1993", "9")
+*/
 
 fun initializeMoviesAndShowsList(answersData: AnswersData) {
     val TAG = "SvitlikOdunsi"

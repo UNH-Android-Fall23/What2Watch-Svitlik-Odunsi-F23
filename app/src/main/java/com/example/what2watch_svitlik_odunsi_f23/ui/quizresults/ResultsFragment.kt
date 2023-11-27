@@ -13,7 +13,6 @@ import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBind
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-
 class ResultsFragment : Fragment() {
 
     private var _binding: FragmentResultsBinding? = null
@@ -38,11 +37,6 @@ class ResultsFragment : Fragment() {
         ResultsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
-        /*  Now I have All the answers for my answers list
-        * I would have to open up the document in Firebase and filter through it based on the
-        * answer list. How do I bring the answer list into this fragment?   */
-
 
 
         //Results Recycler View
