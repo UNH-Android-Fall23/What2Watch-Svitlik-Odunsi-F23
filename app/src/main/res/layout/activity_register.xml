@@ -30,17 +30,14 @@
         android:id="@+id/username"
         android:layout_width="381dp"
         android:layout_height="65dp"
-        android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="text"
         android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/editPassword"
-        app:layout_constraintEnd_toStartOf="@+id/editEmailAddress"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/editEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.14"
         tools:ignore="HardcodedText" />
 
     <EditText
@@ -48,81 +45,68 @@
         android:layout_width="367dp"
         android:layout_height="62dp"
         android:layout_marginEnd="28dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
         app:layout_constraintVertical_bias="0.771"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
+        tools:ignore="HardcodedText" />
+
 
     <TextView
         android:id="@+id/personalInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text="Personal Information"
         android:textColor="#070101"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintHorizontal_bias="0.386"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword"
         tools:ignore="HardcodedText" />
+
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="126dp"
         android:layout_height="22dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="28dp"
         android:fontFamily="sans-serif-black"
         android:text="Date of Birth"
         android:textColor="#070101"
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
+        app:layout_constraintEnd_toStartOf="@+id/personalInfo"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.58"
         tools:ignore="HardcodedText" />
-
 
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="160dp"
         android:layout_height="52dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="213dp"
+        android:layout_marginBottom="137dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="mm/dd/yyyy"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:text="Gender"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/personalInfo"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.523"
-        tools:ignore="HardcodedText" />
-
 
     <Button
         android:id="@+id/Registerbutton"
@@ -132,10 +116,10 @@
         app:iconPadding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
+        app:layout_constraintVertical_bias="0.844"
         tools:ignore="HardcodedText" />
 
     <CheckBox
@@ -155,52 +139,71 @@
         android:id="@+id/editPassword"
         android:layout_width="381dp"
         android:layout_height="58dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="@+id/editEmailAddress"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextDate"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.63"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.571"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="88dp"
-        android:layout_height="27dp"
+        android:layout_width="74dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="41dp"
         android:fontFamily="sans-serif-black"
-        android:text="TextView"
         android:textColor="#070202"
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/personalInfo"
-        tools:layout_editor_absoluteX="261dp"
         tools:text="Gender" />
 
-    <Spinner
-        android:id="@+id/spinnerCountry"
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/country"
+        android:layout_marginBottom="70dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/editTextDate"
+        app:layout_constraintTop_toTopOf="@+id/editTextDate"
+        tools:text="Female" />
 
-    <Spinner
-        android:id="@+id/spinnerGender"
+    <TextView
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:text="TextView"
+        android:textColor="#020101"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        tools:text="Country" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="287dp"
+        android:layout_height="31dp"
+        android:text="TextView"
+        android:textColor="#0C0606"
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:text="Nigeria" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
