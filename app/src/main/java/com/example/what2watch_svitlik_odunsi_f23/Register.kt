@@ -1,42 +1,64 @@
 package com.example.what2watch_svitlik_odunsi_f23
+
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.ads.mediationtestsuite.activities.HomeActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
-class RegisterFragment : Fragment() {
+class RegisterActivity : AppCompatActivity() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.activity_register, container, false)
+    private lateinit var auth: FirebaseAuth
 
-        //initialize EditText and Button
-        val editEmailAddress = view.findViewById<EditText>(R.id.editEmailAddress)
-        val editPassword = view.findViewById<EditText>(R.id.editPassword)
-        val registerButton = view.findViewById<Button>(R.id.Registerbutton)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_register)
 
-        //handle register button click
+        auth = Firebase.auth
+
+        val registerButton: Button = findViewById(R.id.Registerbutton)
         registerButton.setOnClickListener {
-            //get the user's email and password
-            val email = editEmailAddress.text.toString()
-            val password = editPassword.text.toString()
+            val email: String = findViewById<EditText>(R.id.editEmailAddress).text.toString()
+            val password: String = findViewById<EditText>(R.id.editPassword).text.toString()
 
-            //validate the email and password
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(activity, "Please enter your email and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show()
             } else {
-                //if the user's input is valid, navigate to fragment_home
-                findNavController().navigate(R.id.action_nav_host_fragment_to_navigation_home)
+                registerUser(email, password)
             }
         }
+    }
 
-        return view
+    private fun registerUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                    updateUI(null)
+                }
+            }
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
+        if (user != null) {
+            // navigate to the home fragment
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        } else {
+            // Prompt the user to try again with different credentials
+            Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun registerUser() {
-        val intent = Intent(this, Register::class.java)
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
     private fun loginUser() {
@@ -44,10 +44,6 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show()
             return
         }
-
-
-
-
 
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
