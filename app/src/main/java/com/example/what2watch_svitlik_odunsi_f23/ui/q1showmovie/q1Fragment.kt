@@ -37,7 +37,7 @@ class q1Fragment : Fragment() {
         btnShow.setOnClickListener {
             Log.d(TAG, "Show button was pressed!")
             Log.d(TAG, "Answer data ${(show)}")
-            answersList.add(0, AnswersData(show))
+            answersList.add(0,AnswersData(show))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q2)
         }

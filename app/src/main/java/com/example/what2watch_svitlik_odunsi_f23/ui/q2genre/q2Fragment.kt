@@ -37,6 +37,7 @@ class q2Fragment : Fragment() {
     private val mystery = "mystery"
     private val history = "history"
     val TAG = "SvitlikOdunsi"
+    val q1 = answersList[0].q1
 
     private val binding get() = _binding!!
 
@@ -83,7 +84,7 @@ class q2Fragment : Fragment() {
         btnAdventure.setOnClickListener {
             Log.d(TAG, "Adventure genre was chosen")
             Log.d(TAG, "Answer data ${(adventure)}")
-            answersList.add(AnswersData(adventure))
+            answersList.add(0, AnswersData(q1,adventure))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
@@ -160,7 +161,7 @@ class q2Fragment : Fragment() {
         btnDocumentary.setOnClickListener {
             Log.d(TAG, "Documentary genre was chosen")
             Log.d(TAG, "Answer data ${(documentary)}")
-            answersList.add(1, AnswersData (documentary))
+            answersList.add(AnswersData (documentary))
             Log.d(TAG, "answersList size:{answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }

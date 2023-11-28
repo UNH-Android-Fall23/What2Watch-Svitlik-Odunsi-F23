@@ -33,6 +33,8 @@ class q3Fragment : Fragment() {
     private val twentytens = "2010"
     private val twentytwenies = "2020"
     private val recent = "2023"
+    val q1 = answersList[0].q1
+    val q2 = answersList[0].q2
 
 
     override fun onCreateView(
@@ -42,8 +44,6 @@ class q3Fragment : Fragment() {
     ): View {
         val q3ViewModel =
             ViewModelProvider(this).get(q3ViewModel::class.java)
-
-
         _binding = FragmentQ3Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -53,7 +53,6 @@ class q3Fragment : Fragment() {
             textView.text = it
         }
 
-
         // Buttons for the different decades
         val btnNext = binding.btnNext
         val btn80s = binding.btn80s
@@ -62,7 +61,8 @@ class q3Fragment : Fragment() {
         val btn10s = binding.btn10s
         val btn20s = binding.btn20s
         val btnRecent = binding.btnRecent
-
+        val q1 = answersList[0].q1
+        val q2 = answersList[0].q2
 
         // Button click listeners
         btnNext.setOnClickListener {
@@ -74,6 +74,8 @@ class q3Fragment : Fragment() {
         btn80s.setOnClickListener {
             Log.d(TAG, "80s button was pressed!")
             //       answersList.add(AnswersData(q3 = eighties))
+            Log.d(TAG, "Answer data ${(eighties)}")
+            answersList.add(AnswersData(eighties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -81,6 +83,8 @@ class q3Fragment : Fragment() {
         btn90s.setOnClickListener {
             Log.d(TAG, "90s button was pressed!")
             //           answersList.add(AnswersData(q3 = nineties))
+            Log.d(TAG, "Answer data ${(nineties)}")
+            answersList.add(AnswersData(nineties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -88,6 +92,8 @@ class q3Fragment : Fragment() {
         btn00s.setOnClickListener {
             Log.d(TAG, "00s button was pressed!")
             //           answersList.add(AnswersData(q3 = twothousands))
+            Log.d(TAG, "Answer data ${(twothousands)}")
+            answersList.add(0, AnswersData(q1, q2, twothousands))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -95,6 +101,8 @@ class q3Fragment : Fragment() {
         btn10s.setOnClickListener {
             Log.d(TAG, "10s button was pressed!")
             //            answersList.add(AnswersData(q3 = twentytens))
+            Log.d(TAG, "Answer data ${(twentytens)}")
+            answersList.add(AnswersData(twentytens))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -102,6 +110,8 @@ class q3Fragment : Fragment() {
         btn20s.setOnClickListener {
             Log.d(TAG, "20s button was pressed!")
             //           answersList.add(AnswersData(q3 = twentytwenies))
+            Log.d(TAG, "Answer data ${(twentytwenies)}")
+            answersList.add(AnswersData(twentytwenies))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q4)
         }

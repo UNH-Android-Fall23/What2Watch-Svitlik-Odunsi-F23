@@ -20,6 +20,7 @@ data class MoviesAndShows(
 )
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf()
 var db = Firebase.firestore
+
 /*
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
     // TODO: This is temporary data, I will take this out soon
@@ -27,12 +28,18 @@ var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is
 ) */
 
 fun initializeMoviesAndShowsList(answersData: AnswersData) {
+    val startYearFilter = answersList[0].q3.toLong()
+    val endYearFilter = (startYearFilter + 9)
+
+
     val TAG = "SvitlikOdunsi"
-    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}, ${answersList[1].q1}")
+    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}, ${answersList[0].q2}, ${answersList[0].q3}")
 
     db.collection ("MoviesAndShows")
         .whereEqualTo("titleType", answersList[0].q1)
-        .whereEqualTo("genre",answersList[1].q1)
+        .whereEqualTo("genre",answersList[0].q2)
+        .whereGreaterThanOrEqualTo("startYear", answersList[0].q3.toLong())
+        .whereLessThan("startYear", endYearFilter)
         .get()
         .addOnSuccessListener {documents ->
             for (document in documents) {

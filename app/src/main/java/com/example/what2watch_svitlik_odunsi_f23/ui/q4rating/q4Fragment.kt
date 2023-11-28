@@ -21,6 +21,8 @@ class q4Fragment : Fragment() {
     val TAG = "SvitlikOdunsi"
     private var _binding: FragmentQ4Binding? = null
     private val binding get() = _binding!!
+    val q1 = answersList[0].q1
+    val q2 = answersList[0].q2
 
 
     override fun onCreateView(
