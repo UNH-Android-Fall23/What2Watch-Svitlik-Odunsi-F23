@@ -28,10 +28,11 @@ var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is
 
 fun initializeMoviesAndShowsList(answersData: AnswersData) {
     val TAG = "SvitlikOdunsi"
-    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}")
+    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}, ${answersList[1].q1}")
 
     db.collection ("MoviesAndShows")
         .whereEqualTo("titleType", answersList[0].q1)
+        .whereEqualTo("genre",answersList[1].q1)
         .get()
         .addOnSuccessListener {documents ->
             for (document in documents) {
@@ -59,41 +60,44 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
             Log.w(TAG, "Error getting documents: ", exception)
         }
 }//This says it is adding the imdb information into movieandshows list. but, it should be showing up in my results recycler view
-    /*
-    val moviesShow = FirebaseFirestore.getInstance().collection("MoviesAndShows")
-    var query: Query = moviesShow
 
-    answersData.q1.let {
-        val titleTypeValue = answersData.q1
-        query = query.whereEqualTo("titleType", titleTypeValue)
-        Log.d(TAG, "Filter added to query: = $titleTypeValue")
+
+
+/*
+val moviesShow = FirebaseFirestore.getInstance().collection("MoviesAndShows")
+var query: Query = moviesShow
+
+answersData.q1.let {
+    val titleTypeValue = answersData.q1
+    query = query.whereEqualTo("titleType", titleTypeValue)
+    Log.d(TAG, "Filter added to query: = $titleTypeValue")
+}
+
+/*
+ answersData.q2?.let {
+     query = query.whereEqualTo("genre", it)
+     Log.d(TAG, "Filter added to query: genre = $it")
+ }
+
+ answersData.q3?.let {
+     query = query.whereEqualTo("startYear", it)
+     Log.d(TAG, "Filter added to query: startYear = $it")
+ }
+
+  answersData.q4?.let {
+     query = query.whereLessThanOrEqualTo("averageRating", it)
+     Log.d(TAG, "Filter added to query: startYear = $it")
+ }
+
+query.get()
+    .addOnSuccessListener { documents ->
+        for (document in documents) {
+            val movieOrShow = document.toObject(MoviesAndShows::class.java)
+            MoviesAndShowsList.add(movieOrShow)
+            Log.d(TAG, "Retrieved: $movieOrShow")
+        }
     }
-
-    /*
-     answersData.q2?.let {
-         query = query.whereEqualTo("genre", it)
-         Log.d(TAG, "Filter added to query: genre = $it")
-     }
-
-     answersData.q3?.let {
-         query = query.whereEqualTo("startYear", it)
-         Log.d(TAG, "Filter added to query: startYear = $it")
-     }
-
-      answersData.q4?.let {
-         query = query.whereLessThanOrEqualTo("averageRating", it)
-         Log.d(TAG, "Filter added to query: startYear = $it")
-     }
-
-    query.get()
-        .addOnSuccessListener { documents ->
-            for (document in documents) {
-                val movieOrShow = document.toObject(MoviesAndShows::class.java)
-                MoviesAndShowsList.add(movieOrShow)
-                Log.d(TAG, "Retrieved: $movieOrShow")
-            }
-        }
-        .addOnFailureListener { exception ->
-            Log.w(TAG, "Error getting documents: ", exception)
-        }
+    .addOnFailureListener { exception ->
+        Log.w(TAG, "Error getting documents: ", exception)
+    }
 } */

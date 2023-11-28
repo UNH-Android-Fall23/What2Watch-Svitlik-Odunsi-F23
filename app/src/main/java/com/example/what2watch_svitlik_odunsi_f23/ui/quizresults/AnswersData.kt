@@ -4,8 +4,8 @@ data class AnswersData(
 
     val q1: String = "",
     val q2: String = "",
-    // val q3: String = "",
-    // val q4: Int = 0,
+    //val q3: String = "",
+    //val q4: Int = 0,
 
 
 )
