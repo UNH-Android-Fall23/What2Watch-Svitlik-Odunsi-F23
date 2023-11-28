@@ -1,8 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 
 import android.util.Log
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -26,7 +24,7 @@ var db = Firebase.firestore
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
     // TODO: This is temporary data, I will take this out soon
     MoviesAndShows ("dfsdf", "Movie", "Jurrasic Park", "Jurrasic Park", 1993, "Action", "1", "90", "1993", "9")
-*/
+) */
 
 fun initializeMoviesAndShowsList(answersData: AnswersData) {
     val TAG = "SvitlikOdunsi"
@@ -38,12 +36,29 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
         .addOnSuccessListener {documents ->
             for (document in documents) {
                 Log.d (TAG, "${document.id} => $document.data}")
+                //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
+                val movieOrShow = MoviesAndShows(
+                    tconst = document.id,
+                    titleType = document.getString("titleType") ?: "",
+                    primaryTitle = document.getString("primaryTitle") ?: "",
+                    originalTitle = document.getString("originalTitle") ?: "",
+                    startYear = document.getLong("startYear") ?: 0,
+                    genre = document.getString("genre") ?: "",
+                    isAdult = document.getString("isAdult") ?: "",
+                    runtime = document.getString("runtime") ?: "",
+                    endYear = document.getString("endYear") ?: "",
+                    averageRating = document.getString("averageRating") ?: ""
+                )
+
+                MoviesAndShowsList.add(movieOrShow)
+
+                Log.d(TAG, "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}")
             }
         }
         .addOnFailureListener { exception ->
             Log.w(TAG, "Error getting documents: ", exception)
         }
-}
+}//This says it is adding the imdb information into movieandshows list. but, it should be showing up in my results recycler view
     /*
     val moviesShow = FirebaseFirestore.getInstance().collection("MoviesAndShows")
     var query: Query = moviesShow

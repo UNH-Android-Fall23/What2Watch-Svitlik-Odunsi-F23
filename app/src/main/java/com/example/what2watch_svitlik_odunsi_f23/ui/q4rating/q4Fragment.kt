@@ -49,9 +49,9 @@ class q4Fragment : Fragment() {
             //       answersList.add(AnswersData(q4 = finalSliderValue))
             //Log.d(TAG, "answersList size: ${answersList.size}")
             Log.d(TAG, "slider final value $finalSliderValue")
-
             val answersData = AnswersData(answersList.toString())
             initializeMoviesAndShowsList(answersData)
+            Log.d(TAG, "Everything uploaded into the array list")
             findNavController().navigate(R.id.navigation_quizresults)
         }
 
