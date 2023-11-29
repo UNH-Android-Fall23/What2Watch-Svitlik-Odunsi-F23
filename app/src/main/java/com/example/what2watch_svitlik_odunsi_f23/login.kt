@@ -14,6 +14,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var buttonLogin: Button
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var buttonRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +25,17 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             loginUser()
         }
+
+        buttonRegister = findViewById(R.id.buttonRegister)
+        buttonRegister.setOnClickListener {
+            registerUser()
+        }
     }
 
+    private fun registerUser() {
+        val intent = Intent(this, Register::class.java)
+        startActivity(intent)
+    }
     private fun loginUser() {
         val email = "ololade.odunsi@gmail.com"
         val password = "OloladeOdunsi"
@@ -34,6 +44,11 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show()
             return
         }
+
+
+
+
+
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
