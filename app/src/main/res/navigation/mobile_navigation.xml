@@ -80,10 +80,17 @@
         tools:layout="@layout/fragment_results" />
 
     <fragment
+        android:id="@+id/navigation_Register"
+        android:name="com.example.what2watch_svitlik_odunsi_f23.ui.register.Register"
+        android:label="Register"
+        tools:layout="@layout/activity_register" />
+
+
+    <fragment
         android:id="@+id/navigation_login"
         android:name="com.example.what2watch_svitlik_odunsi_f23.ui.login.LogInFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/activity_login" >
         <action
             android:id="@+id/action_navigation_login_to_navigation_home"
             app:destination="@id/navigation_home" />

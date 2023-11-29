@@ -35,10 +35,16 @@ class LogInFragment : Fragment() {
         val root : View = binding.root
 
         val btnLogIn = binding.btnLogin
+        val btnNewUser = binding.btnNewUser
 
 
         binding.btnLogin.setOnClickListener {
             Log.d(TAG, "LogIn button was pressed!")
+            findNavController().navigate(R.id.navigation_home)
+        }
+
+        binding.btnNewUser.setOnClickListener {
+            Log.d(TAG, "New user button was pressed!")
             findNavController().navigate(R.id.navigation_home)
         }
 

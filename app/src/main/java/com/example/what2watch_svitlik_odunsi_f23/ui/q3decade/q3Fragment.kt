@@ -73,9 +73,9 @@ class q3Fragment : Fragment() {
 
         btn80s.setOnClickListener {
             Log.d(TAG, "80s button was pressed!")
-            //       answersList.add(AnswersData(q3 = eighties))
+            // answersList.add(AnswersData(q3 = eighties))
             Log.d(TAG, "Answer data ${(eighties)}")
-            answersList.add(AnswersData(eighties))
+            answersList.add(0, AnswersData(q1, q2, eighties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -84,7 +84,7 @@ class q3Fragment : Fragment() {
             Log.d(TAG, "90s button was pressed!")
             //           answersList.add(AnswersData(q3 = nineties))
             Log.d(TAG, "Answer data ${(nineties)}")
-            answersList.add(AnswersData(nineties))
+            answersList.add(0, AnswersData(q1, q2, nineties))
             findNavController().navigate(R.id.navigation_q4)
         }
 
@@ -102,16 +102,16 @@ class q3Fragment : Fragment() {
             Log.d(TAG, "10s button was pressed!")
             //            answersList.add(AnswersData(q3 = twentytens))
             Log.d(TAG, "Answer data ${(twentytens)}")
-            answersList.add(AnswersData(twentytens))
+            answersList.add(0, AnswersData(q1, q2, twentytens))
             findNavController().navigate(R.id.navigation_q4)
         }
 
 
         btn20s.setOnClickListener {
             Log.d(TAG, "20s button was pressed!")
-            //           answersList.add(AnswersData(q3 = twentytwenies))
+            //answersList.add(AnswersData(q3 = twentytwenies))
             Log.d(TAG, "Answer data ${(twentytwenies)}")
-            answersList.add(AnswersData(twentytwenies))
+            answersList.add(0, AnswersData(q1, q2, twentytwenies))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q4)
         }
@@ -120,7 +120,7 @@ class q3Fragment : Fragment() {
         /* may have to get rid of this, no "recent" on imdb dataset */
         btnRecent.setOnClickListener {
             Log.d(TAG, "Recent button was pressed!")
-            //           answersList.add(AnswersData(q3 = recent))
+            //answersList.add(AnswersData(q3 = recent))
             findNavController().navigate(R.id.navigation_q4)
         }
         return root

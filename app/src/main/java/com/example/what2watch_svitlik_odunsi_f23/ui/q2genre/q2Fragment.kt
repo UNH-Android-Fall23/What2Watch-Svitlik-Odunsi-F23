@@ -76,7 +76,7 @@ class q2Fragment : Fragment() {
 
         btnAction.setOnClickListener {
             Log.d(TAG, "Action genre was chosen")
-            answersList.add(AnswersData(action))
+            answersList.add(0, AnswersData(q1,action))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
@@ -91,7 +91,7 @@ class q2Fragment : Fragment() {
 
         btnSciFi.setOnClickListener {
             Log.d(TAG, "Sci Fi genre was chosen")
-            answersList.add(AnswersData(scifi))
+            answersList.add(0, AnswersData(q1,scifi))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
@@ -99,7 +99,7 @@ class q2Fragment : Fragment() {
 
         btnRomance.setOnClickListener {
             Log.d(TAG, "Romance genre was chosen")
-            answersList.add(AnswersData(romance))
+            answersList.add(0, AnswersData(q1,romance))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
@@ -107,7 +107,7 @@ class q2Fragment : Fragment() {
 
         btnMystery.setOnClickListener {
             Log.d(TAG, "Mystery genre was chosen")
-            answersList.add(AnswersData(mystery))
+            answersList.add(0, AnswersData(q1,mystery))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
@@ -115,59 +115,59 @@ class q2Fragment : Fragment() {
 
         btnHistory.setOnClickListener {
             Log.d(TAG, "History genre was chosen")
-            answersList.add(AnswersData(history))
+            answersList.add(0, AnswersData(q1,history))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
         btnComedy.setOnClickListener {
             Log.d(TAG, "Comedy genre was chosen")
-            answersList.add(AnswersData(comedy))
+            answersList.add(0, AnswersData(q1,comedy))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
         btnThriller.setOnClickListener {
             Log.d(TAG, "Thriller genre was chosen")
-            answersList.add(AnswersData(thriller))
+            answersList.add(0, AnswersData(q1,thriller))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
         btnHorror.setOnClickListener {
             Log.d(TAG, "Horror genre was chosen")
-            answersList.add(AnswersData(horror))
+            answersList.add(0, AnswersData(q1,horror))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
         btnRomCom.setOnClickListener {
             Log.d(TAG, "Rom-com genre was chosen")
-            answersList.add(AnswersData(romcom))
+            answersList.add(0, AnswersData(q1,romcom))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
 
         btnFaith.setOnClickListener {
             Log.d(TAG, "Faith genre was chosen")
-            answersList.add(AnswersData(faith))
+            answersList.add(0, AnswersData(q1,faith))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
 
         btnDrama.setOnClickListener {
             Log.d(TAG, "Drama genre was chosen")
-            answersList.add(AnswersData(drama))
+            answersList.add(0, AnswersData(q1,drama))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
 
         btnDocumentary.setOnClickListener {
             Log.d(TAG, "Documentary genre was chosen")
-            Log.d(TAG, "Answer data ${(documentary)}")
+            answersList.add(0, AnswersData(q1,documentary))
             answersList.add(AnswersData (documentary))
             Log.d(TAG, "answersList size:{answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }
         btnFantasy.setOnClickListener {
             Log.d(TAG, "Fantasy genre was chosen")
-            answersList.add(AnswersData(fantasy))
+            answersList.add(0, AnswersData(q1,fantasy))
             Log.d(TAG, "answersList size: ${answersList.size}")
             findNavController().navigate(R.id.navigation_q3)
         }

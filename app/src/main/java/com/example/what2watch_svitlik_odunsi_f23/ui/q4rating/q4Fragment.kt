@@ -23,6 +23,7 @@ class q4Fragment : Fragment() {
     private val binding get() = _binding!!
     val q1 = answersList[0].q1
     val q2 = answersList[0].q2
+    val q3 = answersList[0].q3
 
 
     override fun onCreateView(
@@ -51,8 +52,8 @@ class q4Fragment : Fragment() {
             //       answersList.add(AnswersData(q4 = finalSliderValue))
             //Log.d(TAG, "answersList size: ${answersList.size}")
             Log.d(TAG, "slider final value $finalSliderValue")
+            answersList.add(0, AnswersData(q1, q2, q3, finalSliderValue))
             val answersData = AnswersData(answersList.toString())
-            Log.d(TAG, "AnswersList: ${answersList[0]}")
             initializeMoviesAndShowsList(answersData)
             Log.d(TAG, "Everything uploaded into the array list")
             findNavController().navigate(R.id.navigation_quizresults)
