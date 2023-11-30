@@ -37,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
     private fun loginUser() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
         val email = "ololade.odunsi@gmail.com"
         val password = "OloladeOdunsi"
 
