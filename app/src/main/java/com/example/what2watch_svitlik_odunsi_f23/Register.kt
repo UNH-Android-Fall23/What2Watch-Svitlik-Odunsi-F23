@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.ads.mediationtestsuite.activities.HomeActivity
+import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -54,7 +54,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             // navigate to the home fragment
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
         } else {
             // Prompt the user to try again with different credentials
