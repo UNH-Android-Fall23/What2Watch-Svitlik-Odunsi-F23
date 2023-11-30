@@ -1,11 +1,27 @@
 package com.example.what2watch_svitlik_odunsi_f23
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
-class logout : AppCompatActivity() {
+class Logout : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logout)
+
+        // Call logout method
+        logout()
+    }
+
+    private fun logout() {
+        // Logout from Firebase
+        FirebaseAuth.getInstance().signOut()
+
+        // Go back to LoginActivity
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish() // Close this activity
     }
 }
