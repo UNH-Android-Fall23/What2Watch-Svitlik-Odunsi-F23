@@ -6,67 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LogInFragment">
 
-    <TextView
-        android:id="@+id/text_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Adding clickable attributes to the TextViews -->
 
     <TextView
         android:id="@+id/text_Home"
-        android:layout_width="260dp"
-        android:layout_height="62dp"
-        android:fontFamily="@font/alata"
-        android:text=" What2Watch"
-        android:textColor="#000000"
-        android:textSize="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="What2Watch"
+        android:textColor="#D30404"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.08"
+        tools:ignore="MissingConstraints" />
 
-    <!-- Adding clickable attributes to the TextViews -->
     <TextView
         android:id="@+id/text_profile"
         android:layout_width="60dp"
         android:layout_height="62dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/alata"
+        android:clickable="true"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onProfileClick"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:clickable="true"
-        android:onClick="onProfileClick"
+        app:layout_constraintBottom_toTopOf="@+id/text_editProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.163" />
 
     <TextView
         android:id="@+id/text_reviews"
         android:layout_width="75dp"
         android:layout_height="62dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/alata"
+        android:clickable="true"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onReviewsClick"
         android:text="Reviews"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:clickable="true"
-        android:onClick="onReviewsClick"
+        app:layout_constraintBottom_toTopOf="@+id/text_editProfile"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.163" />
 
     <TextView
         android:id="@+id/text_editProfile"
@@ -74,62 +68,48 @@
         android:layout_height="62dp"
         android:layout_marginTop="104dp"
         android:clickable="true"
-        android:fontFamily="@font/alata"
+        android:fontFamily="sans-serif-medium"
         android:onClick="onEditProfileClick"
         android:text="Edit Profile"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_Settings"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
-
-    <TextView
-        android:id="@+id/text_Theme"
-        android:layout_width="180dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="168dp"
-        android:clickable="true"
-        android:fontFamily="@font/alata"
-        android:onClick="onThemeClick"
-        android:text="Theme"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.178" />
 
     <TextView
         android:id="@+id/text_Settings"
         android:layout_width="180dp"
         android:layout_height="62dp"
-        android:layout_marginTop="220dp"
-        android:fontFamily="@font/alata"
+        android:layout_marginBottom="256dp"
+        android:clickable="true"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onSettingsClick"
         android:text="Settings"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:clickable="true"
-        android:onClick="onSettingsClick"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintBottom_toTopOf="@+id/logout_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/text_Logout"
-        android:layout_width="180dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="432dp"
-        android:clickable="true"
-        android:fontFamily="@font/alata"
-        android:onClick="onLogoutClick"
-        android:text="Logout"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/text_Settings"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/text_Settings"
-        app:layout_constraintTop_toBottomOf="@+id/text_Home" />
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSettingsClick"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.876"
+        tools:text="Log out" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
