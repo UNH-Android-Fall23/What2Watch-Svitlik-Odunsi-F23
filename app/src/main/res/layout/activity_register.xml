@@ -193,8 +193,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="0.217"
         tools:text="Country" />
 
     <TextView

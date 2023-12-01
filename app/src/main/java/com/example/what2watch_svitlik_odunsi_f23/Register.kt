@@ -10,17 +10,20 @@ import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var userRef: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         auth = Firebase.auth
+        userRef = FirebaseDatabase.getInstance().reference
 
         val registerButton: Button = findViewById(R.id.Registerbutton)
         registerButton.setOnClickListener {
@@ -41,6 +44,23 @@ class RegisterActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
+
+                    // Get the user's gender and country from the spinners
+                    val selectedGender: String = genderSpinner.selectedItem.toString()
+                    val selectedCountry: String = countrySpinner.selectedItem.toString()
+
+                    // Save the user data to Firebase Database
+                    user?.let { user ->
+                        val userId = user.uid
+                        val userData = mapOf(
+                            "uid" to userId,
+                            "email" to email,
+                            "gender" to selectedGender,
+                            "country" to selectedCountry
+                        )
+                        userRef.child(userId).setValue(userData)
+                    }
+
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
