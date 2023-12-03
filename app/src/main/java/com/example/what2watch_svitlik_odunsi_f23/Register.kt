@@ -24,6 +24,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         val genderOptions=arrayOf("Male","Female","Non-Binary")
+        val countryOptions = arrayOf("United States", "Nigeria", "China", "Russia", "United Kingdom", "Ghana", "Eritrea")
         auth = Firebase.auth
        userRef = Firebase.database
 
@@ -79,7 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                         val userId = user.uid
                         val selectedGender = "Female, Male, Non-Binary"
                         //val userRegistrationReference = userRef.child("UserRegistration")
-                        val selectedCountry = "United States, China, Nigeria, United Kingdom"
+                        val selectedCountry = "United States, Nigeria, China, Russia, United Kingdom, Ghana, Eritrea"
                         val userData = mapOf(
                             "uid" to userId,
                             "email" to email,
