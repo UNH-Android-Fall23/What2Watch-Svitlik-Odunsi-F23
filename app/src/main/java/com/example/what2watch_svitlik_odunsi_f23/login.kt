@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -16,15 +15,11 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var buttonLogin: Button
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var buttonRegister: Button
-    //private lateinit var binding: LoginActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //val root : View = binding.root
-
-        //binding=layoutInflater(LoginActivity.)
         buttonLogin = findViewById(R.id.buttonLogin)
         firebaseAuth = FirebaseAuth.getInstance()
         buttonLogin.setOnClickListener {
@@ -42,10 +37,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
     private fun loginUser() {
-        val input_email = findViewById<EditText>(R.id.editEmailText);
-        val input_password = findViewById<EditText>(R.id.editPasswordText);
-        val email= input_email.text.toString();
-        val password= input_password.text.toString();
+        val email = "ololade.odunsi@gmail.com"
+        val password = "OloladeOdunsi"
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show()
@@ -91,6 +84,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "LoginActivityF23"
+        private const val TAG = "LoginActivity"
     }
 }

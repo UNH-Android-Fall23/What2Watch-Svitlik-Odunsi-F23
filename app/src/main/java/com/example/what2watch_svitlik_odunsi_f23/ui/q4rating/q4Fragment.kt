@@ -14,7 +14,7 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ4Binding
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.initializeMoviesAndShowsList
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.quizFilters
 
 class q4Fragment : Fragment() {
 
@@ -54,7 +54,7 @@ class q4Fragment : Fragment() {
             Log.d(TAG, "slider final value $finalSliderValue")
             answersList.add(0, AnswersData(q1, q2, q3, finalSliderValue))
             val answersData = AnswersData(answersList.toString())
-            initializeMoviesAndShowsList(answersData)
+            quizFilters(answersData)
             Log.d(TAG, "Everything uploaded into the array list")
             findNavController().navigate(R.id.navigation_quizresults)
         }

@@ -20,14 +20,13 @@ data class MoviesAndShows(
 )
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf()
 var db = Firebase.firestore
-
 /*
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf( //TODO: This is temporary data for debugging recycler results view
     // TODO: This is temporary data, I will take this out soon
     MoviesAndShows ("dfsdf", "Movie", "Jurrasic Park", "Jurrasic Park", 1993, "Action", "1", "90", "1993", "9")
 ) */
 
-fun initializeMoviesAndShowsList(answersData: AnswersData) {
+fun quizFilters(answersData: AnswersData) {
     val startYearFilter = answersList[0].q3.toLong()
     val endYearFilter = (startYearFilter + 9)
 
@@ -62,6 +61,81 @@ fun initializeMoviesAndShowsList(answersData: AnswersData) {
                 MoviesAndShowsList.add(movieOrShow)
 
                 Log.d(TAG, "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}")
+            }
+        }
+        .addOnFailureListener { exception ->
+            Log.w(TAG, "Error getting documents: ", exception)
+        }
+}
+
+fun browseFilters(answersData: AnswersData) {
+
+    val TAG = "SvitlikOdunsi"
+    Log.d(TAG, "Filter about to be query: = ${answersList[0].q1}, ${answersList[0].q2}, ${answersList[0].q3}, ${answersList[0].q4}")
+
+    db.collection ("MoviesAndShows")
+        .whereEqualTo("genre",answersList[0].q2)
+        .get()
+        .addOnSuccessListener {documents ->
+            for (document in documents) {
+                Log.d (TAG, "${document.id} => $document.data}")
+                //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
+                val movieOrShow = MoviesAndShows(
+                    tconst = document.id,
+                    titleType = document.getString("titleType") ?: "",
+                    primaryTitle = document.getString("primaryTitle") ?: "",
+                    originalTitle = document.getString("originalTitle") ?: "",
+                    startYear = document.getLong("startYear") ?: 0,
+                    genre = document.getString("genre") ?: "",
+                    isAdult = document.getString("isAdult") ?: "",
+                    runtime = document.getString("runtime") ?: "",
+                    endYear = document.getString("endYear") ?: "",
+                    averageRating = document.getString("averageRating") ?: ""
+                )
+
+                MoviesAndShowsList.add(movieOrShow)
+
+                Log.d(TAG, "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}")
+            }
+        }
+        .addOnFailureListener { exception ->
+            Log.w(TAG, "Error getting documents: ", exception)
+        }
+}
+fun shuffleGetRandom() {
+
+    val TAG = "SvitlikOdunsi"
+
+    val k = 10
+
+    db.collection("MoviesAndShows")
+        .get()
+        .addOnSuccessListener { documents ->
+            val shuffledDocuments = documents.toMutableList().shuffled()
+            val selectedDocuments = shuffledDocuments.take(k)
+
+            for (document in selectedDocuments) {
+                Log.d(TAG, "${document.id} => $document.data}")
+                //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
+                val movieOrShow = MoviesAndShows(
+                    tconst = document.id,
+                    titleType = document.getString("titleType") ?: "",
+                    primaryTitle = document.getString("primaryTitle") ?: "",
+                    originalTitle = document.getString("originalTitle") ?: "",
+                    startYear = document.getLong("startYear") ?: 0,
+                    genre = document.getString("genre") ?: "",
+                    isAdult = document.getString("isAdult") ?: "",
+                    runtime = document.getString("runtime") ?: "",
+                    endYear = document.getString("endYear") ?: "",
+                    averageRating = document.getString("averageRating") ?: ""
+                )
+
+                MoviesAndShowsList.add(movieOrShow)
+
+                Log.d(
+                    TAG,
+                    "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}"
+                )
             }
         }
         .addOnFailureListener { exception ->
