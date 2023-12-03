@@ -70,4 +70,9 @@ dependencies {
 }
 
 
+    implementation ("com.google.firebase:firebase-database-ktx:20.3.0")
+
+}
+
+"com.google.gms.google-services"
 

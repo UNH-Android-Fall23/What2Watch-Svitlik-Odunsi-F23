@@ -22,9 +22,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
+        app:layout_constraintVertical_bias="0.02"
         tools:ignore="HardcodedText" />
-
 
     <EditText
         android:id="@+id/username"
@@ -40,6 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
         tools:ignore="HardcodedText" />
 
+
     <EditText
         android:id="@+id/editEmailAddress"
         android:layout_width="367dp"
@@ -51,11 +51,11 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.771"
+        app:layout_constraintVertical_bias="0.869"
         tools:ignore="HardcodedText" />
-
 
     <TextView
         android:id="@+id/personalInfo"
@@ -78,6 +78,8 @@
         android:id="@+id/textView8"
         android:layout_width="126dp"
         android:layout_height="22dp"
+        android:layout_marginTop="321dp"
+        android:layout_marginBottom="241dp"
         android:fontFamily="sans-serif-black"
         android:text="Date of Birth"
         android:textColor="#070101"
@@ -85,8 +87,8 @@
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toStartOf="@+id/personalInfo"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/personalInfo"
+        app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
         app:layout_constraintVertical_bias="0.58"
@@ -96,12 +98,16 @@
         android:id="@+id/editTextDate"
         android:layout_width="160dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="137dp"
+        android:layout_marginTop="99dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="mm/dd/yyyy"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
+        app:layout_constraintEnd_toStartOf="@+id/genderSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/personalInfo"
+        app:layout_constraintVertical_bias="0.047"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="@+id/textView8"
@@ -135,6 +141,7 @@
         app:layout_constraintVertical_bias="0.944"
         tools:ignore="HardcodedText" />
 
+
     <EditText
         android:id="@+id/editPassword"
         android:layout_width="381dp"
@@ -145,22 +152,30 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="@+id/editEmailAddress"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="@+id/editTextDate"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.571"
+        app:layout_constraintVertical_bias="0.631"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="74dp"
         android:layout_height="19dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="113dp"
         android:fontFamily="sans-serif-black"
         android:textColor="#070202"
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/personalInfo"
+        app:layout_constraintVertical_bias="0.071"
+        tools:text="Gender" />
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -188,15 +203,32 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
+        app:layout_constraintEnd_toEndOf="@+id/Registerbutton"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/Registerbutton"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="0.359"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
         tools:text="Country" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="287dp"
-        android:layout_height="31dp"
+    <Spinner
+        android:id="@+id/genderSpinner"
+        android:layout_width="196dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="@string/gender"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/personalInfo"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <Spinner
+        android:id="@+id/countrySpinner"
+        android:layout_width="359dp"
+        android:layout_height="51dp"
         android:text="TextView"
         android:textColor="#0C0606"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
