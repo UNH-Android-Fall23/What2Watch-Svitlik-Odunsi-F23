@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentHomeBinding
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.shuffleGetRandom
 
 class HomeFragment : Fragment() {
     private val TAG = "SvitlikOdunsi"
@@ -39,7 +38,6 @@ class HomeFragment : Fragment() {
 
         btnPick.setOnClickListener {
             Log.d(TAG, "Just pick for me button was pressed!")
-            shuffleGetRandom()
             findNavController().navigate(R.id.navigation_shuffle)
         }
 

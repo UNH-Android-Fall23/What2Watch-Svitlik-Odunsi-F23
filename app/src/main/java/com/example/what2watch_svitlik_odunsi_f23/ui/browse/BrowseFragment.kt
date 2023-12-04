@@ -12,11 +12,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentBrowseBinding
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShows
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShowsList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.RecyclerResultsCard
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.browseFilters
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.db
 
 class BrowseFragment : Fragment() {
 
@@ -53,48 +54,73 @@ class BrowseFragment : Fragment() {
                 "Action" -> {
                     Log.d(TAG, "Action genre was chosen")
                     Log.d(TAG, "Answer data ${(action)}")
-                    answersList.add(0, AnswersData("", "action", "", 10))
+                    val answersData = AnswersData("", "action", "", 10)
 
-                }
+                    // Add the database query here
+                    if (answersList.isNotEmpty()) {
+                        Log.d(
+                            TAG,
+                            "Filter about to be query: = ${answersList[0].q1}, ${answersList[0].q2}, ${answersList[0].q3}, ${answersList[0].q4}"
+                        )
 
-                "Adventure" -> {
-                    Log.d(TAG, "adventure genre was chosen")
-                    Log.d(TAG, "Answer data ${(adventure)}")
-                    answersList.add(0, AnswersData("", "adventure", "", 10))
+                        db.collection("MoviesAndShows")
+                            .whereEqualTo("genre", answersList[0].q2)
+                            .get()
+                            .addOnSuccessListener { documents ->
+                                for (document in documents) {
+                                    Log.d(TAG, "${document.id} => $document.data}")
+                                    //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
+                                    val movieOrShow = MoviesAndShows(
+                                        tconst = document.id,
+                                        titleType = document.getString("titleType") ?: "",
+                                        primaryTitle = document.getString("primaryTitle") ?: "",
+                                        originalTitle = document.getString("originalTitle") ?: "",
+                                        startYear = document.getLong("startYear") ?: 0,
+                                        genre = document.getString("genre") ?: "",
+                                        isAdult = document.getString("isAdult") ?: "",
+                                        runtime = document.getString("runtime") ?: "",
+                                        endYear = document.getString("endYear") ?: "",
+                                        averageRating = document.getString("averageRating") ?: ""
+                                    )
 
-                }
+                                    MoviesAndShowsList.add(movieOrShow)
 
-                "Drama" -> {
-                    Log.d(TAG, "Drama genre was chosen")
-                    Log.d(TAG, "Answer data ${(drama)}")
-                    answersList.add(0, AnswersData(q1, drama, q3 , 10))
+                                    Log.d(
+                                        TAG,
+                                        "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}"
+                                    )
+                                }
 
+                                // Populate the RecyclerView after getting the data
+                                val browseRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
+                                for (result in MoviesAndShowsList) {
+                                    browseRecyclerList.add(
+                                        RecyclerResultsCard(
+                                            result.tconst,
+                                            result.primaryTitle,
+                                            result.titleType,
+                                            result.startYear,
+                                            result.genre,
+                                            result.averageRating
+                                        )
+                                    )
+                                }
+
+                                mRecyclerView = binding.recyclerViewMoviesShows
+                                mRecyclerView.setHasFixedSize(true)
+                                mRecyclerView.layoutManager = LinearLayoutManager(context)
+                                mRecyclerView.adapter =
+                                    BrowseRecyclerAdapter(browseRecyclerList, this@BrowseFragment)
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.w(TAG, "Error getting documents: ", exception)
+                            }
+                    } else {
+                        Log.e(TAG, "answersList is empty")
+                    }
                 }
             }
-
-            val answersData = AnswersData(answersList.toString())
-            browseFilters(answersData)
-            Log.d(TAG, "Everything uploaded into the array list")
-
         }
-        val browseRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
-        for (result in MoviesAndShowsList) {
-            browseRecyclerList.add(
-                RecyclerResultsCard(
-                    result.tconst,
-                    result.primaryTitle,
-                    result.titleType,
-                    result.startYear,
-                    result.genre,
-                    result.averageRating
-                )
-            )
-        }
-
-        mRecyclerView = binding.recyclerViewMoviesShows
-        mRecyclerView.setHasFixedSize(true)
-        mRecyclerView.layoutManager = LinearLayoutManager(context)
-        mRecyclerView.adapter = BrowseRecyclerAdapter(browseRecyclerList, this)
 
         val textView: TextView = binding.textView4
         browseViewModel.text.observe(viewLifecycleOwner) {
@@ -116,4 +142,3 @@ class BrowseFragment : Fragment() {
         )
     }
 }
-/* Have it add the quiz question into the array.. so genre is question 2  so add that intoa SECOND ARRAY and then do the qiery of that, or it may have to be 0, we shall see */
