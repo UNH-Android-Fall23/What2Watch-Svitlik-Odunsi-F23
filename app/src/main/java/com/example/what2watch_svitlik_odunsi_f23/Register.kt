@@ -48,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
             .also{
                     adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                genderSpinner.adapter=adapter
+                countrySpinner.adapter=adapter
             }
 
 
