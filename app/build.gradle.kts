@@ -69,8 +69,3 @@ dependencies {
     implementation ("com.google.firebase:firebase-messaging:23.3.1")
 }
 
-
-    implementation ("com.google.firebase:firebase-database-ktx:20.3.0")
-
-}
-

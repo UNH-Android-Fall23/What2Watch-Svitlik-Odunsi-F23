@@ -105,9 +105,6 @@
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
         app:layout_constraintEnd_toStartOf="@+id/genderSpinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/personalInfo"
-        app:layout_constraintVertical_bias="0.047"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="@+id/textView8"
@@ -169,13 +166,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.584"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/personalInfo"
         app:layout_constraintVertical_bias="0.071"
-        tools:text="Gender" />
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -203,15 +195,13 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="@+id/Registerbutton"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/Registerbutton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
         app:layout_constraintVertical_bias="0.359"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        tools:text="Country" />
+        tools:text="Country"
+        tools:ignore="UnknownId" />
 
     <Spinner
         android:id="@+id/genderSpinner"

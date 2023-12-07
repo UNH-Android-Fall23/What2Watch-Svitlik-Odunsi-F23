@@ -20,8 +20,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             onLogoutClick(it)
         }
 
-        view.findViewById<View>(R.id.text_reviews).setOnClickListener { Log.d(TAG) }
-        )
+     //   view.findViewById<View>(R.id.text_reviews).setOnClickListener { Log.d(TAG) }
+       // )
     }
 
     private fun showLogoutDialog() {
