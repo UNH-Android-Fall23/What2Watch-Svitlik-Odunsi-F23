@@ -34,7 +34,7 @@
         android:clickable="true"
         android:fontFamily="sans-serif-medium"
         android:onClick="onProfileClick"
-        android:text="Profile"
+        android:text="@string/profile"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_editProfile"
@@ -75,10 +75,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_Settings"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <TextView
         android:id="@+id/text_Settings"
@@ -93,7 +93,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/logout_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
         app:layout_constraintVertical_bias="1.0" />
@@ -102,14 +102,14 @@
         android:id="@+id/logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onSettingsClick"
-        android:text="Button"
+        android:onClick="onLogoutClick"
+        android:text="@string/log_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="0.876"
+        app:layout_constraintVertical_bias="0.818"
         tools:text="Log out" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
