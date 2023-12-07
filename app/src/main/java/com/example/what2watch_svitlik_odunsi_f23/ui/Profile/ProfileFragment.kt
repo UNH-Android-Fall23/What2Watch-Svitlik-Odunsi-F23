@@ -1,31 +1,56 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.Profile
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentProfileBinding
+import com.example.what2watch_svitlik_odunsi_f23.LoginActivity
+import com.example.what2watch_svitlik_odunsi_f23.R
 
-val TAG = "SvitlikOdunsi"
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-class ProfileFragment : Fragment() {
-    private var _binding: FragmentProfileBinding? = null
-    private val binding get() = _binding!!
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        return root
+        // Add a click listener to the logout button
+        view.findViewById<View>(R.id.logout_button).setOnClickListener {
+            onLogoutClick(it)
+        }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun showLogoutDialog() {
+        // Create a dialog to ask the user to confirm their logout
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setTitle("Confirm Logout")
+        builder.setMessage("Are you sure you want to log out?")
+        builder.setPositiveButton("Yes") { _, _ ->
+            // User confirmed logout, log out the user
+            logoutUser()
+        }
+        builder.setNegativeButton("No") { _, _ ->
+            // User canceled logout, do nothing
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    fun onLogoutClick(view: View) {
+        // Call the new function to show the logout dialog
+        showLogoutDialog()
+    }
+
+    private fun logoutUser() {
+        // Perform your logout logic here
+
+        // Navigate back to the login page
+        val intent = Intent(requireActivity(), LoginActivity::class.java)
+        startActivity(intent)
+        activity?.finish()
     }
 }
+    private fun Intent(profileFragment: ProfileFragment, java: Any): Intent {
+        TODO("Not yet implemented")
+    }
+
 
