@@ -1,5 +1,5 @@
-package com.example.what2watch_svitlik_odunsi_f23
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -9,35 +9,35 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.ads.mediationtestsuite.activities.HomeActivity
+import com.example.what2watch_svitlik_odunsi_f23.R
+import com.example.what2watch_svitlik_odunsi_f23.R.id.genderSpinner
+import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 
-class RegisterActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var userRef: DatabaseReference
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
-        val genderOptions=arrayOf("Male","Female","Non-Binary")
-        val countryOptions = arrayOf("United States", "Nigeria", "China", "Russia", "United Kingdom", "Ghana", "Eritrea")
-        auth = Firebase.auth
-       userRef = Firebase.database
+        setContentView(R.layout.activity_main)
 
-        //Citation :Android Studio Documentation.
-        val genderSpinner = findViewById<Spinner>(R.id.genderSpinner)
+        auth = FirebaseAuth.getInstance()
+        userRef = FirebaseDatabase.getInstance().getReference("UserRegistration")
+
+        val genderSpinner = findViewById<Spinner>(genderSpinner)
         ArrayAdapter.createFromResource(
             this,
             R.array.gender_options,
             android.R.layout.simple_spinner_item)
-            .also{
-                adapter ->
+            .also { adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                genderSpinner.adapter=adapter
+                genderSpinner.adapter = adapter
             }
 
         val countrySpinner = findViewById<Spinner>(R.id.countrySpinner)
@@ -45,13 +45,10 @@ class RegisterActivity : AppCompatActivity() {
             this,
             R.array.country_options,
             android.R.layout.simple_spinner_item)
-            .also{
-                    adapter ->
+            .also { adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                countrySpinner.adapter=adapter
+                countrySpinner.adapter = adapter
             }
-
-
 
         val registerButton: Button = findViewById(R.id.Registerbutton)
         registerButton.setOnClickListener {
@@ -73,21 +70,18 @@ class RegisterActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
 
-                    // Get the use val selectedCountry: String =countrySpinner.selectedItem.toString()
-
                     // Save the user data to Firebase Database
                     user?.let { user ->
                         val userId = user.uid
-                        val selectedGender = "Female, Male, Non-Binary"
-                        //val userRegistrationReference = userRef.child("UserRegistration")
-                        val selectedCountry = "United States, Nigeria, China, Russia, United Kingdom, Ghana, Eritrea"
+                        val selectedGender = findViewById<Spinner>(genderSpinner).selectedItem.toString()
+                        val selectedCountry = findViewById<Spinner>(R.id.countrySpinner).selectedItem.toString()
                         val userData = mapOf(
                             "uid" to userId,
                             "email" to email,
                             "gender" to selectedGender,
                             "country" to selectedCountry
                         )
-                        //userRegistrationReference.child(userId).setValue(userData)
+                        userRef.child(userId).setValue(userData)
                     }
 
                     updateUI(auth.currentUser)
