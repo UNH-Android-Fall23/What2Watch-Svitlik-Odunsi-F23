@@ -2,11 +2,13 @@ package com.example.what2watch_svitlik_odunsi_f23.ui.Profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.what2watch_svitlik_odunsi_f23.LoginActivity
 import com.example.what2watch_svitlik_odunsi_f23.R
+import com.example.what2watch_svitlik_odunsi_f23.ui.notifications.TAG
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
@@ -17,10 +19,13 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         view.findViewById<View>(R.id.logout_button).setOnClickListener {
             onLogoutClick(it)
         }
+
+        view.findViewById<View>(R.id.text_reviews).setOnClickListener { Log.d(TAG) }
+        )
     }
 
     private fun showLogoutDialog() {
-        // Create a dialog to ask the user to confirm their logout
+        // This creates a dialog to ask the user to confirm their logout.
         val builder = AlertDialog.Builder(requireActivity())
         builder.setTitle("Confirm Logout")
         builder.setMessage("Are you sure you want to log out?")
@@ -29,21 +34,21 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             logoutUser()
         }
         builder.setNegativeButton("No") { _, _ ->
-            // User canceled logout, do nothing
+            // If User canceled logout, do nothing
         }
         val dialog = builder.create()
         dialog.show()
     }
 
     fun onLogoutClick(view: View) {
-        // Call the new function to show the logout dialog
+        // Calling the new function to show the logout dialog
         showLogoutDialog()
     }
 
     private fun logoutUser() {
-        // Perform your logout logic here
+        //logout logic permormed here
 
-        // Navigate back to the login page
+        // Navigating back to the login page
         val intent = Intent(requireActivity(), LoginActivity::class.java)
         startActivity(intent)
         requireActivity().finish()
