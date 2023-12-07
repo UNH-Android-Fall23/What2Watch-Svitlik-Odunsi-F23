@@ -22,4 +22,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="country">Country</string>
     <string name="gender">Gender</string>
+    <string name="log_out">Log Out</string>
+    <string name="profile">Profile</string>
 </resources>
