@@ -1,13 +1,13 @@
 package com.example.what2watch_svitlik_odunsi_f23
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.what2watch_svitlik_odunsi_f23.databinding.ActivityMainBinding
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+    fun onLogoutClick(view: View) {
+        // Handle the logout action here.
+    }
+
+
 }
 
 
