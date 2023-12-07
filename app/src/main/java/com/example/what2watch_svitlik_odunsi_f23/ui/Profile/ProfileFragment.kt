@@ -46,7 +46,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         // Navigate back to the login page
         val intent = Intent(requireActivity(), LoginActivity::class.java)
         startActivity(intent)
-        activity?.finish()
+        requireActivity().finish()
     }
 }
     private fun Intent(profileFragment: ProfileFragment, java: Any): Intent {
