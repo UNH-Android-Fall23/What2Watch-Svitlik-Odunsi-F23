@@ -74,5 +74,3 @@ dependencies {
 
 }
 
-"com.google.gms.google-services"
-
