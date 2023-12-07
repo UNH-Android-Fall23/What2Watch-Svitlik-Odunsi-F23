@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.ads.mediationtestsuite.activities.HomeActivity
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.R.id.genderSpinner
 import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
@@ -105,7 +104,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             // navigate to the home fragment
-            val intent = Intent(this, HomeActivity::class.java)
+           // val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         } else {
             // Prompt the user to try again with different credentials
