@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentResultsBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -38,6 +39,7 @@ class ResultsFragment : Fragment() {
             textView.text = it
         }
 
+        //val ratingBar = findByViewId(R.id.ratingBar)
 
         //Results Recycler View
         val resultsRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()

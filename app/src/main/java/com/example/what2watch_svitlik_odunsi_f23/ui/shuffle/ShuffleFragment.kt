@@ -21,9 +21,6 @@ class ShuffleFragment : Fragment() {
 
     private var _binding: FragmentShuffleBinding? = null
     private lateinit var mRecyclerView: RecyclerView
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -37,17 +34,12 @@ class ShuffleFragment : Fragment() {
         _binding = FragmentShuffleBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val k = 10
-
         db.collection("MoviesAndShows")
+            .limit(25)
             .get()
             .addOnSuccessListener { documents ->
-                val shuffledDocuments = documents.toMutableList().shuffled()
-                val selectedDocuments = shuffledDocuments.take(k)
-
-                for (document in selectedDocuments) {
+                for (document in documents) {
                     Log.d(TAG, "${document.id} => $document.data}")
-                    //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
                     val movieOrShow = MoviesAndShows(
                         tconst = document.id,
                         titleType = document.getString("titleType") ?: "",
