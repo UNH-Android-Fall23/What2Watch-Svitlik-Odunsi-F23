@@ -31,11 +31,13 @@ class ResultsAdapter (
         val (imageResource, name, type, genre, year, rating) = mExampleList[position]
       //  holder.mImageView.setImageResource(imageResource)
         holder.mTextView1.text = name
-        holder.mTextView2.text = type
-        holder.mTextGenre.text = genre.toString()
+        holder.mTextView2.text = type.capitalize()
+        holder.mTextGenre.text = genre.toString().capitalize()
         holder.mTextYear.text = year.toString()
         holder.mTextRating.text = rating.toString()
 
+        val criticRatingText = "Critic Rating: $rating"
+        holder.mTextRating.text = criticRatingText
 
         holder.itemView.setOnClickListener {
             Log.d(TAG, "Clicked position i s$position")
