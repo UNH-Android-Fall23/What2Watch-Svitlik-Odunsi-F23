@@ -7,43 +7,44 @@
     tools:context=".ui.browse.BrowseFragment">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/select"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
             android:layout_width="match_parent"
             android:layout_height="99dp"
             android:inputType="none" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewMoviesShows"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.913"
-            tools:ignore="NotSibling"
-            tools:listitem="@layout/movies_shows_card" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMoviesShows"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        tools:listitem="@layout/movies_shows_card" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" "
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewMoviesShows"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="127dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

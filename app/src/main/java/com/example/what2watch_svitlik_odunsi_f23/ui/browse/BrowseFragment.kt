@@ -25,6 +25,7 @@ class BrowseFragment : Fragment() {
     val action: String = "action"
     val adventure: String = "adventure"
     val drama: String = "drama"
+    val documentary: String = "documentary"
     private var _binding: FragmentBrowseBinding? = null
     private lateinit var mRecyclerView: RecyclerView
     private val binding get() = _binding!!
@@ -43,7 +44,9 @@ class BrowseFragment : Fragment() {
         val root: View = binding.root
 
         val autoCompleteTextView = binding.autoCompleteTxt
-        val adapterItems = arrayOf("Action", "Adventure", "Drama")
+        val adapterItems = arrayOf(
+            "Action", "Adventure", "Sci-Fi", "Romance", "Comedy", "Thriller", "Horror",
+            "Romantic Comedy", "Faith", "Drama", "Documentary", "Fantasy", "Mystery", "History")
         val adapter = createArrayAdapter(adapterItems)
         autoCompleteTextView.setAdapter(adapter)
 
@@ -55,20 +58,25 @@ class BrowseFragment : Fragment() {
                     Log.d(TAG, "Action genre was chosen")
                     Log.d(TAG, "Answer data ${(action)}")
                     val answersData = AnswersData("", "action", "", 10)
+                }
+                "Adventure" -> {
+                    Log.d(TAG, "Action genre was chosen")
+                    Log.d(TAG, "Answer data ${(adventure)}")
+                    val answersData = AnswersData("", "adventure", "", 10)
+                }
+                    "Drama" -> {
+                        Log.d(TAG, "Action genre was chosen")
+                        Log.d(TAG, "Answer data ${(drama)}")
+                        val answersData = AnswersData("", "Drama", "", 10)
 
-                    // Add the database query here
-                    if (answersList.isNotEmpty()) {
-                        Log.d(
-                            TAG,
-                            "Filter about to be query: = ${answersList[0].q1}, ${answersList[0].q2}, ${answersList[0].q3}, ${answersList[0].q4}"
-                        )
-
-                        db.collection("MoviesAndShows")
-                            .whereEqualTo("genre", answersList[0].q2)
+                    db.collection("MoviesAndShows")
+                            .whereEqualTo("genre", answersData.q2)
+                            .limit(25) // Set the limit to 25 documents
                             .get()
                             .addOnSuccessListener { documents ->
                                 for (document in documents) {
                                     Log.d(TAG, "${document.id} => $document.data}")
+
                                     //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
                                     val movieOrShow = MoviesAndShows(
                                         tconst = document.id,
@@ -115,12 +123,11 @@ class BrowseFragment : Fragment() {
                             .addOnFailureListener { exception ->
                                 Log.w(TAG, "Error getting documents: ", exception)
                             }
-                    } else {
-                        Log.e(TAG, "answersList is empty")
+
                     }
                 }
             }
-        }
+
 
         val textView: TextView = binding.textView4
         browseViewModel.text.observe(viewLifecycleOwner) {
