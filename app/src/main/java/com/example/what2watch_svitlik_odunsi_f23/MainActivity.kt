@@ -1,7 +1,11 @@
 package com.example.what2watch_svitlik_odunsi_f23
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.RatingBar
+import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,7 +20,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-     val TAG = "SvitlikOdunsi"
+    val TAG = "SvitlikOdunsi"
 
     private var db = Firebase.firestore
 
@@ -43,11 +47,32 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
     fun onLogoutClick(view: View) {
         // Handle the logout action here.
     }
 
+    fun handleRatingBarChange(rating: Int) {
+        val ratingValue = rating
+        Log.d(TAG, "Ratings bar touched: $rating")
 
+        //hard coded data for firebase
+        val tconst: String = "fsdfksdf"
+        val username: String = "sarahsvitlik"
+        val ratingsCollection = Firebase.firestore.collection("MovieReviews")
+
+        val newUserReview = hashMapOf(
+            "tconst" to tconst,
+            "rating" to ratingValue,
+            "username" to username
+        )
+
+        ratingsCollection.add(newUserReview)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "Rating added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.e(TAG, "Error adding rating", e)
+            }
+    }
 }
-
-

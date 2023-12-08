@@ -74,7 +74,9 @@
             android:numStars="5"
             android:scaleX="0.5"
             android:scaleY="0.5"
-            android:stepSize="1" />
+            android:stepSize="1"
+            android:rating="@={viewModel.moviesshowscard}"
+        />
 
 
     </RelativeLayout>
