@@ -1,5 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.browse
 
+import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -28,6 +29,7 @@ class BrowseFragment : Fragment() {
     val documentary: String = "documentary"
     private var _binding: FragmentBrowseBinding? = null
     private lateinit var mRecyclerView: RecyclerView
+    var answersData = AnswersData("", "", "", 10)
     private val binding get() = _binding!!
     val q1: String = "   "
     val q3: String = "   "
@@ -55,78 +57,78 @@ class BrowseFragment : Fragment() {
 
             when (selectedItem) {
                 "Action" -> {
+                    MoviesAndShowsList.clear()
                     Log.d(TAG, "Action genre was chosen")
                     Log.d(TAG, "Answer data ${(action)}")
-                    val answersData = AnswersData("", "action", "", 10)
+                    answersData = AnswersData("", "action", "", 10)
                 }
                 "Adventure" -> {
+                    MoviesAndShowsList.clear()
                     Log.d(TAG, "Action genre was chosen")
                     Log.d(TAG, "Answer data ${(adventure)}")
-                    val answersData = AnswersData("", "adventure", "", 10)
+                    answersData = AnswersData("", "adventure", "", 10)
                 }
-                    "Drama" -> {
-                        Log.d(TAG, "Action genre was chosen")
-                        Log.d(TAG, "Answer data ${(drama)}")
-                        val answersData = AnswersData("", "Drama", "", 10)
-
+                "Drama" -> {
+                    MoviesAndShowsList.clear()
+                    Log.d(TAG, "Action genre was chosen")
+                    Log.d(TAG, "Answer data ${(drama)}")
+                    answersData = AnswersData("", "Drama", "", 10)
+                }}
                     db.collection("MoviesAndShows")
-                            .whereEqualTo("genre", answersData.q2)
-                            .limit(25) // Set the limit to 25 documents
-                            .get()
-                            .addOnSuccessListener { documents ->
-                                for (document in documents) {
-                                    Log.d(TAG, "${document.id} => $document.data}")
+                        .whereEqualTo("genre", answersData.q2)
+                        .limit(25) // Set the limit to 25 documents
+                        .get()
+                        .addOnSuccessListener { documents ->
+                            for (document in documents) {
+                                Log.d(TAG, "${document.id} => $document.data}")
 
-                                    //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
-                                    val movieOrShow = MoviesAndShows(
-                                        tconst = document.id,
-                                        titleType = document.getString("titleType") ?: "",
-                                        primaryTitle = document.getString("primaryTitle") ?: "",
-                                        originalTitle = document.getString("originalTitle") ?: "",
-                                        startYear = document.getLong("startYear") ?: 0,
-                                        genre = document.getString("genre") ?: "",
-                                        isAdult = document.getString("isAdult") ?: "",
-                                        runtime = document.getString("runtime") ?: "",
-                                        endYear = document.getString("endYear") ?: "",
-                                        averageRating = document.getString("averageRating") ?: ""
-                                    )
+                                //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
+                                val movieOrShow = MoviesAndShows(
+                                    tconst = document.id,
+                                    titleType = document.getString("titleType") ?: "",
+                                    primaryTitle = document.getString("primaryTitle") ?: "",
+                                    originalTitle = document.getString("originalTitle") ?: "",
+                                    startYear = document.getLong("startYear") ?: 0,
+                                    genre = document.getString("genre") ?: "",
+                                    isAdult = document.getString("isAdult") ?: "",
+                                    runtime = document.getString("runtime") ?: "",
+                                    endYear = document.getString("endYear") ?: "",
+                                    averageRating = document.getString("averageRating") ?: ""
+                                )
 
-                                    MoviesAndShowsList.add(movieOrShow)
+                                MoviesAndShowsList.add(movieOrShow)
 
-                                    Log.d(
-                                        TAG,
-                                        "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}"
-                                    )
-                                }
-
-                                // Populate the RecyclerView after getting the data
-                                val browseRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
-                                for (result in MoviesAndShowsList) {
-                                    browseRecyclerList.add(
-                                        RecyclerResultsCard(
-                                            result.tconst,
-                                            result.primaryTitle,
-                                            result.titleType,
-                                            result.startYear,
-                                            result.genre,
-                                            result.averageRating
-                                        )
-                                    )
-                                }
-
-                                mRecyclerView = binding.recyclerViewMoviesShows
-                                mRecyclerView.setHasFixedSize(true)
-                                mRecyclerView.layoutManager = LinearLayoutManager(context)
-                                mRecyclerView.adapter =
-                                    BrowseRecyclerAdapter(browseRecyclerList, this@BrowseFragment)
-                            }
-                            .addOnFailureListener { exception ->
-                                Log.w(TAG, "Error getting documents: ", exception)
+                                Log.d(
+                                    TAG,
+                                    "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}"
+                                )
                             }
 
-                    }
-                }
-            }
+                            // Populate the RecyclerView after getting the data
+                            val browseRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
+                            for (result in MoviesAndShowsList) {
+                                browseRecyclerList.add(
+                                    RecyclerResultsCard(
+                                        result.tconst,
+                                        result.primaryTitle,
+                                        result.titleType,
+                                        result.startYear,
+                                        result.genre,
+                                        result.averageRating
+                                    )
+                                )
+                            }
+
+                            mRecyclerView = binding.recyclerViewMoviesShows
+                            mRecyclerView.setHasFixedSize(true)
+                            mRecyclerView.layoutManager = LinearLayoutManager(context)
+                            mRecyclerView.adapter =
+                                BrowseRecyclerAdapter(browseRecyclerList, this@BrowseFragment)
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.w(TAG, "Error getting documents: ", exception)
+                        }
+        }
 
 
         val textView: TextView = binding.textView4
