@@ -22,6 +22,8 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var userRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 

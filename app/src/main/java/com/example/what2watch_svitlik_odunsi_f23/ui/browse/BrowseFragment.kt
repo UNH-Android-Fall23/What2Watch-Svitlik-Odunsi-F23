@@ -36,6 +36,7 @@ class BrowseFragment : Fragment() {
     val q4 = 10
 
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
