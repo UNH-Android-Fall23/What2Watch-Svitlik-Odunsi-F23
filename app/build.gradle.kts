@@ -47,6 +47,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation ("com.google.firebase:firebase-messaging:23.3.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
@@ -64,6 +65,8 @@ dependencies {
     implementation("com.google.firebase:firebase-common-ktx:20.4.2")
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation("com.google.firebase:firebase-messaging:23.3.1")
+    implementation ("androidx.activity:activity-ktx:1.8.1")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("com.google.firebase:firebase-auth:20.0.1")
 
 }

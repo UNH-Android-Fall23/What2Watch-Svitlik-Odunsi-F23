@@ -8,7 +8,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.what2watch_svitlik_odunsi_f23.LoginActivity
 import com.example.what2watch_svitlik_odunsi_f23.R
-import com.example.what2watch_svitlik_odunsi_f23.ui.notifications.TAG
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 

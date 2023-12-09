@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     val TAG = "SvitlikOdunsi"
+    val apiLevel = android.os.Build.VERSION.SDK_INT
 
     private var db = Firebase.firestore
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
+        Log.d(TAG, "The device is running on API level $apiLevel")
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each

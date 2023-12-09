@@ -10,20 +10,15 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.what2watch_svitlik_odunsi_f23.MainActivity
 import com.example.what2watch_svitlik_odunsi_f23.R
-import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
-val TAG = "SvitlikOdunsi"
 
-
-public class PushNotifications : FirebaseMessagingService() {
+class NotificationsActivity : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         if (remoteMessage.notification != null) {
             val title = remoteMessage.notification?.title
             val body = remoteMessage.notification?.body
-
-            // Call a method to display the notification
             showNotification(title, body)
         }
     }
@@ -36,18 +31,20 @@ public class PushNotifications : FirebaseMessagingService() {
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        val pendingIntent: PendingIntent =
+            PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
         val builder = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(R.drawable.cinema)
+            .setSmallIcon(R.drawable.tv)
             .setContentTitle(title)
             .setContentText(body)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 
-        val notificationManager = NotificationManagerCompat.from(this)
-        val notificationId = 1
+        val notificationId = System.currentTimeMillis().toInt()
+
+        val notificationManager = NotificationManagerCompat.from(applicationContext)
         notificationManager.notify(notificationId, builder.build())
     }
 
@@ -60,7 +57,8 @@ public class PushNotifications : FirebaseMessagingService() {
                 description = descriptionText
             }
 
-            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
     }
