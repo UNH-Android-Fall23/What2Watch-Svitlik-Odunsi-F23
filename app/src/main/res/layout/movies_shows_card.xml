@@ -9,8 +9,6 @@
         android:layout_height="223dp"
         android:padding="20dp">
 
-        <!-- Temporary photo -->
-
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="93dp"
@@ -24,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="#000000"
             android:layout_toEndOf="@+id/image_view"
             android:text="Movie Title"
             android:textSize="18sp"
@@ -33,6 +32,7 @@
             android:id="@+id/text_type1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:layout_below="@id/text_name"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/image_view"
@@ -47,12 +47,14 @@
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/image_view"
             android:paddingTop="5dp"
-            android:text="Genre" />
+            android:text="Genre"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@id/text_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:layout_below="@id/text_genre"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/image_view"
@@ -63,6 +65,7 @@
             android:id="@+id/text_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:layout_below="@id/text_year"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/image_view"
@@ -74,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_rating"
+            android:textColor="#000000"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/image_view"
             android:paddingTop="5dp"
