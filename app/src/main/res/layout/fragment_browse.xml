@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,27 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".ui.browse.BrowseFragment">
 
+    <TextView
+        android:id="@+id/text_Browse"
+        android:layout_width="181dp"
+        android:layout_height="68dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Browse"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.024" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/select"
+        android:hint="What genre are you in the mood for? "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/text_Browse">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
             android:layout_width="match_parent"
-            android:layout_height="99dp"
-            android:inputType="none" />
+            android:layout_height="33dp"
+            android:textColor="@color/black"
+            android:inputType="none"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMoviesShows"
+        android:layout_marginTop="20dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,3 +67,5 @@
         tools:layout_editor_absoluteY="127dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
