@@ -21,13 +21,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/text_1"
         android:layout_width="283dp"
         android:layout_height="88dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="ready for something new?"
         android:textAlignment="center"
@@ -43,7 +43,7 @@
         style="@style/Widget.Material3.Button"
         android:layout_width="198dp"
         android:layout_height="66dp"
-        android:backgroundTint="#8F79BF"
+        android:backgroundTint="#7973F7"
         android:fontFamily="@font/alata"
         android:text="Shuffle"
         android:textSize="20dp"
@@ -60,7 +60,7 @@
         android:layout_width="198dp"
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#8F79BF"
+        android:backgroundTint="#7973F7"
         android:fontFamily="@font/alata"
         android:text="Start"
         android:textSize="20dp"
@@ -74,7 +74,7 @@
         android:layout_width="200dp"
         android:layout_height="216dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/filmreel"
+        android:src="@drawable/tv"
         app:layout_constraintEnd_toEndOf="@+id/text_Home"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/text_Home"
