@@ -29,33 +29,34 @@ class RegisterActivity : AppCompatActivity() {
         userRef = Firebase.database.reference
 
         // Initialize spinners with R arrays
-        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
-        ArrayAdapter.createFromResource(
+      //  val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
+     /*    ArrayAdapter.createFromResource(
             this,
             R.array.gender_options,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            genderSpinner.adapter = adapter
+         //   genderSpinner.adapter = adapter
         }
 
-        val countrySpinner: Spinner = findViewById(R.id.countrySpinner)
+      //  val countrySpinner: Spinner = findViewById(R.id.countrySpinner)
         ArrayAdapter.createFromResource(
             this,
             R.array.country_options,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            countrySpinner.adapter = adapter
+          //  countrySpinner.adapter = adapter
         }
-
+*/
         val registerButton: Button = findViewById(R.id.Registerbutton)
         registerButton.setOnClickListener {
             val email: String = findViewById<EditText>(R.id.editEmailAddress).text.toString()
             val password: String = findViewById<EditText>(R.id.editPassword).text.toString()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 registerUser(email, password)
             }
@@ -70,10 +71,10 @@ class RegisterActivity : AppCompatActivity() {
                     val user = auth.currentUser
 
                     // Get the user selected country and gender
-                    val genderSpinner = findViewById<Spinner>(R.id.genderSpinner)
-                    val countrySpinner = findViewById<Spinner>(R.id.countrySpinner)
-                    val selectedGender = genderSpinner.selectedItem.toString()
-                    val selectedCountry = countrySpinner.selectedItem.toString()
+             ///       val genderSpinner = findViewById<Spinner>(R.id.genderSpinner)
+             //       val countrySpinner = findViewById<Spinner>(R.id.countrySpinner)
+            //        val selectedGender = genderSpinner.selectedItem.toString()
+           //         val selectedCountry = countrySpinner.selectedItem.toString()
 
                     // Save the user data to Firebase Database
                     user?.let { user ->
@@ -82,8 +83,8 @@ class RegisterActivity : AppCompatActivity() {
                         val userData = mapOf(
                             "uid" to userId,
                             "email" to email,
-                            "gender" to selectedGender,
-                            "country" to selectedCountry
+                 //           "gender" to selectedGender,
+               //             "country" to selectedCountry
                         )
                         userRegistrationReference.child(userId).setValue(userData)
                     }
@@ -92,8 +93,10 @@ class RegisterActivity : AppCompatActivity() {
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     updateUI(null)
                 }
             }
@@ -101,12 +104,14 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            // navigate to the home fragment
+            // navigate to the HomeActivity (or wherever you want to navigate)
             val intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
+            finish() // Optional: Close the current activity to prevent going back
         } else {
             // Prompt the user to try again with different credentials
-            Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }
