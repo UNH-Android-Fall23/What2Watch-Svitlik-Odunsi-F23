@@ -139,7 +139,7 @@
         app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toBottomOf="@id/editEmailAddress"
         tools:ignore="HardcodedText" />
-<!--
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="74dp"
@@ -198,5 +198,5 @@
         app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
--->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,10 +20,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        Log.d(TAG, "Started login")
         buttonLogin = findViewById(R.id.buttonLogin)
         firebaseAuth = FirebaseAuth.getInstance()
         buttonLogin.setOnClickListener {
-            loginUser()
+           loginUser()
         }
 
         buttonRegister = findViewById(R.id.buttonRegister)
@@ -74,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show()
         }
     }
-
+/*
     override fun onStart() {
         super.onStart()
         if (!isFinishing) {
@@ -82,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
             updateUI(currentUser)
         }
     }
-
+ */
     companion object {
         private const val TAG = "LoginActivity"
     }
