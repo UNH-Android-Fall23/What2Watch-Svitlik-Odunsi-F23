@@ -9,13 +9,15 @@
         android:layout_height="223dp"
         android:padding="20dp">
 
+        <!-- Temporary photo -->
+
         <ImageView
             android:id="@+id/image_view"
-            android:layout_width="100dp"
+            android:layout_width="93dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/results_image"
-            android:src="@drawable/cinema" /> <!-- Temporary photo -->
+            android:src="@drawable/tv2" />
 
         <TextView
             android:id="@+id/text_name"

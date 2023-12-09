@@ -67,7 +67,7 @@ class ShuffleFragment : Fragment() {
                 Log.w(TAG, "Error getting documents: ", exception)
             }
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textShuffle
         shuffleViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
