@@ -16,8 +16,11 @@ data class MoviesAndShows(
     val runtime: String = "",
     val endYear: String = "",
     val averageRating: String = "",
+    val userRating:Int = 0
 
-)
+) {
+}
+
 var MoviesAndShowsList: ArrayList<MoviesAndShows> = arrayListOf()
 var db = Firebase.firestore
 /*

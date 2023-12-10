@@ -1,6 +1,5 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.browse
 
-import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,7 +15,6 @@ import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentBrowseBindi
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShows
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShowsList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.RecyclerResultsCard
-import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.db
 
@@ -115,7 +113,8 @@ class BrowseFragment : Fragment() {
                                         result.titleType,
                                         result.startYear,
                                         result.genre,
-                                        result.averageRating
+                                        result.averageRating,
+                                        result.userRating
                                     )
                                 )
                             }

@@ -6,13 +6,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RatingBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentShuffleBinding
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShows
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShowsList
@@ -80,7 +78,7 @@ class ShuffleFragment : Fragment() {
                     result.titleType,
                     result.startYear,
                     result.genre,
-                    result.averageRating
+                    result.averageRating,
                 )
             )
         }

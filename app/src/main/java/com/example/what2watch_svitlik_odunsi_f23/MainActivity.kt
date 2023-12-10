@@ -56,27 +56,4 @@ class MainActivity : AppCompatActivity() {
         // Handle the logout action here.
     }
 
-    fun handleRatingBarChange(rating: Int) {
-        val ratingValue = rating
-        Log.d(TAG, "Ratings bar touched: $rating")
-
-        //hard coded data for firebase
-        val tconst: String = "fsdfksdf"
-        val username: String = "sarahsvitlik"
-        val ratingsCollection = Firebase.firestore.collection("MovieReviews")
-
-        val newUserReview = hashMapOf(
-            "tconst" to tconst,
-            "rating" to ratingValue,
-            "username" to username
-        )
-
-        ratingsCollection.add(newUserReview)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "Rating added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.e(TAG, "Error adding rating", e)
-            }
-    }
 }
