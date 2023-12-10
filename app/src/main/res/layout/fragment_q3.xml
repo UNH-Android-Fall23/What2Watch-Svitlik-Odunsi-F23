@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.q3decade.Q3Fragment">
+    tools:context=".ui.q3decade.q3Fragment">
 
     <TextView
         android:id="@+id/text_Q3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -24,99 +25,104 @@
 
     <TextView
         android:id="@+id/text_Home"
-        android:layout_width="260dp"
-        android:layout_height="62dp"
-        android:fontFamily="@font/alata"
+        android:layout_width="311dp"
+        android:layout_height="69dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text=" What2Watch"
         android:textColor="#000000"
-        android:textSize="40sp"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <TextView
         android:id="@+id/text_Decade"
-        android:layout_width="212dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="25dp"
-        android:fontFamily="@font/alata"
+        android:layout_width="211dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text=" What Decade?"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="@id/text_Home"
-        app:layout_constraintRight_toRightOf="@id/text_Home"
-        app:layout_constraintTop_toBottomOf="@id/text_Home" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@id/text_Home"
+        app:layout_constraintVertical_chainStyle="packed" />
+
 
     <Button
         android:id="@+id/btn_80s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="80's"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_90s" />
+        style="@style/Widget.Material3.Button"
+        android:layout_width="324dp"
+        android:layout_height="68dp"
 
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#7973F7"
+        android:fontFamily="@font/alata"
+        android:text="80's"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/text_Decade" />
 
     <Button
         android:id="@+id/btn_90s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="324dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#7973F7"
+        android:fontFamily="@font/alata"
+
         android:text="90's"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_Home" />
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/btn_80s" />
 
     <Button
         android:id="@+id/btn_00s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="324dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#7973F7"
+        android:fontFamily="@font/alata"
         android:text="00's"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_90s" />
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
 
     <Button
         android:id="@+id/btn_10s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="324dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#7973F7"
+        android:fontFamily="@font/alata"
         android:text="10's"
-        app:layout_constraintEnd_toStartOf="@+id/btn_20s"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintTop_toBottomOf="@+id/btn_00s" />
 
     <Button
         android:id="@+id/btn_20s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="324dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#7973F7"
+        android:fontFamily="@font/alata"
         android:text="20's"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_90s" />
-
-    <Button
-        android:id="@+id/btn_recent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toBottomOf="@+id/btn_10s" />
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_recent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

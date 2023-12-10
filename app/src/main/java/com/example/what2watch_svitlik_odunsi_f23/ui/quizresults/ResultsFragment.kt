@@ -24,7 +24,6 @@ class ResultsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var mRecyclerView: RecyclerView
     val TAG = "SvitlikOdunsi"
-    private lateinit var ratingBar: RatingBar
 
     override fun onCreateView(
         inflater: LayoutInflater,

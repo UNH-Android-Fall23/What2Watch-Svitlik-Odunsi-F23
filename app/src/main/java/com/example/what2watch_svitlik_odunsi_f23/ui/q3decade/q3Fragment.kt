@@ -54,21 +54,14 @@ class q3Fragment : Fragment() {
         }
 
         // Buttons for the different decades
-        val btnNext = binding.btnNext
         val btn80s = binding.btn80s
         val btn90s = binding.btn90s
         val btn00s = binding.btn00s
         val btn10s = binding.btn10s
         val btn20s = binding.btn20s
-        val btnRecent = binding.btnRecent
         val q1 = answersList[0].q1
         val q2 = answersList[0].q2
 
-        // Button click listeners
-        btnNext.setOnClickListener {
-            Log.d(TAG, "Next button was pressed!")
-            findNavController().navigate(R.id.navigation_q4)
-        }
 
 
         btn80s.setOnClickListener {
@@ -117,12 +110,6 @@ class q3Fragment : Fragment() {
         }
 
 
-        /* may have to get rid of this, no "recent" on imdb dataset */
-        btnRecent.setOnClickListener {
-            Log.d(TAG, "Recent button was pressed!")
-            //answersList.add(AnswersData(q3 = recent))
-            findNavController().navigate(R.id.navigation_q4)
-        }
         return root
     }
 
