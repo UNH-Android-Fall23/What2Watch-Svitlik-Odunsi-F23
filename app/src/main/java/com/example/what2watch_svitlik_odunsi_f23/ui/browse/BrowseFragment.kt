@@ -92,15 +92,14 @@ class BrowseFragment : Fragment() {
                                     isAdult = document.getString("isAdult") ?: "",
                                     runtime = document.getString("runtime") ?: "",
                                     endYear = document.getString("endYear") ?: "",
-                                    criticRating = document.getString("averageRating") ?: ""
+                                    criticRating = document.getString("averageRating") ?: "",
+                                    userRating = document.getLong("userRating") ?: 0
+
                                 )
 
                                 MoviesAndShowsList.add(movieOrShow)
 
-                                Log.d(
-                                    TAG,
-                                    "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}"
-                                )
+                                Log.d(TAG, "Added IMDb information into the MoviesAndShows Data array, ${(movieOrShow)}")
                             }
 
                             // Populate the RecyclerView after getting the data

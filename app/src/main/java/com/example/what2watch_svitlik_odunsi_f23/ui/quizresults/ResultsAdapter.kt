@@ -45,6 +45,9 @@ class ResultsAdapter(
         holder.mTextRating.text = criticRating.toString()
         holder.mStarRating.rating = userRating.toFloat()
 
+        val userRatingBar = holder.itemView.findViewById<RatingBar>(R.id.ratingBar)
+        userRatingBar.rating = userRating.toFloat()
+
         val TAG = "SvitlikOdunsi"
         holder.mStarRating.setOnRatingBarChangeListener { _, rating, _ ->
             Log.d(TAG, "Ratings bar touched: $rating")
@@ -55,6 +58,8 @@ class ResultsAdapter(
                 //check if the rating is already in the database
                 // if not, then run the code below
                 // if it is, just do an update database query
+            //todo: I need to add how to calculate the average user rating, so I would have to
+                // loop through all user ratings for one movie, add that, and then divide that by total users
 
             val username: String = "need to add this"
             val ratingsCollection = Firebase.firestore.collection("MoviesReviews")

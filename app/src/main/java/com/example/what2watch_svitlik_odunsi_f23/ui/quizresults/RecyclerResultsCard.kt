@@ -7,5 +7,5 @@ data class RecyclerResultsCard(
     val startYear: Long,
     val genre: String,
     val averageRating: String,
-    val userRating: Int
+    val userRating: Long
 )
