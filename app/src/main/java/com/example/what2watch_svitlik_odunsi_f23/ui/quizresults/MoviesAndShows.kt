@@ -15,8 +15,8 @@ data class MoviesAndShows(
     val isAdult: String = "",
     val runtime: String = "",
     val endYear: String = "",
-    val averageRating: String = "",
-    val userRating:Int = 0
+    val criticRating: String = "",
+    val userRating:Int  = 0
 
 ) {
 }
@@ -58,7 +58,7 @@ fun quizFilters(answersData: AnswersData) {
                     isAdult = document.getString("isAdult") ?: "",
                     runtime = document.getString("runtime") ?: "",
                     endYear = document.getString("endYear") ?: "",
-                    averageRating = document.getString("averageRating") ?: ""
+                    criticRating = document.getString("averageRating") ?: ""
                 )
 
                 MoviesAndShowsList.add(movieOrShow)

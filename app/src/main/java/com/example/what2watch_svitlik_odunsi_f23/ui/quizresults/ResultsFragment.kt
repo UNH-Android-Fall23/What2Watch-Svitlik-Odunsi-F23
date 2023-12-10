@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -17,11 +18,13 @@ class ResultsFragment : Fragment() {
 
     private var _binding: FragmentResultsBinding? = null
     private val db = Firebase.firestore
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var mRecyclerView: RecyclerView
     val TAG = "SvitlikOdunsi"
+    private lateinit var ratingBar: RatingBar
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,8 +41,6 @@ class ResultsFragment : Fragment() {
             textView.text = it
         }
 
-        //val ratingBar = findByViewId(R.id.ratingBar)
-
         //Results Recycler View
         val resultsRecyclerList: ArrayList<RecyclerResultsCard> = ArrayList()
         for (result in MoviesAndShowsList) {
@@ -50,7 +51,7 @@ class ResultsFragment : Fragment() {
                     result.titleType,
                     result.startYear,
                     result.genre,
-                    result.averageRating,
+                    result.criticRating,
                     result.userRating
                 )
             )
@@ -63,12 +64,7 @@ class ResultsFragment : Fragment() {
         mRecyclerView.adapter = ResultsAdapter(resultsRecyclerList, this)
 
         return root
-
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+    // ...
 }
-

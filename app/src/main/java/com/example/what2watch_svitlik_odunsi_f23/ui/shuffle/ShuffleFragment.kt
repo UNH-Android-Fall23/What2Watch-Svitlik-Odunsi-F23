@@ -52,7 +52,7 @@ class ShuffleFragment : Fragment() {
                         isAdult = document.getString("isAdult") ?: "",
                         runtime = document.getString("runtime") ?: "",
                         endYear = document.getString("endYear") ?: "",
-                        averageRating = document.getString("averageRating") ?: ""
+                        criticRating = document.getString("averageRating") ?: ""
                     )
 
                     MoviesAndShowsList.add(movieOrShow)
@@ -78,7 +78,9 @@ class ShuffleFragment : Fragment() {
                     result.titleType,
                     result.startYear,
                     result.genre,
-                    result.averageRating,
+                    result.criticRating,
+                    result.userRating
+
                 )
             )
         }
