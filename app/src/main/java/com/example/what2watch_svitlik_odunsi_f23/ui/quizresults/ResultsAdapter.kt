@@ -50,6 +50,11 @@ class ResultsAdapter(
             Log.d(TAG, "Ratings bar touched: $rating")
 
             //I need to pull the current tconst into here and add to firebase
+            //todo: add in username functionality
+            //todo: add in something to make sure that the rating isn't being written to firebase more than once.
+                //check if the rating is already in the database
+                // if not, then run the code below
+                // if it is, just do an update database query
 
             val username: String = "need to add this"
             val ratingsCollection = Firebase.firestore.collection("MoviesReviews")
@@ -89,18 +94,12 @@ class ResultsAdapter(
                             }
                     }
                 }
-
-
         }
-
-
 
         // Now i need to take that rating and add it to the MoviesAndShowsFireabse
         //fitler to find the right rconst
 
     }
-
-
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mImageView: ImageView = itemView.findViewById(R.id.image_view)
         val mTextView1: TextView = itemView.findViewById(R.id.text_name)

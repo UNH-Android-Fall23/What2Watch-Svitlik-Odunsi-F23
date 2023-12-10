@@ -11,13 +11,16 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.R
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
 class ShuffleRecyclerAdapter (
     private val mExampleList: ArrayList<RecyclerResultsCard>, // takes in a list
-    private val context: ShuffleFragment //pass in the context of results fragment to link data from one to another
+    private val context: ShuffleFragment, //pass in the context of results fragment to link data from one to another
+    private val db: FirebaseFirestore = Firebase.firestore
+
 ) : RecyclerView.Adapter<ShuffleRecyclerAdapter.ExampleViewHolder>() {
 
     val TAG = "SvitlikOdunsi"
@@ -48,8 +51,6 @@ class ShuffleRecyclerAdapter (
         holder.mStarRating.setOnRatingBarChangeListener { _, rating, _ ->
             Log.d(TAG, "Ratings bar touched: $rating")
 
-            //I need to pull the current tconst into here and add to firebase
-
             val username: String = "need to add this"
             val ratingsCollection = Firebase.firestore.collection("MoviesReviews")
 
@@ -71,7 +72,32 @@ class ShuffleRecyclerAdapter (
                 .addOnFailureListener { e ->
                     Log.e(TAG, "Error adding rating", e)
                 }
+            db.collection ("MoviesAndShows")
+                .whereEqualTo("tconst", tConst)
+                .get()
+                .addOnSuccessListener {documents ->
+                    for (document in documents) {
+                        // Update the userRating field in the document
+                        val documentId = document.id
+                        db.collection("MoviesAndShows").document(documentId)
+                            .update("userRating", rating)
+                            .addOnSuccessListener {
+                                Log.d(TAG, "Document successfully updated!")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e(TAG, "Error updating document", e)
+                            }
+                    }
+                }
+
+
         }
+
+
+
+        // Now i need to take that rating and add it to the MoviesAndShowsFireabse
+        //fitler to find the right rconst
+
     }
 
 
@@ -84,4 +110,6 @@ class ShuffleRecyclerAdapter (
         val mTextRating: TextView = itemView.findViewById(R.id.text_rating)
         val mStarRating: RatingBar = itemView.findViewById(R.id.ratingBar)
     }
+
+
 }
