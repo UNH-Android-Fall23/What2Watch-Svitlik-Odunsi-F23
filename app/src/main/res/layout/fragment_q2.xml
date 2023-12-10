@@ -43,14 +43,14 @@
         style="@style/Widget.Material3.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#7973F7"
         android:fontFamily="@font/alata"
-        android:textSize="15dp"
         android:text="Romance"
-        app:layout_constraintEnd_toStartOf="@+id/btn_action"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toTopOf="@+id/btn_action" />
 
     <Button
@@ -98,21 +98,6 @@
         app:layout_constraintStart_toEndOf="@+id/btn_fantasy"
         app:layout_constraintTop_toBottomOf="@+id/btn_comedy"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btn_next"
-        style="@style/Widget.Material3.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#7973F7"
-        android:fontFamily="@font/alata"
-        android:text="Next"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drama" />
 
     <Button
         android:id="@+id/btn_fantasy"
@@ -166,14 +151,14 @@
         style="@style/Widget.Material3.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#7973F7"
         android:fontFamily="@font/alata"
         android:text="Faith"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toEndOf="@+id/btn_action"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toTopOf="@+id/btn_action" />
 
     <Button
@@ -241,14 +226,14 @@
         style="@style/Widget.Material3.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="188dp"
         android:backgroundTint="#7973F7"
         android:fontFamily="@font/alata"
         android:text="Action"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_Home"
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="@+id/text_Home"
         app:layout_constraintTop_toTopOf="@+id/text_Home" />
 
     <Button
