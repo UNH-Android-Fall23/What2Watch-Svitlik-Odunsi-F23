@@ -5,8 +5,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 data class MoviesAndShows(
-    //from imbd basics data collection
-    val tconst: String ="",
+    val tconst: Comparable<*> = "",
     val titleType: String = "",    //this is how IMBD differentiates a show or a movie
     val primaryTitle: String = "",
     val originalTitle: String ="",
@@ -49,7 +48,7 @@ fun quizFilters(answersData: AnswersData) {
                 Log.d (TAG, "${document.id} => $document.data}")
                 //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
                 val movieOrShow = MoviesAndShows(
-                    tconst = document.id,
+                    tconst = document.getString("tconst") ?: "",
                     titleType = document.getString("titleType") ?: "",
                     primaryTitle = document.getString("primaryTitle") ?: "",
                     originalTitle = document.getString("originalTitle") ?: "",

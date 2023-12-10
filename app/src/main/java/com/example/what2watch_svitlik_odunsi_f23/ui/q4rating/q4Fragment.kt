@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.example.what2watch_svitlik_odunsi_f23.databinding.FragmentQ4Binding
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.AnswersData
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.MoviesAndShowsList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.answersList
 import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.quizFilters
 
@@ -56,6 +57,7 @@ class q4Fragment : Fragment() {
             val answersData = AnswersData(answersList.toString())
             quizFilters(answersData)
             Log.d(TAG, "Everything uploaded into the array list")
+
             findNavController().navigate(R.id.navigation_quizresults)
         }
 

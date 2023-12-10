@@ -1,6 +1,7 @@
 package com.example.what2watch_svitlik_odunsi_f23.ui.quizresults
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +46,7 @@ class ResultsFragment : Fragment() {
         for (result in MoviesAndShowsList) {
             resultsRecyclerList.add(
                 RecyclerResultsCard(
-                    result.tconst,
+                    result.tconst.toString(),
                     result.primaryTitle,
                     result.titleType,
                     result.startYear,

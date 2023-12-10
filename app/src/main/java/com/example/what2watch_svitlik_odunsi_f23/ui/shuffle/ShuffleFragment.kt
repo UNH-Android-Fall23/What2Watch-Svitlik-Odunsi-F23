@@ -73,7 +73,7 @@ class ShuffleFragment : Fragment() {
         for (result in MoviesAndShowsList) {
             shuffleRecyclerList.add(
                 RecyclerResultsCard(
-                    result.tconst,
+                    result.tconst.toString(),
                     result.primaryTitle,
                     result.titleType,
                     result.startYear,

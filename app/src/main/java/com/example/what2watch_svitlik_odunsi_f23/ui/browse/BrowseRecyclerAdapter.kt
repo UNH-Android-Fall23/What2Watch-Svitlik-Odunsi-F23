@@ -41,16 +41,20 @@ class BrowseRecyclerAdapter (
         holder.mTextRating.text = criticRating.toString()
         holder.mStarRating.rating = userRating.toFloat()
 
+        val TAG = "SvitlikOdunsi"
         holder.mStarRating.setOnRatingBarChangeListener { _, rating, _ ->
             Log.d(TAG, "Ratings bar touched: $rating")
 
-            //hard coded data for firebase
-            val tconst: String = "hi"
-            val username: String = "poop"
+            //I need to pull the current tconst into here and add to firebase
+
+            val username: String = "need to add this"
             val ratingsCollection = Firebase.firestore.collection("MoviesReviews")
 
+            val tConst = mExampleList[position].tconst
+            Log.d(TAG, "tconst: ${tConst}")
+
             val newUserReview = hashMapOf(
-                "tconst" to tconst,
+                "tconst" to tConst,
                 "rating" to rating,
                 "username" to username
             )
@@ -77,4 +81,6 @@ class BrowseRecyclerAdapter (
         val mTextRating: TextView = itemView.findViewById(R.id.text_rating)
         val mStarRating: RatingBar = itemView.findViewById(R.id.ratingBar)
     }
+
+
 }

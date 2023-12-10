@@ -108,7 +108,7 @@ class BrowseFragment : Fragment() {
                             for (result in MoviesAndShowsList) {
                                 browseRecyclerList.add(
                                     RecyclerResultsCard(
-                                        result.tconst,
+                                        result.tconst.toString(),
                                         result.primaryTitle,
                                         result.titleType,
                                         result.startYear,
