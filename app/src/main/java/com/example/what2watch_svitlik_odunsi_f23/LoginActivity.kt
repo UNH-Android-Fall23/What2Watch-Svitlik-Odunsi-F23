@@ -32,6 +32,8 @@ class LoginActivity : AppCompatActivity() {
         buttonRegister.setOnClickListener {
             registerUser()
         }
+
+
     }
 
     private fun registerUser() {
@@ -63,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     updateUI(null)
+
                 }
             }
     }
@@ -76,6 +79,8 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show()
         }
     }
+
+
 /*
     override fun onStart() {
         super.onStart()

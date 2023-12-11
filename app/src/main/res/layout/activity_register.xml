@@ -21,59 +21,60 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
-
+        app:layout_constraintVertical_bias="0.02" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="381dp"
         android:layout_height="65dp"
+        android:layout_marginTop="11dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="text"
         android:text="Username"
         app:layout_constraintBottom_toTopOf="@+id/editEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
+        app:layout_constraintEnd_toEndOf="@+id/editEmailAddress"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/text_Home"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/editEmailAddress"
         android:layout_width="378dp"
         android:layout_height="64dp"
-        android:layout_marginTop="8dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@id/username"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.732"
         tools:ignore="HardcodedText" />
-<!--
+
     <TextView
         android:id="@+id/personalInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Personal Information"
         android:textColor="#070101"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@id/editPassword"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.908"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="126dp"
         android:layout_height="22dp"
-        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
         android:text="Date of Birth"
         android:textColor="#070101"
@@ -81,79 +82,84 @@
         android:textStyle="bold"
 
         android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/genderSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.935"
         tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/editTextDate"
-        android:layout_width="123dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="64dp"
+        android:layout_width="137dp"
+        android:layout_height="53dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="mm/dd/yyyy"
         android:inputType="date"
-
-        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/countrySpinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/countrySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.877"
         tools:ignore="HardcodedText" />
--->
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="281dp"
+        android:layout_height="68dp"
+        android:text="I agree to the terms of use and privacy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Registerbutton"
+        tools:ignore="HardcodedText" />
+
     <Button
         android:id="@+id/Registerbutton"
         android:layout_width="282dp"
         android:layout_height="61dp"
         android:text="Register"
         app:iconPadding="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox2"
+        app:layout_constraintStart_toStartOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:ignore="HardcodedText" />
-<!--
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="281dp"
-        android:layout_height="68dp"
-        android:text="I agree to the terms of use and privacy"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/Registerbutton"
-        tools:ignore="HardcodedText" />
--->
+
     <EditText
         android:id="@+id/editPassword"
-        android:layout_width="381dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="371dp"
+        android:layout_height="63dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@id/editEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/personalInfo"
+        app:layout_constraintEnd_toEndOf="@+id/personalInfo"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="@+id/personalInfo"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.781"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="74dp"
         android:layout_height="19dp"
-        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:textColor="#070202"
         android:textSize="16sp"
         android:textStyle="bold"
-
         android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/personalInfo"
+        app:layout_constraintBottom_toTopOf="@+id/genderSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/genderSpinner"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="@+id/genderSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.933"
         tools:text="Gender" />
 
     <TextView
@@ -164,39 +170,55 @@
         android:textColor="#020101"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.418"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/countrySpinner"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="@+id/countrySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/genderSpinner"
+        app:layout_constraintVertical_bias="0.176"
         tools:ignore="UnknownId"
         tools:text="Country" />
 
     <Spinner
         android:id="@+id/genderSpinner"
-        android:layout_width="147dp"
-        android:layout_height="33dp"
-        android:layout_margin="16dp"
+        android:layout_width="149dp"
+        android:layout_height="64dp"
 
-        android:layout_marginTop="16dp"
         android:text="@string/gender"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/countrySpinner"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/countrySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/text_Home"
+        app:layout_constraintVertical_bias="0.541" />
 
     <Spinner
         android:id="@+id/countrySpinner"
-        android:layout_width="320dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="308dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="12dp"
         android:text="Country"
         android:textColor="#0C0606"
-        app:layout_constraintEnd_toEndOf="@+id/text_Home"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toStartOf="@+id/text_Home"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintBottom_toTopOf="@+id/Registerbutton"
+        app:layout_constraintEnd_toEndOf="@+id/Registerbutton"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toStartOf="@+id/Registerbutton"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.402" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
