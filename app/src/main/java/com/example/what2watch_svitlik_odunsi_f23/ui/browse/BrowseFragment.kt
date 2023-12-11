@@ -83,7 +83,7 @@ class BrowseFragment : Fragment() {
 
                                 //I Need to take the document that was just grabbed and immediately enter it into our MoviesAndShowsList
                                 val movieOrShow = MoviesAndShows(
-                                    tconst = document.id,
+                                    tconst = document.getString("tconst") ?: "",
                                     titleType = document.getString("titleType") ?: "",
                                     primaryTitle = document.getString("primaryTitle") ?: "",
                                     originalTitle = document.getString("originalTitle") ?: "",

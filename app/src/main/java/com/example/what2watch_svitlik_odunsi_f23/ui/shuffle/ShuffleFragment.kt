@@ -43,7 +43,7 @@ class ShuffleFragment : Fragment() {
                 for (document in documents) {
                     Log.d(TAG, "${document.id} => $document.data}")
                     val movieOrShow = MoviesAndShows(
-                        tconst = document.id,
+                        tconst = document.getString("tconst") ?: "",
                         titleType = document.getString("titleType") ?: "",
                         primaryTitle = document.getString("primaryTitle") ?: "",
                         originalTitle = document.getString("originalTitle") ?: "",

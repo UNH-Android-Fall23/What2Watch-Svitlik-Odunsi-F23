@@ -11,6 +11,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what2watch_svitlik_odunsi_f23.R
+import com.example.what2watch_svitlik_odunsi_f23.ui.quizresults.ResultsAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -57,50 +58,72 @@ class BrowseRecyclerAdapter (
             //check if the rating is already in the database
             // if not, then run the code below
             // if it is, just do an update database query
+            //todo: I need to add how to calculate the average user rating, so I would have to
+            // loop through all user ratings for one movie, add that, and then divide that by total users
 
             val username: String = "need to add this"
             val ratingsCollection = Firebase.firestore.collection("MoviesReviews")
-
             val tConst = mExampleList[position].tconst
-            Log.d(TAG, "tconst: ${tConst}")
 
-            val newUserReview = hashMapOf(
-                "tconst" to tConst,
-                "rating" to rating,
-                "username" to username
-            )
+            val TAG = "SvitlikOdunsi"
+            holder.mStarRating.setOnRatingBarChangeListener { _, rating, _ ->
+                Log.d(TAG, "Ratings bar touched: $rating")
 
-            ratingsCollection.add(newUserReview)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(TAG, "Rating added with ID: ${documentReference.id}")
+                // Check if the rating already exists in the database
+                ratingsCollection
+                    .whereEqualTo("tconst", tConst)
+                    .whereEqualTo("username", username)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        if (documents.isEmpty) {
+                            // The rating is not in the database, add a new rating
+                            val newUserReview = hashMapOf(
+                                "tconst" to tConst,
+                                "rating" to rating,
+                                "username" to username
+                            )
 
-                }
-
-                .addOnFailureListener { e ->
-                    Log.e(TAG, "Error adding rating", e)
-                }
-            db.collection ("MoviesAndShows")
-                .whereEqualTo("tconst", tConst)
-                .get()
-                .addOnSuccessListener {documents ->
-                    for (document in documents) {
-                        // Update the userRating field in the document
-                        val documentId = document.id
-                        db.collection("MoviesAndShows").document(documentId)
-                            .update("userRating", rating)
-                            .addOnSuccessListener {
-                                Log.d(TAG, "Document successfully updated!")
-                            }
-                            .addOnFailureListener { e ->
-                                Log.e(TAG, "Error updating document", e)
-                            }
+                            ratingsCollection.add(newUserReview)
+                                .addOnSuccessListener { documentReference ->
+                                    Log.d(TAG, "Rating added with ID: ${documentReference.id}")
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.e(TAG, "Error adding rating", e)
+                                }
+                        } else {
+                            // The rating already exists, you might want to handle this case
+                            Log.d(
+                                TAG,
+                                "Rating already exists for user $username and tconst $tConst"
+                            )
+                        }
                     }
-                }
+                    .addOnFailureListener { e ->
+                        Log.e(TAG, "Error checking if rating exists", e)
+                    }
+
+                // Update the userRating field in the MoviesAndShows document
+                db.collection("MoviesAndShows")
+                    .whereEqualTo("tconst", tConst)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        for (document in documents) {
+                            val documentId = document.id
+                            db.collection("MoviesAndShows").document(documentId)
+                                .update("userRating", rating)
+                                .addOnSuccessListener {
+                                    Log.d(TAG, "Document successfully updated!")
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.e(TAG, "Error updating document", e)
+                                }
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e(TAG, "Error getting MoviesAndShows document", e)
+                    }
+            }
         }
-
-        // Now i need to take that rating and add it to the MoviesAndShowsFireabse
-        //fitler to find the right rconst
-
     }
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mImageView: ImageView = itemView.findViewById(R.id.image_view)
