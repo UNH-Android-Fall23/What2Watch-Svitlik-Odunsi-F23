@@ -8,12 +8,12 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.what2watch_svitlik_odunsi_f23.R.layout.activity_register
 import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -24,10 +24,10 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(activity_register)
 
        firebaseAuth = FirebaseAuth.getInstance()
-        userRef = Firebase.database.reference
+        userRef = FirebaseDatabase.getInstance().reference
         //database = FirebaseDatabase.getInstance()
 
        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
@@ -90,7 +90,6 @@ class RegisterActivity : AppCompatActivity() {
                     }
 
                     updateUI(firebaseAuth.currentUser)
-                    updateUI(user)
                 } else {
 
                     Toast.makeText(
@@ -106,12 +105,13 @@ class RegisterActivity : AppCompatActivity() {
         if (user != null) {
 
             val intent = Intent(this, HomeFragment::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-            finish()
-        } else {
+        //    finish()
+        //} else {
 
-            Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT)
-                .show()
+           // Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT)
+          //      .show()
         }
     }
 }
