@@ -22,6 +22,14 @@
         tools:layout="@layout/fragment_browse" />
 
     <fragment
+        android:id="@+id/navigation_recyclerSplashScreen"
+        android:name= "com.example.what2watch_svitlik_odunsi_f23.ui.splashscreen.RecyclerSplashFragment"
+        android:label="SplashScreen"
+        tools:layout="@layout/recycler_splashscreen" />
+
+
+
+    <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.what2watch_svitlik_odunsi_f23.ui.Profile.ProfileFragment"
         android:label="Profile"
