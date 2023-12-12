@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var userRef: DatabaseReference
 
-    private fun registerUser(email: String, password: String, firstName: String, lastName: String) {
+    private fun registerUser(email: String, password: String, fullName: String) {
 
     }
 
@@ -52,14 +52,14 @@ class RegisterActivity : AppCompatActivity() {
         registerButton.setOnClickListener {
             val email: String = findViewById<EditText>(R.id.editEmailAddress).text.toString()
             val password: String = findViewById<EditText>(R.id.editPassword).text.toString()
-            val firstName: String = findViewById<EditText>(R.id.firstName).text.toString()
-            val lastName: String = findViewById<EditText>(R.id.lastName).text.toString()
+            val fullName: String = findViewById<EditText>(R.id.FullName).text.toString()
 
-            if (email.isEmpty() || password.isEmpty() || firstName.isEmpty() || lastName.isEmpty()) {
+
+            if (email.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
                 Toast.makeText(this, "Please enter your email and password", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                registerUser(email, password, firstName, lastName)
+                registerUser(email, password, fullName)
             }
         }
 
@@ -75,16 +75,15 @@ class RegisterActivity : AppCompatActivity() {
                         // Save the user data to Firebase Database
                         user?.let { user ->
                             val userId = user.uid
-                            val firstName = "FirstName"
-                            val lastName = "LastName"
+                            val fullName = "fullName"
+
 
 
                             val userRegistrationReference = userRef.child("UserRegistration")
                             val userData = mapOf(
                                 "uid" to userId,
                                 "email" to email,
-                                "firstName" to firstName,
-                                "LastName" to lastName
+                                "fullName" to fullName
                             )
                             userRegistrationReference.child(userId).setValue(userData)
                         }
