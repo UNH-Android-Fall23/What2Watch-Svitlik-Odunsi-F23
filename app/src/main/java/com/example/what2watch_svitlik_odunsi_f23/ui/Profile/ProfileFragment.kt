@@ -15,7 +15,7 @@ import com.example.what2watch_svitlik_odunsi_f23.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class FragmentProfile : Fragment() {
+class ProfileFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
@@ -26,7 +26,8 @@ class FragmentProfile : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+       super.onViewCreated(view, savedInstanceState)
+
 
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
@@ -48,7 +49,7 @@ class FragmentProfile : Fragment() {
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents: ", exception)
             }
-
+    }}
 
 
         /*document?.let { doc ->
@@ -60,9 +61,9 @@ class FragmentProfile : Fragment() {
                 view.findViewById<TextView>(R.id.editEmailAddress).text = email
             }
 
-        }*/
+        }
 
-        view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
+       view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
             // Navigate to the Edit Profile screen
         }
 
@@ -110,8 +111,8 @@ class FragmentProfile : Fragment() {
     }
 
 }
-private fun Intent(profileFragment: FragmentProfile, java: Any): Intent {
+private fun Intent(profileFragment: ProfileFragment, java: Any): Intent {
     TODO("Not yet implemented")
 }
-
+*/
 
