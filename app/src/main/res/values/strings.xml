@@ -26,4 +26,6 @@
     <string name="profile">Profile</string>
     <string name="textview">TextView</string>
     <string name="results_image">Results Image</string>
+    <string name="location">Location</string>
+    <string name="country_of_residence">Country of Residence</string>
 </resources>

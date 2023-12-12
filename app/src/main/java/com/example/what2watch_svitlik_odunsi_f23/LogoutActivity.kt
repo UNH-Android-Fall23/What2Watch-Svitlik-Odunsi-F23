@@ -11,8 +11,6 @@ class Logout : AppCompatActivity() {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logout)
-
-        // Call logout method
         logout()
     }
 

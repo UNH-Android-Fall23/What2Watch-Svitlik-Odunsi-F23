@@ -8,27 +8,27 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.what2watch_svitlik_odunsi_f23.R.layout.activity_register
 import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var userRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(activity_register)
 
-        auth = Firebase.auth
-        userRef = Firebase.database.reference
+       firebaseAuth = FirebaseAuth.getInstance()
+        userRef = FirebaseDatabase.getInstance().reference
+        //database = FirebaseDatabase.getInstance()
 
        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
        ArrayAdapter.createFromResource(
@@ -64,11 +64,11 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
+                    val user = firebaseAuth.currentUser
 
                     // Get the user selected country and gender
                    val genderSpinner = findViewById<Spinner>(R.id.genderSpinner)
@@ -89,10 +89,9 @@ class RegisterActivity : AppCompatActivity() {
                         userRegistrationReference.child(userId).setValue(userData)
                     }
 
-                    updateUI(auth.currentUser)
-                    updateUI(user)
+                    updateUI(firebaseAuth.currentUser)
                 } else {
-                    // If sign in fails, display a message to the user.
+
                     Toast.makeText(
                         baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT
@@ -104,14 +103,15 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            // navigate to the HomeActivity (or wherever you want to navigate)
+
             val intent = Intent(this, HomeFragment::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-            finish() // Optional: Close the current activity to prevent going back
-        } else {
-            // Prompt the user to try again with different credentials
-            Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT)
-                .show()
+        //    finish()
+        //} else {
+
+           // Toast.makeText(this, "Please try again with different credentials.", Toast.LENGTH_SHORT)
+          //      .show()
         }
     }
 }
