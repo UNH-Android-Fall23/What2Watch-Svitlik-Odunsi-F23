@@ -132,7 +132,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintBottom_toTopOf="@+id/FullName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +142,7 @@
         tools:text="Username" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/FullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -152,12 +152,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_profile"
         app:layout_constraintVertical_bias="0.565"
         tools:ignore="MissingConstraints"
-        tools:text="Name" />
+        tools:text="Full Name" />
 
     <TextView
         android:id="@+id/textView11"

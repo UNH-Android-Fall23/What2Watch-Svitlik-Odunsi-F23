@@ -34,16 +34,13 @@ class ProfileFragment : Fragment() {
         val currentUser = auth.currentUser
 
         val db = FirebaseFirestore.getInstance()
-        db.collection("users")
+        db.collection("UserRegistration")
             .whereEqualTo("uid", currentUser?.uid)
             .get()
             .addOnSuccessListener { documents: QuerySnapshot ->
                 for (document in documents) {
-                    document.getString("username")?.let { username: String ->
-                        view.findViewById<TextView>(R.id.username).text = username
-                    }
-                    document.getString("email")?.let { email: String ->
-                        view.findViewById<TextView>(R.id.editEmailAddress).text = email
+                    document.getString("fullName")?.let { fullName: String ->
+                        view.findViewById<TextView>(R.id.FullName).text = fullName
                     }
                 }
             }
@@ -51,7 +48,8 @@ class ProfileFragment : Fragment() {
                 Log.w(TAG, "Error getting documents: ", exception)
             }
 
-        view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
+
+       /* view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
         }
 
         view.findViewById<TextView>(R.id.text_profile).setOnClickListener {
@@ -67,7 +65,7 @@ class ProfileFragment : Fragment() {
 
         view.findViewById<TextView>(R.id.textView5).setOnClickListener {
 
-        }
+        }*/
 
         view.findViewById<TextView>(R.id.text_Settings).setOnClickListener {
         }
