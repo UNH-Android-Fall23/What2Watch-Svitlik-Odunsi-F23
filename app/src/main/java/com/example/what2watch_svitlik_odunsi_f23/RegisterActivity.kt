@@ -45,14 +45,14 @@ class RegisterActivity : AppCompatActivity() {
 
                     updateUI(auth.currentUser)
                 } else {
-                    Log.w(TAG, "createUserwithEmail: failure", task.exception)
-                    // Show your own error message here
+                    Log.w(TAG, "createUserWithEmailAndPassword: failure", task.exception)
                     Toast.makeText(
                         baseContext,
-                        "Authentication Failed.",
-                        Toast.LENGTH_SHORT,
+                        "Authentication Failed: ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
                     ).show()
                     updateUI(null)
+
 
                 }
             }
