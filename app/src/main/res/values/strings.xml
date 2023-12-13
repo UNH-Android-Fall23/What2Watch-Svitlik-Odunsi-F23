@@ -28,4 +28,7 @@
     <string name="results_image">Results Image</string>
     <string name="location">Location</string>
     <string name="country_of_residence">Country of Residence</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
 </resources>
