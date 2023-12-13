@@ -68,6 +68,6 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging:23.3.1")
     implementation ("androidx.activity:activity-ktx:1.8.1")
     implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("com.google.firebase:firebase-auth:20.0.1")
+    implementation ("com.google.firebase:firebase-auth:22.3.0")
 
 }
