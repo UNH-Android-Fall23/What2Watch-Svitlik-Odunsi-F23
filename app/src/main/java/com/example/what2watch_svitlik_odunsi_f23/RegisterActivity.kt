@@ -1,7 +1,6 @@
 package com.example.what2watch_svitlik_odunsi_f23
 
 import android.content.ContentValues.TAG
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -23,16 +22,16 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var userRef: DatabaseReference
 
+
     private fun registerUser(email: String, password: String, fullName: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserwithEmail:success")
                     val user = auth.currentUser
                     updateUI(user)
 
-                    // Save the user data to Firebase Database
+                   // Save the user data to Firebase Database
                     user?.let { user ->
                         val userId = user.uid
                         val userRegistrationReference = userRef.child("UserRegistration")
@@ -43,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
                         userRegistrationReference.child(userId).setValue(userData)
                     }
 
-                    updateUI(auth.currentUser)
+                    updateUI(user)
                 } else {
                     Log.w(TAG, "createUserWithEmailAndPassword: failure", task.exception)
                     Toast.makeText(
@@ -60,9 +59,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            val intent = Intent(this, HomeFragment::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
+            // Correct way to navigate to HomeFragment
+            val fragmentTransaction = supportFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container, HomeFragment())
+            fragmentTransaction.addToBackStack(null) // Optional, to add the fragment to the back stack
+            fragmentTransaction.commit()
         }
     }
 
@@ -88,5 +89,6 @@ class RegisterActivity : AppCompatActivity() {
                 registerUser(email, password, fullName)
             }
         }
+
     }
 }
