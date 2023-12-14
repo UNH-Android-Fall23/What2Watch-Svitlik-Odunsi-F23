@@ -50,23 +50,23 @@ class ProfileFragment : Fragment() {
             }
 
 
-       /* view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
+       view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
         }
 
-        view.findViewById<TextView>(R.id.text_profile).setOnClickListener {
+        /*view.findViewById<TextView>(R.id.text_profile).setOnClickListener {
 
         }
 
         view.findViewById<TextView>(R.id.textView9).setOnClickListener {
 
-        }
+        }*/
         view.findViewById<TextView>(R.id.textView11).setOnClickListener {
 
         }
 
         view.findViewById<TextView>(R.id.textView5).setOnClickListener {
 
-        }*/
+        }
 
         view.findViewById<TextView>(R.id.text_Settings).setOnClickListener {
         }
