@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.what2watch_svitlik_odunsi_f23.R.layout.activity_register
-import com.example.what2watch_svitlik_odunsi_f23.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -28,14 +27,19 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserwithEmail:success")
+                    Log.d(TAG, "createUserWithEmailAndPassword:success")
                     val user = auth.currentUser
+
+                    // Get UID of the authenticated user
+                    val uid = user?.uid
+                    Log.d("Firebase UID", "User ID: $uid")
+
                     updateUI(user)
 
                     // Save the user data to Firebase Database
                     user?.let { user ->
                         val userId = user.uid
-                        val userRegistrationReference = userRef.child("UserRegistration")
+                        val userRegistrationReference = FirebaseDatabase.getInstance().reference.child("UserRegistration")
                         val userData = mapOf(
                             "uid" to userId,
                             "fullName" to fullName
@@ -52,15 +56,14 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     updateUI(null)
-
-
                 }
             }
     }
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            val intent = Intent(this, HomeFragment::class.java)
+            // Navigate to the login screen after successful registration
+            val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }

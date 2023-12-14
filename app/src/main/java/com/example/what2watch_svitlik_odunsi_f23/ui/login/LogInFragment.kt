@@ -52,21 +52,21 @@ class LogInFragment : Fragment() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(activity, "Please enter your email and password", Toast.LENGTH_SHORT)
                     .show()
-                return@setOnClickListener
-            }
+            } else {
 
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        findNavController().navigate(R.id.navigation_home)
-                    } else {
-                        Toast.makeText(
-                            activity,
-                            "Error: ${task.exception?.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            findNavController().navigate(R.id.navigation_home)
+                        } else {
+                            Toast.makeText(
+                                activity,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
+            }
         }
 
         binding.btnNewUser.setOnClickListener {
@@ -75,7 +75,6 @@ class LogInFragment : Fragment() {
         }
 
         return root
-
     }
 
     override fun onDestroyView() {
