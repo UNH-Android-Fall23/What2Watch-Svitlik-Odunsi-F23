@@ -27,11 +27,11 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "createUserwithEmail:success")
+                    Log.d(TAG, "createUserWithEmailAndPassword:success")
                     val user = auth.currentUser
                     updateUI(user)
 
-                   // Save the user data to Firebase Database
+                    // Save the user data to Firebase Database
                     user?.let { user ->
                         val userId = user.uid
                         val userRegistrationReference = userRef.child("UserRegistration")
@@ -41,8 +41,6 @@ class RegisterActivity : AppCompatActivity() {
                         )
                         userRegistrationReference.child(userId).setValue(userData)
                     }
-
-                    updateUI(user)
                 } else {
                     Log.w(TAG, "createUserWithEmailAndPassword: failure", task.exception)
                     Toast.makeText(
@@ -51,13 +49,11 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     updateUI(null)
-
-
                 }
             }
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+                private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             // Correct way to navigate to HomeFragment
             val fragmentTransaction = supportFragmentManager.beginTransaction()
