@@ -35,7 +35,7 @@ class LogInFragment : Fragment() {
     ): View {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val root : View = binding.root
+        val root: View = binding.root
 
         auth = Firebase.auth
         db = Firebase.firestore
@@ -50,7 +50,8 @@ class LogInFragment : Fragment() {
             val password = binding.editTextTextPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(activity, "Please enter your email and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please enter your email and password", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
@@ -59,7 +60,11 @@ class LogInFragment : Fragment() {
                     if (task.isSuccessful) {
                         findNavController().navigate(R.id.navigation_home)
                     } else {
-                        Toast.makeText(activity, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            activity,
+                            "Error: ${task.exception?.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
         }
