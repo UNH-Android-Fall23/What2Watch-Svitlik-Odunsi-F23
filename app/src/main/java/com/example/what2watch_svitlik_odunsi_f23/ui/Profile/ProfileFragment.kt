@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.what2watch_svitlik_odunsi_f23.LoginActivity
+import com.example.what2watch_svitlik_odunsi_f23.ProfileEdit
 import com.example.what2watch_svitlik_odunsi_f23.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -75,6 +76,11 @@ class ProfileFragment : Fragment() {
 
         view.findViewById<View>(R.id.logout_button).setOnClickListener {
             onLogoutClick(it)
+        }
+
+        view.findViewById<TextView>(R.id.text_editProfile).setOnClickListener {
+            val intent = Intent(requireActivity(), ProfileEdit::class.java)
+            startActivity(intent)
         }
     }
 
